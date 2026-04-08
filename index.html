@@ -141,9 +141,9 @@
     .popup p{font-size:14px;color:var(--g500);line-height:1.6;margin-bottom:20px}
     .popup .btn-primary{display:block;text-align:center;font-size:15px;padding:14px}
 
-    /* Mobile */
+    /* Tablet (< 900px) */
     @media(max-width:900px){
-      .nav-links{position:fixed;top:72px;left:0;right:0;background:white;flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--g200);display:none;box-shadow:0 8px 30px rgba(0,0,0,0.1)}
+      .nav-links{position:fixed;top:72px;left:0;right:0;background:white;flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--g200);display:none;box-shadow:0 8px 30px rgba(0,0,0,0.1);z-index:60}
       .nav-links.open{display:flex}
       .mobile-toggle{display:block}
       .hero-inner{grid-template-columns:1fr;text-align:center}
@@ -152,18 +152,59 @@
       .hero-text{order:1}
       .hero-buttons{justify-content:center}
       .hero p{margin-left:auto;margin-right:auto}
-      .hero{padding:100px 24px 60px;min-height:auto}
+      .hero{padding:100px 16px 60px;min-height:auto}
+      .hero-watermark{width:400px;height:400px}
       .stats-inner{grid-template-columns:repeat(2,1fr)}
       .services-grid{grid-template-columns:1fr}
       .prism-inner{grid-template-columns:1fr;text-align:center}
+      .prism-features{text-align:left;padding-left:0}
       .sectors-grid{grid-template-columns:repeat(2,1fr)}
       .footer-inner{grid-template-columns:1fr 1fr}
+      .section{padding:60px 16px}
+      .popup{padding:28px;margin:16px}
     }
+    /* Small phone (< 480px — Samsung S23, iPhone 14) */
     @media(max-width:480px){
-      .stats-inner{grid-template-columns:repeat(2,1fr);gap:16px}
-      .sectors-grid{grid-template-columns:1fr 1fr}
-      .footer-inner{grid-template-columns:1fr}
-      .hero-logo img{width:120px;height:120px}
+      .nav-inner{padding:0 16px;height:64px}
+      .nav-logo span{font-size:15px}
+      .nav-logo img{height:36px;width:36px}
+      .nav-links{top:64px}
+      .hero{padding:80px 16px 48px}
+      .hero-logo img{width:110px;height:110px}
+      .hero h1{font-size:1.7rem}
+      .hero p{font-size:15px}
+      .hero-badge{font-size:11px;padding:5px 14px}
+      .hero-buttons{flex-direction:column;gap:10px}
+      .btn-primary,.btn-secondary{width:100%;text-align:center;padding:14px 20px}
+      .stats-inner{grid-template-columns:repeat(2,1fr);gap:12px}
+      .stat-num{font-size:1.8rem}
+      .stat-label{font-size:11px}
+      .service-card{padding:24px}
+      .sectors-grid{grid-template-columns:1fr 1fr;gap:10px}
+      .sector-card{padding:16px}
+      .sector-card .emoji{font-size:28px}
+      .sector-card h4{font-size:12px}
+      .footer-inner{grid-template-columns:1fr;gap:24px}
+      .footer-bottom{flex-direction:column;text-align:center}
+      .cta h2{font-size:1.4rem}
+      .cta{padding:48px 16px}
+      .popup{padding:24px 20px;border-radius:16px}
+      .popup h3{font-size:18px}
+      .popup p{font-size:13px}
+      .prism-text h2{font-size:1.5rem}
+      .prism-features li{font-size:13px}
+      .prism-mockup img{max-width:140px}
+    }
+    /* iPhone SE / very small (< 375px) */
+    @media(max-width:375px){
+      .hero-logo img{width:90px;height:90px}
+      .hero h1{font-size:1.5rem}
+      .stat-num{font-size:1.5rem}
+    }
+    /* Safe area for notched phones */
+    @supports(padding:max(0px)){
+      .nav{padding-top:env(safe-area-inset-top)}
+      .footer{padding-bottom:max(24px,env(safe-area-inset-bottom))}
     }
   </style>
 </head>
