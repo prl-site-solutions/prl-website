@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Slavery & Human Trafficking Statement | PRL Site Solutions</title>
+  <meta name="description" content="PRL Site Solutions Ltd Modern Slavery and Human Trafficking Statement — our zero-tolerance approach and the steps we take to prevent modern slavery in our operations and supply chain.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcfearless75.github.io/prl-website/modern-slavery.html">
+  <link rel="icon" href="./assets/prl_logo.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="./assets/prl_logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--blue:#005f8c;--blue-dark:#003d5c;--blue-darker:#001f2e;--blue-light:#e0f2fe;--amber:#f59e0b;--white:#fff;--g50:#f9fafb;--g100:#f3f4f6;--g200:#e5e7eb;--g500:#6b7280;--g700:#374151;--g900:#111827}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:var(--g900);line-height:1.7;overflow-x:hidden;padding-top:72px}
+    a{text-decoration:none;color:inherit}
+
+    /* Nav */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--g200);box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+    .nav-logo{display:flex;align-items:center;gap:12px}
+    .nav-logo img{height:44px;width:44px;border-radius:50%}
+    .nav-logo span{font-weight:800;font-size:18px;color:var(--blue)}
+    .nav-links{display:flex;align-items:center;gap:28px}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--g700);transition:color 0.2s}
+    .nav-links a:hover{color:var(--blue)}
+    .nav-cta{background:var(--blue);color:white!important;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:600;transition:all 0.3s}
+    .nav-cta:hover{background:var(--blue-dark)}
+    .mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+    .mobile-toggle svg{width:28px;height:28px;color:var(--g700)}
+
+    /* Page header */
+    .page-header{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 60%,var(--blue-darker) 100%);color:white;padding:56px 24px 52px;position:relative;overflow:hidden}
+    .page-header::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+    .page-header-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+    .page-header-tag{display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);padding:5px 14px;border-radius:50px;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;color:rgba(255,255,255,0.9)}
+    .page-header h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;line-height:1.15;margin-bottom:12px}
+    .page-header-meta{font-size:14px;opacity:0.75;display:flex;flex-wrap:wrap;gap:20px}
+    .page-header-meta span{display:flex;align-items:center;gap:6px}
+
+    /* Content */
+    .content-wrap{max-width:900px;margin:0 auto;padding:56px 24px 80px}
+
+    /* Placeholder highlight */
+    .placeholder{background:#fef3c7;color:#92400e;padding:1px 6px;border-radius:3px;font-style:italic;font-size:0.95em}
+
+    /* Section */
+    .doc-section{margin-bottom:44px;padding-bottom:44px;border-bottom:1px solid var(--g200)}
+    .doc-section:last-child{border-bottom:none;margin-bottom:0}
+    .doc-section h2{font-size:1.15rem;font-weight:700;color:var(--blue);margin-bottom:14px;padding-left:14px;border-left:3px solid var(--blue)}
+    .doc-section p{font-size:15px;color:var(--g700);margin-bottom:12px}
+    .doc-section p:last-child{margin-bottom:0}
+    .doc-section ul{margin:10px 0 12px 0;padding-left:0;list-style:none}
+    .doc-section ul li{font-size:15px;color:var(--g700);padding:6px 0 6px 20px;position:relative}
+    .doc-section ul li::before{content:'';position:absolute;left:0;top:14px;width:8px;height:8px;background:var(--blue);border-radius:50%;flex-shrink:0}
+
+    /* Risk / concern callout boxes */
+    .callout{background:var(--g50);border:1px solid var(--g200);border-radius:10px;padding:20px 24px;margin:16px 0}
+    .callout.alert{background:#fef2f2;border-color:#fecaca}
+    .callout h3{font-size:14px;font-weight:700;color:var(--g900);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.04em}
+    .callout ul{margin:0;padding:0;list-style:none}
+    .callout ul li{font-size:14px;color:var(--g700);padding:5px 0 5px 18px;position:relative}
+    .callout ul li::before{content:'';position:absolute;left:0;top:13px;width:6px;height:6px;background:var(--blue);border-radius:50%}
+    .callout.alert ul li::before{background:#dc2626}
+
+    /* Contact box */
+    .contact-box{background:var(--blue);color:white;border-radius:10px;padding:24px 28px;margin:20px 0}
+    .contact-box h3{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;opacity:0.8;margin-bottom:12px}
+    .contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:14px}
+    .contact-item:last-child{margin-bottom:0}
+    .contact-item strong{opacity:0.7;min-width:80px;font-size:13px;margin-top:1px}
+    .contact-item a{color:white;text-decoration:underline;text-underline-offset:2px}
+
+    /* Signature block */
+    .signature-block{background:var(--g50);border:1px solid var(--g200);border-radius:10px;padding:28px;margin-top:24px}
+    .signature-block p{font-size:14px;color:var(--g700);margin-bottom:6px}
+    .sig-line{border-bottom:1px solid var(--g700);width:240px;height:48px;margin:16px 0 8px}
+
+    /* Footer */
+    .footer{background:var(--g900);color:var(--g500);padding:40px 24px 24px}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+    .footer-brand{display:flex;align-items:center;gap:12px}
+    .footer-brand img{width:32px;height:32px;border-radius:50%}
+    .footer-brand span{color:white;font-weight:700;font-size:14px}
+    .footer-links{display:flex;flex-wrap:wrap;gap:16px}
+    .footer-links a{font-size:12px;color:var(--g500);transition:color 0.2s}
+    .footer-links a:hover{color:white}
+    .footer-bottom{max-width:1100px;margin:20px auto 0;padding-top:20px;border-top:1px solid #374151;font-size:12px;text-align:center}
+
+    @media(max-width:900px){
+      .nav-links{position:fixed;top:72px;left:0;right:0;background:white;flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--g200);display:none;box-shadow:0 8px 30px rgba(0,0,0,0.1);z-index:60}
+      .nav-links.open{display:flex}
+      .mobile-toggle{display:block}
+    }
+    @media(max-width:480px){
+      .nav-inner{padding:0 16px;height:64px}
+      .nav-logo span{font-size:15px}
+      .nav-logo img{height:36px;width:36px}
+      .nav-links{top:64px}
+      body{padding-top:64px}
+      .page-header{padding:40px 16px 36px}
+      .content-wrap{padding:36px 16px 60px}
+      .contact-box{padding:20px}
+      .signature-block{padding:20px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="./" class="nav-logo">
+        <img src="./assets/prl_logo.jpg" alt="PRL">
+        <span>PRL Site Solutions</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="./#services">Services</a>
+        <a href="./#sectors">Sectors</a>
+        <a href="https://www.prismworkforce.online/new-starter">New Starter</a>
+        <a href="./#prism">PRISM App</a>
+        <a href="./careers.html">Vacancies</a>
+        <a href="./#contact">Contact</a>
+        <a href="https://www.prismworkforce.online/login" class="nav-cta">Contractor Login</a>
+      </div>
+      <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="page-header-tag">Legal &amp; Compliance</div>
+      <h1>Modern Slavery &amp; Human Trafficking Statement</h1>
+      <div class="page-header-meta">
+        <span>PRL Site Solutions Ltd</span>
+        <span>Financial Year: <span class="placeholder" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9)">[INSERT YEAR]</span></span>
+        <span>Published: <span class="placeholder" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9)">[INSERT DATE]</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Document Content -->
+  <div class="content-wrap">
+
+    <!-- Our Commitment -->
+    <div class="doc-section">
+      <h2>Our Commitment</h2>
+      <p>PRL Site Solutions Ltd is committed to acting ethically and with integrity in all of our business operations and relationships. We have a zero-tolerance approach to modern slavery and human trafficking, and we are committed to implementing and enforcing effective systems and controls to ensure these practices have no place in our business or supply chain.</p>
+      <p>This statement is made in the spirit of the Modern Slavery Act 2015 and sets out the steps we have taken to identify, assess, and address the risk of modern slavery across our operations.</p>
+    </div>
+
+    <!-- About PRL -->
+    <div class="doc-section">
+      <h2>About PRL Site Solutions</h2>
+      <p>PRL Site Solutions Ltd is a <span class="placeholder">[labour supply / site services / construction recruitment]</span> company based in <span class="placeholder">[location]</span>. We operate across <span class="placeholder">[regions/sectors]</span> providing <span class="placeholder">[core services]</span> to clients in the construction, infrastructure, and industrial sectors.</p>
+      <p>Our workforce includes directly employed staff, contractors, and agency labour. We engage a supply chain of <span class="placeholder">[approximate number]</span> suppliers and subcontractors across the UK.</p>
+    </div>
+
+    <!-- Supply Chains -->
+    <div class="doc-section">
+      <h2>Our Supply Chains</h2>
+      <p>Our supply chain includes:</p>
+      <ul>
+        <li>Labour supply and staffing agencies</li>
+        <li>Plant hire and equipment suppliers</li>
+        <li>Materials and consumables suppliers</li>
+        <li>Specialist subcontractors</li>
+      </ul>
+      <p>We recognise that the construction, facilities management, and labour supply sectors carry elevated risk of modern slavery and forced labour, particularly within sub-contracted and agency workforces. We take this seriously and apply appropriate scrutiny at supplier onboarding and ongoing review.</p>
+    </div>
+
+    <!-- Policies -->
+    <div class="doc-section">
+      <h2>Policies in Relation to Slavery and Human Trafficking</h2>
+      <p>We maintain the following internal policies relevant to modern slavery:</p>
+      <ul>
+        <li><strong>Anti-Slavery and Human Trafficking Policy</strong> — sets out our zero-tolerance position and the responsibilities of staff and management</li>
+        <li><strong>Recruitment and Right to Work Policy</strong> — ensures we verify the identity and legal right to work of all individuals engaged by PRL</li>
+        <li><strong>Whistleblowing Policy</strong> — provides a confidential route for staff or suppliers to raise concerns without fear of reprisal</li>
+        <li><strong>Supplier Code of Conduct</strong> — sets minimum ethical standards expected of all supply chain partners</li>
+      </ul>
+      <p>Copies of these policies are available on request from our management team.</p>
+    </div>
+
+    <!-- Due Diligence -->
+    <div class="doc-section">
+      <h2>Due Diligence Processes</h2>
+      <p>To identify and address risk, PRL Site Solutions takes the following steps:</p>
+      <div class="callout">
+        <ul>
+          <li>Conducting supplier checks and pre-qualification assessments prior to engagement</li>
+          <li>Requiring all labour supply agencies to confirm compliance with the Modern Slavery Act and Employment Agencies Act</li>
+          <li>Verifying right-to-work documentation for all directly engaged workers</li>
+          <li>Including anti-slavery obligations in supplier and subcontractor contracts</li>
+          <li>Reviewing agency payroll arrangements to ensure workers are paid correctly and not subject to excessive deductions</li>
+          <li>Maintaining visibility of accommodation arrangements where PRL is involved in housing arrangements for workers</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Risk Assessment -->
+    <div class="doc-section">
+      <h2>Risk Assessment</h2>
+      <p>We have assessed our highest risk areas as:</p>
+      <div class="callout alert">
+        <h3>Elevated Risk Areas</h3>
+        <ul>
+          <li>Agency and subcontracted labour, particularly on large or multi-site projects</li>
+          <li>Supply chains involving overseas sourcing</li>
+          <li>Cash-in-hand or informal labour arrangements</li>
+        </ul>
+      </div>
+      <p>We actively work to identify and eliminate any such arrangements from our operations.</p>
+    </div>
+
+    <!-- Training -->
+    <div class="doc-section">
+      <h2>Training and Awareness</h2>
+      <p>PRL Site Solutions ensures that relevant staff are aware of the risks of modern slavery and understand their responsibilities. This includes:</p>
+      <ul>
+        <li>Awareness briefings for managers and supervisors responsible for workforce engagement</li>
+        <li>Guidance on identifying warning signs of exploitation in the workforce</li>
+        <li>Clear reporting lines for raising concerns internally or with relevant authorities</li>
+      </ul>
+    </div>
+
+    <!-- KPIs -->
+    <div class="doc-section">
+      <h2>Key Performance Indicators</h2>
+      <p>We measure our performance in this area through:</p>
+      <ul>
+        <li>Number of supplier compliance checks completed</li>
+        <li>Staff awareness and training completion rates</li>
+        <li>Number of concerns raised and actions taken</li>
+        <li>Annual review of this statement and associated policies</li>
+      </ul>
+    </div>
+
+    <!-- Reporting -->
+    <div class="doc-section">
+      <h2>Reporting a Concern</h2>
+      <p>If you believe you have witnessed signs of modern slavery or human trafficking — within our workforce, supply chain, or operations — we ask you to report it immediately.</p>
+      <div class="contact-box">
+        <h3>How to report</h3>
+        <div class="contact-item">
+          <strong>Internally</strong>
+          <span>Contact <span class="placeholder" style="background:rgba(255,255,255,0.15);color:white">[Name / Role]</span> at <span class="placeholder" style="background:rgba(255,255,255,0.15);color:white">[email address]</span></span>
+        </div>
+        <div class="contact-item">
+          <strong>Helpline</strong>
+          <span>Modern Slavery Helpline: <a href="tel:08000121700">0800 0121 700</a> (free, 24/7)</span>
+        </div>
+        <div class="contact-item">
+          <strong>Police</strong>
+          <span><a href="tel:101">101</a> (non-emergency) or <a href="tel:999">999</a> in an emergency</span>
+        </div>
+        <div class="contact-item">
+          <strong>Anonymous</strong>
+          <span>Crimestoppers: <a href="tel:08005551111">0800 555 111</a></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Approval -->
+    <div class="doc-section">
+      <h2>Approval</h2>
+      <p>This statement has been approved by the Board of Directors of PRL Site Solutions Ltd and is reviewed annually.</p>
+      <div class="signature-block">
+        <p><strong>Signed:</strong></p>
+        <div class="sig-line"></div>
+        <p><strong><span class="placeholder">[Director Name]</span></strong></p>
+        <p style="margin-top:4px;color:var(--g500);font-size:14px">Director, PRL Site Solutions Ltd</p>
+        <p style="margin-top:12px;font-size:14px">Date: <span class="placeholder">[INSERT DATE]</span></p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="./assets/prl_logo.jpg" alt="PRL">
+        <span>PRL Site Solutions</span>
+      </div>
+      <div class="footer-links">
+        <a href="./">Home</a>
+        <a href="./careers.html">Live Vacancies</a>
+        <a href="./#contact">Contact Us</a>
+        <a href="https://www.prismworkforce.online/privacy">Privacy Policy</a>
+        <a href="./modern-slavery.html">Modern Slavery Statement</a>
+        <a href="https://www.prismworkforce.online/supplier-questionnaire">Supplier Registration</a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 PRL Site Solutions Ltd. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
