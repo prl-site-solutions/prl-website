@@ -286,18 +286,6 @@
     .footer-brand p{font-size:13px;line-height:1.6;margin-top:12px}
     .footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:24px;border-top:1px solid #374151;display:flex;justify-content:space-between;font-size:12px;flex-wrap:wrap;gap:8px}
 
-    /* Popup */
-    .popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:100;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity 0.4s;backdrop-filter:blur(4px)}
-    .popup-overlay.active{opacity:1;pointer-events:auto}
-    .popup{background:white;border-radius:20px;max-width:480px;width:100%;padding:40px;text-align:center;transform:scale(0.8);transition:transform 0.4s;position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.3)}
-    .popup-overlay.active .popup{transform:scale(1)}
-    .popup-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:24px;cursor:pointer;color:var(--g500);padding:4px 8px;border-radius:8px;transition:background 0.2s}
-    .popup-close:hover{background:var(--g100)}
-    .popup img{width:80px;height:80px;border-radius:50%;margin:0 auto 16px}
-    .popup h3{font-size:22px;font-weight:800;margin-bottom:8px;color:var(--blue)}
-    .popup p{font-size:14px;color:var(--g500);line-height:1.6;margin-bottom:20px}
-    .popup .btn-primary{display:block;text-align:center;font-size:15px;padding:14px}
-
     .compliance-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
     /* Tablet (< 900px) */
     @media(max-width:900px){
@@ -321,7 +309,6 @@
       .sectors-grid{grid-template-columns:repeat(2,1fr)}
       .footer-inner{grid-template-columns:1fr 1fr}
       .section{padding:60px 16px}
-      .popup{padding:28px;margin:16px}
     }
     /* Small phone (< 480px — Samsung S23, iPhone 14) */
     @media(max-width:480px){
@@ -349,9 +336,6 @@
       .footer-bottom{flex-direction:column;text-align:center}
       .cta h2{font-size:1.4rem}
       .cta{padding:48px 16px}
-      .popup{padding:24px 20px;border-radius:16px}
-      .popup h3{font-size:18px}
-      .popup p{font-size:13px}
       .prism-text h2{font-size:1.5rem}
       .prism-features li{font-size:13px}
       .prism-mockup img{max-width:140px}
@@ -568,17 +552,6 @@
     <div class="footer-bottom"><span>&copy; 2026 PRL Site Solutions Ltd. All rights reserved.</span><span>Powered by <a href="https://www.prismworkforce.online" style="color:var(--amber)">PRISM</a></span></div>
   </footer>
 
-  <!-- Popup -->
-  <div class="popup-overlay" id="popup" onclick="if(event.target===this)closePopup()">
-    <div class="popup">
-      <button class="popup-close" onclick="closePopup()">&times;</button>
-      <img src="./assets/prl_logo.jpg" alt="PRISM">
-      <h3>Get the PRISM App</h3>
-      <p>Submit timesheets, upload documents, and track your compliance — all from your phone. Available on Android, iPhone, and Desktop.</p>
-      <a href="https://www.prismworkforce.online/install" class="btn-primary">Install Now — It's Free</a>
-      <p style="margin-top:12px;font-size:11px;color:var(--g500)">Free for all PRL contractors</p>
-    </div>
-  </div>
 
   <script>
     // Force scroll to top on load
@@ -640,18 +613,6 @@
       particlesEl.appendChild(p)
     }
 
-    // Popup - show after 4 seconds
-    let popupShown=false
-    setTimeout(()=>{
-      if(!popupShown&&!sessionStorage.getItem('popupDismissed')){
-        document.getElementById('popup').classList.add('active')
-        popupShown=true
-      }
-    },4000)
-    function closePopup(){
-      document.getElementById('popup').classList.remove('active')
-      sessionStorage.setItem('popupDismissed','true')
-    }
   </script>
 </body>
 </html>
