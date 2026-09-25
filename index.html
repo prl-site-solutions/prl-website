@@ -201,8 +201,9 @@
     .nav-logo img{height:44px;width:44px;border-radius:50%;transition:transform 0.3s}
     .nav-logo:hover img{transform:rotate(10deg) scale(1.1)}
     .nav-logo span{font-weight:800;font-size:18px;color:var(--blue)}
-    .nav-links{display:flex;align-items:center;gap:28px}
-    .nav-links a{font-size:14px;font-weight:500;color:var(--g700);transition:color 0.2s;position:relative}
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--g700);transition:color 0.2s;position:relative;white-space:nowrap}
+    .nav-logo span{white-space:nowrap}
     .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--blue);transition:width 0.3s}
     .nav-links a:hover::after{width:100%}
     .nav-links a:hover{color:var(--blue)}
@@ -211,6 +212,13 @@
     .nav-cta:hover{background:var(--blue-dark);transform:translateY(-1px);box-shadow:0 4px 15px rgba(0,95,140,0.3)}
     .mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
     .mobile-toggle svg{width:28px;height:28px;color:var(--g700)}
+    /* Seven nav items don't fit on one line below ~1000px: compact first, then the menu button */
+    @media(max-width:1100px) and (min-width:1001px){.nav-links{gap:16px}.nav-links a{font-size:13px}.nav-cta{padding:9px 16px}}
+    @media(max-width:1000px){
+      .nav-links{position:fixed;top:72px;left:0;right:0;background:white;flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--g200);display:none;box-shadow:0 8px 30px rgba(0,0,0,0.1);z-index:60}
+      .nav-links.open{display:flex}
+      .mobile-toggle{display:block}
+    }
 
     /* Hero */
     .hero{padding:120px 24px 80px;background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 60%,var(--blue-darker) 100%);color:white;position:relative;overflow:hidden;min-height:80vh;display:flex;align-items:center}
