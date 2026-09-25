@@ -1,7 +1,7 @@
 // Visitor tracking — Umami Cloud (cookieless, so no consent banner needed).
 // Dashboard: https://cloud.umami.is — the Website ID below is the only setting.
 (function () {
-  var WEBSITE_ID = '__UMAMI_WEBSITE_ID__';
+  var WEBSITE_ID = 'c052fdde-5418-4c1b-bf0d-97b075c8cf8f';
   if (WEBSITE_ID.indexOf('__') === 0) return; // not configured yet
 
   var s = document.createElement('script');
