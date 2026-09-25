@@ -151,7 +151,7 @@ export const PAGES = [
     description: 'Energy-from-waste (EfW) recruitment: civils, steel fixers, platers, coded welders, E&I, supervisors, HSE and QA/QC. Roles filled at Ince, Pembrokeshire and more.',
     h1: 'Energy-from-waste (EfW) recruitment, from heavy civils to QA/QC',
     lede: 'We staff EfW new builds through every phase: heavy civils for the bunker and boiler house, then mechanical, piping and E&I installation, with the supervision, HSE and QA/QC that tie it together.',
-    facts: ['EfW is a core specialism', 'Civils to commissioning', 'Supervisors with EfW / power / process backgrounds'],
+    facts: ['EfW is a core specialism', 'Civils through to E&I install', 'Supervisors with EfW / power / process backgrounds'],
     rolesIntro: 'Roles we fill on EfW projects, grouped by discipline.',
     roles: [
       ['Civils', 'Civils foremen, groundworkers and steel fixers for heavy reinforced concrete: the waste bunker, tipping hall, boiler house, turbine hall and flue gas treatment bases.'],
