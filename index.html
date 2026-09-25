@@ -42,6 +42,7 @@
   {
     "@context": "https://schema.org",
     "@type": "EmploymentAgency",
+    "@id": "https://prlsitesolutions.co.uk/#organization",
     "name": "PRL Site Solutions",
     "alternateName": "PRL Site Solutions Ltd",
     "url": "https://prlsitesolutions.co.uk/",
@@ -279,6 +280,12 @@
     .sector-card .emoji{font-size:36px;margin-bottom:8px;transition:transform 0.3s}
     .sector-card:hover .emoji{transform:scale(1.2)}
     .sector-card h4{font-size:14px;font-weight:700}
+    a.sector-card{display:block;color:inherit}
+    a.sector-card h4{color:var(--blue)}
+    .card-link{display:inline-block;margin-top:12px;font-size:14px;font-weight:600;color:var(--blue)}
+    .card-link:hover{text-decoration:underline}
+    .sector-specialist{text-align:center;margin-top:28px;color:var(--g700)}
+    .sector-specialist a{color:var(--blue);font-weight:600;text-decoration:underline}
 
     /* CTA */
     .cta{background:var(--blue);color:white;padding:64px 24px;text-align:center;position:relative;overflow:hidden}
@@ -448,10 +455,10 @@
     <div class="section-inner">
       <div class="section-header anim-up"><h2>What We Do</h2><p>Bespoke recruitment solutions tailored to the construction and industrial sectors.</p></div>
       <div class="services-grid">
-        <div class="service-card anim-up delay-1"><div class="service-icon">🏗️</div><h3>Skilled Trades</h3><p>Electricians, plumbers, carpenters, welders — CSCS carded and ready to deploy.</p></div>
-        <div class="service-card anim-up delay-2"><div class="service-icon">👷</div><h3>General Labour</h3><p>Labourers, groundworkers, banksmen — vetted and compliance-checked.</p></div>
-        <div class="service-card anim-up delay-3"><div class="service-icon">🏢</div><h3>Site Management</h3><p>Site managers, supervisors, and project coordinators with proven records.</p></div>
-        <div class="service-card anim-up delay-4"><div class="service-icon">🚜</div><h3>Plant Operators</h3><p>CPCS/NPORS certified operators for excavators, cranes, and specialist machinery.</p></div>
+        <div class="service-card anim-up delay-1"><div class="service-icon">🏗️</div><h3>Skilled Trades</h3><p>Electricians, plumbers, carpenters, welders — CSCS carded and ready to deploy.</p><a href="/skilled-trades-recruitment/" class="card-link">Skilled trades recruitment →</a></div>
+        <div class="service-card anim-up delay-2"><div class="service-icon">👷</div><h3>General Labour</h3><p>Labourers, groundworkers, banksmen — vetted and compliance-checked.</p><a href="/construction-labour-supply/" class="card-link">Labour supply →</a></div>
+        <div class="service-card anim-up delay-3"><div class="service-icon">🏢</div><h3>Site Management</h3><p>Site managers, supervisors, and project coordinators with proven records.</p><a href="/site-management-recruitment/" class="card-link">Site management recruitment →</a></div>
+        <div class="service-card anim-up delay-4"><div class="service-icon">🚜</div><h3>Plant Operators</h3><p>CPCS/NPORS certified operators for excavators, cranes, and specialist machinery.</p><a href="/plant-operator-recruitment/" class="card-link">Plant operator recruitment →</a></div>
         <div class="service-card anim-up delay-5"><div class="service-icon">📋</div><h3>Compliance</h3><p>Full verification — CSCS, DBS, right to work, IR35, and qualifications via PRISM.</p></div>
         <div class="service-card anim-up delay-6"><div class="service-icon">⚡</div><h3>Rapid Response</h3><p>Emergency labour supply within 24 hours. Pre-vetted workers ready to go.</p></div>
       </div>
@@ -464,14 +471,15 @@
       <div class="section-header anim-up"><h2>Sectors We Serve</h2><p>From major contractors to specialist subcontractors.</p></div>
       <div class="sectors-grid">
         <div class="sector-card anim-pop delay-1"><div class="emoji">🏗️</div><h4>Construction</h4></div>
-        <div class="sector-card anim-pop delay-2"><div class="emoji">🏭</div><h4>Industrial</h4></div>
-        <div class="sector-card anim-pop delay-3"><div class="emoji">🚜</div><h4>Plant & Crane</h4></div>
+        <a href="/industrial-construction-recruitment/" class="sector-card anim-pop delay-2"><div class="emoji">🏭</div><h4>Industrial</h4></a>
+        <a href="/plant-operator-recruitment/" class="sector-card anim-pop delay-3"><div class="emoji">🚜</div><h4>Plant & Crane</h4></a>
         <div class="sector-card anim-pop delay-4"><div class="emoji">🏥</div><h4>Facilities</h4></div>
-        <div class="sector-card anim-pop delay-1"><div class="emoji">⚡</div><h4>Electrical</h4></div>
-        <div class="sector-card anim-pop delay-2"><div class="emoji">🔧</div><h4>Mechanical</h4></div>
+        <a href="/mechanical-electrical-recruitment/" class="sector-card anim-pop delay-1"><div class="emoji">⚡</div><h4>Electrical</h4></a>
+        <a href="/mechanical-electrical-recruitment/" class="sector-card anim-pop delay-2"><div class="emoji">🔧</div><h4>Mechanical</h4></a>
         <div class="sector-card anim-pop delay-3"><div class="emoji">🏠</div><h4>Residential</h4></div>
         <div class="sector-card anim-pop delay-4"><div class="emoji">🛤️</div><h4>Infrastructure</h4></div>
       </div>
+      <p class="sector-specialist">Specialists in <a href="/energy-from-waste-recruitment/">energy-from-waste (EfW) recruitment</a>, <a href="/industrial-construction-recruitment/">industrial construction</a> and <a href="/mechanical-electrical-recruitment/">M&amp;E</a>.</p>
     </div>
   </section>
 
@@ -590,7 +598,7 @@
           <img src="./assets/iso-logo.png" alt="ISO 9001 Certified" style="height:48px;width:auto;object-fit:contain;">
         </div>
       </div>
-      <div><h4>Services</h4><a href="#services">Skilled Trades</a><a href="#services">General Labour</a><a href="#services">Plant Operators</a><a href="#services">Site Management</a></div>
+      <div><h4>Services</h4><a href="/skilled-trades-recruitment/">Skilled Trades</a><a href="/construction-labour-supply/">Labour Supply</a><a href="/plant-operator-recruitment/">Plant Operators</a><a href="/site-management-recruitment/">Site Management</a><a href="/energy-from-waste-recruitment/">Energy-from-Waste</a><a href="/industrial-construction-recruitment/">Industrial</a><a href="/mechanical-electrical-recruitment/">M&amp;E</a></div>
       <div><h4>Contractors</h4><a href="https://www.prismworkforce.online/new-starter">New Starter Form</a><a href="https://www.prismworkforce.online/apply">Application Form</a><a href="https://www.prismworkforce.online/payment-query">Payment Query</a><a href="https://www.prismworkforce.online/grievance">Make a Complaint</a><a href="https://www.prismworkforce.online/policy-documents">Company Policies</a><a href="https://www.prismworkforce.online/login">Login</a><a href="https://www.prismworkforce.online/install">Get the App</a></div>
       <div><h4>Company</h4><a href="./careers.html">Live Vacancies</a><a href="#contact">Contact Us</a><a href="https://www.prismworkforce.online/privacy">Privacy Policy</a><a href="https://www.prismworkforce.online/supplier-questionnaire">Supplier Registration</a><a href="./modern-slavery.html">Modern Slavery Statement</a></div>
     </div>

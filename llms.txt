@@ -25,7 +25,20 @@ PRISM is our free workforce management app. Contractors submit timesheets, uploa
 ## Key Pages
 
 - Homepage: https://prlsitesolutions.co.uk/
-- Live Vacancies: https://prlsitesolutions.co.uk/careers.html
+- Live Vacancies (refreshed daily from CV-Library): https://prlsitesolutions.co.uk/careers.html
+
+Services:
+- Skilled trades recruitment (coded welders, platers, steel fixers, electricians, fitters): https://prlsitesolutions.co.uk/skilled-trades-recruitment/
+- Construction labour supply (labourers, groundworkers, banksmen, slinger signallers): https://prlsitesolutions.co.uk/construction-labour-supply/
+- Plant operator recruitment (CPCS/NPORS 360 excavator, telehandler, crane operators): https://prlsitesolutions.co.uk/plant-operator-recruitment/
+- Site management recruitment (supervisors, foremen, HSE advisors, QA/QC): https://prlsitesolutions.co.uk/site-management-recruitment/
+
+Sectors:
+- Energy-from-Waste (EfW) recruitment, a core specialism: https://prlsitesolutions.co.uk/energy-from-waste-recruitment/
+- Industrial construction recruitment (fabrication, docks, process, factory builds): https://prlsitesolutions.co.uk/industrial-construction-recruitment/
+- M&E recruitment (electricians, testers 2391/2394/2395, fitters, pipefitters): https://prlsitesolutions.co.uk/mechanical-electrical-recruitment/
+
+Clients can request workers using the form on any of these pages or on the homepage.
 - Modern Slavery Statement: https://prlsitesolutions.co.uk/modern-slavery.html
 - New Starter Form: https://www.prismworkforce.online/new-starter
 - Contractor Application: https://www.prismworkforce.online/apply
