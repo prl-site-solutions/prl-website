@@ -1,19 +1,31 @@
 # PRL careers page
 
-`careers.html` shows PRL's live CV-Library adverts through CV-Library's own
-embeddable listing (agency ID `454083`):
+The job cards on `careers.html`, and the JobPosting data Google reads for its
+job search, are rebuilt **every morning** from PRL's live CV-Library adverts
+(agency ID `454083`):
 
 https://www.cv-library.co.uk/cgi-bin/yourjobs.cgi?agency=454083
 
 **There is nothing to update when a role opens or closes.** Post or remove the
-advert on CV-Library and the website follows automatically.
+advert on CV-Library and the website follows by the next morning.
 
-Do not add hand-typed job cards back to the page. That is how the page ended
-up showing ten roles that had all expired months earlier (fixed 2026-09-25).
+- Script: `scripts/sync-jobs.mjs` (no dependencies — `node scripts/sync-jobs.mjs`)
+- Schedule: `.github/workflows/sync-jobs.yml`, daily at 05:30 UTC
+- Need it sooner? GitHub → Actions → "Sync jobs from CV-Library" → Run workflow
+
+Everything between the `JOBS-…:START` / `JOBS-…:END` markers in
+`careers.html` is overwritten on each run, so don't hand-edit inside them.
+Hand-typed job cards are how the page ended up showing ten roles that had all
+expired months earlier (fixed 2026-09-25).
+
+If CV-Library changes its page layout, the script fails loudly and leaves the
+last good version of the page in place; GitHub emails the repo owner about the
+failed run.
 
 ---
 
 ## Consultant contact
 
-To update the contact details, search `careers.html` for `07960871442`
-(appears in `tel:` links and the contact card).
+Each job card's Call button uses the contact number on that CV-Library advert.
+The general contact card at the bottom of the page is hand-written: search
+`careers.html` for `07960871442`.

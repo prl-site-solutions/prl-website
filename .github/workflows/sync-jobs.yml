@@ -1,0 +1,46 @@
+# Refreshes the careers page from PRL's live CV-Library adverts once a day.
+# Can also be run by hand: GitHub -> Actions -> "Sync jobs from CV-Library" -> Run workflow.
+name: Sync jobs from CV-Library
+
+on:
+  schedule:
+    - cron: '30 5 * * *'   # 05:30 UTC = 06:30 UK summer time / 05:30 winter
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: sync-jobs
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Rebuild careers.html from CV-Library
+        run: node scripts/sync-jobs.mjs
+
+      - name: Commit and publish if the jobs changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet; then
+            echo "Jobs unchanged — nothing to publish."
+            exit 0
+          fi
+          git config user.name "prl-job-sync"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add careers.html sitemap.xml
+          git commit -m "chore(careers): daily job sync from CV-Library"
+          git push
+          # Pushes made with the workflow token don't always trigger a Pages
+          # build on their own, so ask for one explicitly.
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages build request failed — the push may still trigger one."
