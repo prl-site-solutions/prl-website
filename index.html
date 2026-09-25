@@ -16,7 +16,7 @@
   <meta property="og:url" content="https://prlsitesolutions.co.uk/">
   <meta property="og:title" content="PRL Site Solutions | Construction Recruitment Specialists | Northwest UK">
   <meta property="og:description" content="Leading construction recruitment agency supplying CSCS-certified tradesmen, labourers, and plant operators across the UK. 24-hour rapid response.">
-  <meta property="og:image" content="https://prlsitesolutions.co.uk/assets/prl_logo.jpg">
+  <meta property="og:image" content="https://prlsitesolutions.co.uk/assets/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_GB">
@@ -26,7 +26,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PRL Site Solutions | Construction Recruitment Specialists">
   <meta name="twitter:description" content="Leading construction recruitment agency. Skilled tradesmen, labourers, plant operators. 24hr response. 0800 772 3959.">
-  <meta name="twitter:image" content="https://prlsitesolutions.co.uk/assets/prl_logo.jpg">
+  <meta name="twitter:image" content="https://prlsitesolutions.co.uk/assets/og-image.jpg">
 
   <!-- Geo targeting -->
   <meta name="geo.region" content="GB-MER">
@@ -34,8 +34,8 @@
   <meta name="geo.position" content="53.3727;-3.0738">
   <meta name="ICBM" content="53.3727, -3.0738">
 
-  <link rel="icon" href="./assets/prl_logo.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="./assets/prl_logo.jpg">
+  <link rel="icon" href="./assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
 
   <!-- Structured Data - Organization -->
   <script type="application/ld+json">
@@ -91,7 +91,7 @@
       "opens": "07:00",
       "closes": "18:00"
     }],
-    "priceRange": "$$",
+    "priceRange": "££",
     "knowsAbout": ["Construction Recruitment","Skilled Tradesmen","Plant Operators","Site Management","CSCS Certification","IR35 Compliance","Crane Hire Staffing"]
   }
   </script>
@@ -276,6 +276,27 @@
     .cta{background:var(--blue);color:white;padding:64px 24px;text-align:center;position:relative;overflow:hidden}
     .cta h2{font-size:clamp(1.6rem,3vw,2rem);font-weight:800;margin-bottom:12px}
     .cta p{opacity:0.85;margin-bottom:24px;font-size:16px}
+    .cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start;text-align:left}
+    .cta-contact{padding-top:8px}
+    .cta-contact .btn-primary,.cta-contact .btn-secondary{display:block;text-align:center;margin-bottom:12px}
+    .enquiry{background:white;color:var(--g900);border-radius:14px;padding:28px;box-shadow:0 20px 50px rgba(0,0,0,0.25)}
+    .enquiry h3{font-size:20px;font-weight:800;margin-bottom:4px;color:var(--g900)}
+    .enquiry .enquiry-sub{font-size:14px;color:var(--g500);margin-bottom:20px;opacity:1}
+    .enquiry-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .enquiry-grid .full{grid-column:1/-1}
+    .enquiry label{display:block;font-size:13px;font-weight:600;color:var(--g700);margin-bottom:6px}
+    .enquiry label .opt{font-weight:400;color:var(--g500)}
+    .enquiry input,.enquiry textarea{width:100%;font:inherit;font-size:16px;padding:11px 12px;border:1px solid var(--g200);border-radius:8px;background:white;color:var(--g900)}
+    .enquiry textarea{min-height:110px;resize:vertical}
+    .enquiry input:focus,.enquiry textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+    .enquiry .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    .enquiry button{margin-top:18px;width:100%;border:0;cursor:pointer;font:inherit;font-size:16px;font-weight:700;min-height:48px}
+    .enquiry button[disabled]{opacity:0.6;cursor:wait}
+    .enquiry-status{margin-top:12px;font-size:14px;min-height:20px}
+    .enquiry-status.error{color:#b91c1c}
+    .enquiry-done{text-align:center;padding:24px 8px}
+    .enquiry-done h3{color:var(--blue)}
+    .enquiry-done p{color:var(--g700);opacity:1;margin:8px 0 0}
 
     /* Footer */
     .footer{background:var(--g900);color:var(--g500);padding:48px 24px 24px;background-image:radial-gradient(circle,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:32px 32px}
@@ -307,6 +328,9 @@
       .prism-inner{grid-template-columns:1fr;text-align:center}
       .prism-features{text-align:left;padding-left:0}
       .sectors-grid{grid-template-columns:repeat(2,1fr)}
+      .cta-inner{grid-template-columns:1fr}
+      .enquiry{padding:22px}
+      .enquiry-grid{grid-template-columns:1fr}
       .footer-inner{grid-template-columns:1fr 1fr}
       .section{padding:60px 16px}
     }
@@ -369,8 +393,8 @@
         <a href="https://www.prismworkforce.online/new-starter">New Starter</a>
         <a href="#prism">PRISM App</a>
         <a href="./careers.html">Vacancies</a>
-        <a href="#contact">Contact</a>
-        <a href="https://www.prismworkforce.online/login" class="nav-cta">Contractor Login</a>
+        <a href="https://www.prismworkforce.online/login">Contractor Login</a>
+        <a href="#contact" class="nav-cta">Request Workers</a>
       </div>
       <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -465,14 +489,31 @@
 
   <!-- CTA -->
   <section class="cta" id="contact">
-    <div class="anim-up">
-      <h2>Ready to Staff Your Next Project?</h2>
-      <p>Get in touch today — workers on site within 24 hours.</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:20px">
+    <div class="cta-inner">
+      <form class="enquiry" id="enquiryForm" novalidate>
+        <h3>Request workers</h3>
+        <p class="enquiry-sub">Tell us what you need and we'll call you back, usually the same working day.</p>
+        <div class="enquiry-grid">
+          <div><label for="eq-name">Your name</label><input id="eq-name" name="name" autocomplete="name" required maxlength="100"></div>
+          <div><label for="eq-company">Company</label><input id="eq-company" name="company" autocomplete="organization" required maxlength="150"></div>
+          <div><label for="eq-email">Email</label><input id="eq-email" name="email" type="email" autocomplete="email" required maxlength="200"></div>
+          <div><label for="eq-phone">Phone</label><input id="eq-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="40"></div>
+          <div><label for="eq-workers">How many workers? <span class="opt">(optional)</span></label><input id="eq-workers" name="workers" inputmode="numeric" maxlength="20"></div>
+          <div><label for="eq-start">Start date <span class="opt">(optional)</span></label><input id="eq-start" name="startDate" placeholder="e.g. Monday, ASAP" maxlength="60"></div>
+          <div class="full"><label for="eq-location">Site location <span class="opt">(optional)</span></label><input id="eq-location" name="location" placeholder="Town or postcode" maxlength="150"></div>
+          <div class="full"><label for="eq-message">Trades and details</label><textarea id="eq-message" name="message" required maxlength="3000" placeholder="e.g. 4 CSCS steel fixers, 3 weeks, days"></textarea></div>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="eq-website">Leave this empty</label><input id="eq-website" name="website" tabindex="-1" autocomplete="off"></div>
+        <button type="submit" class="btn-primary">Send enquiry</button>
+        <p class="enquiry-status" id="enquiryStatus" role="status" aria-live="polite"></p>
+      </form>
+      <div class="cta-contact">
+        <h2>Ready to staff your next project?</h2>
+        <p>Workers on site within 24 hours. Prefer to talk? Call or email us directly.</p>
         <a href="tel:08007723959" class="btn-primary" style="font-size:18px">📞 0800 772 3959</a>
         <a href="mailto:info@prlsitesolutions.co.uk" class="btn-secondary" style="border-color:rgba(255,255,255,0.4)">✉️ info@prlsitesolutions.co.uk</a>
+        <p style="font-size:13px;opacity:0.6;margin-top:12px">Looking for work? Register on our <a href="https://www.prismworkforce.online/onboarding" style="color:var(--amber);text-decoration:underline">online portal</a> or see <a href="./careers.html" style="color:var(--amber);text-decoration:underline">live vacancies</a>.</p>
       </div>
-      <p style="font-size:13px;opacity:0.6">Or register on our <a href="https://www.prismworkforce.online/onboarding" style="color:var(--amber);text-decoration:underline">online portal</a></p>
     </div>
   </section>
 
@@ -612,6 +653,44 @@
       p.style.animationDelay=Math.random()*3+'s'
       particlesEl.appendChild(p)
     }
+
+    // "Request workers" form → PRISM /api/enquiry, which emails info@
+    ;(function(){
+      const form=document.getElementById('enquiryForm')
+      if(!form) return
+      const status=document.getElementById('enquiryStatus')
+      const button=form.querySelector('button[type=submit]')
+      const startedAt=Date.now()
+      const FALLBACK='Please call 0800 772 3959 or email info@prlsitesolutions.co.uk.'
+      form.addEventListener('submit',async e=>{
+        e.preventDefault()
+        status.className='enquiry-status'
+        const firstInvalid=[...form.querySelectorAll('[required]')].find(el=>!el.value.trim()||!el.checkValidity())
+        if(firstInvalid){
+          status.className='enquiry-status error'
+          status.textContent='Please fill in '+form.querySelector(`label[for="${firstInvalid.id}"]`).textContent.toLowerCase()+'.'
+          firstInvalid.focus()
+          return
+        }
+        const data=Object.fromEntries(new FormData(form))
+        data.startedAt=startedAt
+        button.disabled=true
+        button.textContent='Sending…'
+        try{
+          const res=await fetch('https://www.prismworkforce.online/api/enquiry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+          const body=await res.json().catch(()=>({}))
+          if(!res.ok) throw new Error(body.error||FALLBACK)
+          form.innerHTML='<div class="enquiry-done"><h3>Thanks, we\'ve got your enquiry</h3><p>One of the team will call you back, usually the same working day. Need someone sooner? Call 0800 772 3959.</p></div>'
+          form.querySelector('h3').setAttribute('tabindex','-1')
+          form.querySelector('h3').focus()
+        }catch(err){
+          status.className='enquiry-status error'
+          status.textContent=err.message&&err.message!=='Failed to fetch'?err.message:'Sorry, that didn\'t send. '+FALLBACK
+          button.disabled=false
+          button.textContent='Send enquiry'
+        }
+      })
+    })()
 
   </script>
 </body>
