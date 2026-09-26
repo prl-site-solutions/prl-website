@@ -17,7 +17,78 @@ export const COMMON_CHECKS = [
 export const STEPS = [
   ['Tell us what you need', 'Use the form or call 0800 772 3959. Trades, numbers, site, start date and any site-specific tickets.'],
   ['We put forward checked people', 'We match from our pool of 320+ active contractors. Everyone is compliance-checked before they go, and in most cases they can be on site within 24 hours.'],
-  ['On site, and we stay involved', 'We visit our sites regularly to check our workforce are OK and being treated properly. Timesheets and documents run through our PRISM app, and you get one point of contact for the whole placement.'],
+  ['On site, and we stay involved', 'We appoint a project manager to each customer\'s site and visit regularly to check our workforce are OK and being treated properly. Timesheets and documents run through our PRISM app.'],
+];
+
+// Case studies — /case-studies/<slug>/. Headcounts come from PRISM placement
+// records (read-only aggregate query, 2026-09-26); project facts from PRL's 2026
+// company profile. Update the figures by re-running that query, not by guessing.
+export const CASE_STUDIES = [
+  {
+    slug: 'protos-energy-park-ince',
+    title: 'Case Study: 420+ Workers for Protos Energy Park, Ince Marsh | PRL',
+    description: 'How PRL Site Solutions placed 420+ electricians, labourers, fire watch, plant and mechanical staff for Metlen at Protos Energy Park, Ince Marsh, Cheshire.',
+    h1: 'Staffing Protos Energy Park at Ince Marsh: 420+ workers placed',
+    lede: 'Energy-from-waste with carbon capture at Ince Marsh, Cheshire. PRL has placed more than 420 people across electrical, mechanical, civils, plant and fire watch roles, on days and nights.',
+    image: ['/assets/case-studies/protos-ince-marsh.jpg', 1400, 423, 'Aerial view of the Protos Energy Park construction site at Ince Marsh, Cheshire'],
+    meta: [['Client', 'Metlen'], ['Site', 'Ince Marsh, Cheshire'], ['Sector', 'Energy-from-waste'], ['Since', 'March 2026, ongoing']],
+    glance: [['420+', 'workers placed'], ['250+', 'on site today'], ['Day & night', 'shifts covered'], ['16 wks', 'typical placement']],
+    sections: [
+      ['The project', [
+        'Protos Energy Park at Ince Marsh, Cheshire is home to an energy-from-waste plant, a joint venture by Encyclis and Biffa, processing 500,000 tonnes of non-recyclable waste a year into 49.9MW of electricity.',
+        'A full-scale carbon capture facility is being added, one of the first in the UK integrated with an energy-from-waste plant. It is designed to capture around 370,000 tonnes of CO₂ a year for storage in depleted Liverpool Bay gas fields via the HyNet pipeline.',
+      ]],
+      ['The challenge', [
+        'An energy-from-waste build is one of the most labour-intensive jobs in UK construction, and the demand changes as it moves from civils into a large electrical and mechanical installation. The site needed a supplier who could put large numbers of compliance-checked people on site quickly, across many trades and on day and night shifts, and keep it going for months.',
+      ]],
+    ],
+    supplied: {
+      intro: 'Placements for Metlen at Ince Marsh, by trade (people with a recorded role):',
+      rows: [
+        ['Electrical', '118', 'Electricians, approved electricians, testers, improvers and electrical supervisors'],
+        ['Labour', '64', 'General and skilled labourers, days and nights'],
+        ['Fire watch', '44', 'Day and night fire watch covering hot works across the site'],
+        ['Plant, lifting and banksmen', '30', 'Telehandler drivers, slingers, banksmen, riggers and gantry operators'],
+        ['Mechanical, piping and welding', '27', 'Pipefitters, pipefitter mates, welders and plater fabricators'],
+        ['Supervision and HSE', '12', 'Site supervisors, HSE and H&S advisors, QA/QC'],
+        ['Civils', '11', 'Groundworkers, groundworks supervisors and setting-out'],
+        ['Other trades and support', '15+', 'Joiners, painters, scaffolders, rope access, storemen, traffic marshals and site admin'],
+      ],
+    },
+    how: [
+      ['Checked before day one', 'Every worker\'s CSCS card, right to work and trade tickets were checked in PRISM before their first shift, with expiry dates tracked for the whole placement.'],
+      ['Scale without the paperwork', 'Hundreds of starts and finishes managed in one system, with timesheets, documents and assignments in the contractor app.'],
+      ['A project manager on site', 'A PRL project manager assigned to the site, plus regular visits to check our workforce are OK and being treated properly.'],
+    ],
+    also: 'Alongside Ince Marsh, PRL has supplied 37 people to Carey\'s on the Protos Carbon Capture works, mainly civils, plant and banksmen on short, fast-turnaround packages.',
+    related: ['energy-from-waste-recruitment', 'mechanical-electrical-recruitment', 'construction-labour-supply'],
+  },
+  {
+    slug: 'kelvin-energy-from-waste-sandwell',
+    title: 'Case Study: Civils on the Kelvin EfW Plant, Sandwell | PRL Site Solutions',
+    description: 'PRL Site Solutions delivered foundational civils on the £500m Kelvin energy-from-waste plant in Sandwell: process drainage, service ducts, pits and troughs.',
+    h1: 'Foundational civils for the Kelvin energy-from-waste plant, Sandwell',
+    lede: 'On the £500m Kelvin EfW facility in the West Midlands, PRL delivered the underground and foundational civils the rest of the plant is built on.',
+    image: ['/assets/case-studies/kelvin-sandwell.jpg', 600, 338, 'The Kelvin energy-from-waste plant under construction beside the motorway in Sandwell'],
+    meta: [['Project', 'Acciona Kelvin Project'], ['Site', 'Sandwell, West Midlands'], ['Sector', 'Energy-from-waste'], ['Scope', 'Foundational civils']],
+    glance: [['£500m', 'facility'], ['395,000 t', 'waste a year'], ['44MW', 'baseload power'], ['95,000+', 'homes powered']],
+    sections: [
+      ['The project', [
+        'The Kelvin Energy-from-Waste facility is a £500 million green infrastructure development in Sandwell, West Midlands. It was granted planning consent in September 2019 and acquired from developer Verus Energy in 2021.',
+        'The plant is designed to process 395,000 tonnes of non-recyclable household and business waste a year, turning waste that would otherwise go to landfill or export into 44MW of baseload electricity, enough for more than 95,000 homes and businesses.',
+      ]],
+      ['Our scope', [
+        'An energy recovery facility has to withstand extreme industrial demands, and that starts below ground. PRL was trusted with foundational civils and essential infrastructure on the Acciona Kelvin Project, deploying experienced civils teams on:',
+      ]],
+    ],
+    scope: [
+      ['Process drainage systems', 'High-performance systems to safely manage complex industrial run-off.'],
+      ['Service ducts and ancillary structures', 'Containment networks protecting the facility\'s cabling and utility connections.'],
+      ['Pits and troughs', 'Heavily reinforced concrete structures supporting heavy machinery and plant operations.'],
+    ],
+    result: 'With experienced teams and rigorous safety standards, PRL delivered the underground network and structural foundations, laying the groundwork for a facility that will help drive the West Midlands towards net zero.',
+    related: ['energy-from-waste-recruitment', 'construction-labour-supply', 'skilled-trades-recruitment'],
+  },
 ];
 
 export const PAGES = [
@@ -173,6 +244,7 @@ export const PAGES = [
       ['Where are your EfW placements?', 'Wherever the project is. Recent EfW and industrial roles have been at Ince in Cheshire, in Pembrokeshire, at Deeside and at Bridgwater in Somerset, and we place nationwide.'],
     ],
     related: ['industrial-construction-recruitment', 'site-management-recruitment', 'skilled-trades-recruitment', 'construction-labour-supply'],
+    caseStudies: ['protos-energy-park-ince', 'kelvin-energy-from-waste-sandwell'],
   },
   {
     slug: 'industrial-construction-recruitment',
