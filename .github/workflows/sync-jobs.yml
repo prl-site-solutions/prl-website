@@ -1,4 +1,4 @@
-# Refreshes the careers page from PRL's live CV-Library adverts once a day.
+# Refreshes the careers page from PRL's live CV-Library adverts twice a day.
 # Can also be run by hand: GitHub -> Actions -> "Sync jobs from CV-Library" -> Run workflow.
 name: Sync jobs from CV-Library
 
