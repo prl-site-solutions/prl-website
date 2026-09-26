@@ -27,7 +27,8 @@
   <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--blue:#005f8c;--blue-dark:#003d5c;--blue-darker:#001f2e;--blue-light:#e0f2fe;--amber:#f59e0b;--white:#fff;--g50:#f9fafb;--g100:#f3f4f6;--g200:#e5e7eb;--g500:#6b7280;--g700:#374151;--g900:#111827}
@@ -132,7 +133,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="./" class="nav-logo">
-        <img src="./assets/prl_logo.jpg" alt="PRL">
+        <img src="./assets/prl_logo_96.jpg" alt="" width="44" height="44">
         <span>PRL Site Solutions</span>
       </a>
       <div class="nav-links" id="navLinks">
@@ -144,7 +145,7 @@
         <a href="./#contact">Contact</a>
         <a href="https://www.prismworkforce.online/login" class="nav-cta">Contractor Login</a>
       </div>
-      <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <button class="mobile-toggle" aria-label="Menu" aria-controls="navLinks" aria-expanded="false" onclick="var n=document.getElementById('navLinks');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
@@ -307,7 +308,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="./assets/prl_logo.jpg" alt="PRL">
+        <img src="./assets/prl_logo_96.jpg" alt="" width="44" height="44">
         <span>PRL Site Solutions</span>
       </div>
       <div class="footer-links">

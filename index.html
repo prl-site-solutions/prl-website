@@ -171,7 +171,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--blue:#005f8c;--blue-dark:#003d5c;--blue-darker:#001f2e;--blue-light:#e0f2fe;--amber:#f59e0b;--white:#fff;--g50:#f9fafb;--g100:#f3f4f6;--g200:#e5e7eb;--g500:#6b7280;--g700:#374151;--g900:#111827}
@@ -290,9 +291,9 @@
     .sector-card:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:0 8px 25px rgba(0,0,0,0.06)}
     .sector-card .emoji{font-size:36px;margin-bottom:8px;transition:transform 0.3s}
     .sector-card:hover .emoji{transform:scale(1.2)}
-    .sector-card h4{font-size:14px;font-weight:700}
+    .sector-card h3{font-size:14px;font-weight:700}
     a.sector-card{display:block;color:inherit}
-    a.sector-card h4{color:var(--blue)}
+    a.sector-card h3{color:var(--blue)}
     .card-link{display:inline-block;margin-top:12px;font-size:14px;font-weight:600;color:var(--blue)}
     .card-link:hover{text-decoration:underline}
     .sector-specialist{text-align:center;margin-top:28px;color:var(--g700)}
@@ -327,7 +328,7 @@
     /* Footer */
     .footer{background:var(--g900);color:var(--g500);padding:48px 24px 24px;background-image:radial-gradient(circle,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:32px 32px}
     .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
-    .footer h4{color:white;font-size:14px;font-weight:700;margin-bottom:16px}
+    .footer h2{color:white;font-size:14px;font-weight:700;margin-bottom:16px}
     .footer a{display:block;font-size:13px;color:var(--g500);padding:4px 0;transition:color 0.2s}
     .footer a:hover{color:white}
     .footer-brand p{font-size:13px;line-height:1.6;margin-top:12px}
@@ -381,7 +382,7 @@
       .sectors-grid{grid-template-columns:1fr 1fr;gap:10px}
       .sector-card{padding:16px}
       .sector-card .emoji{font-size:28px}
-      .sector-card h4{font-size:12px}
+      .sector-card h3{font-size:12px}
       .footer-inner{grid-template-columns:1fr;gap:24px}
       .footer-bottom{flex-direction:column;text-align:center}
       .cta h2{font-size:1.4rem}
@@ -412,7 +413,7 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <img src="./assets/prl_logo.jpg" alt="PRL">
+        <img src="./assets/prl_logo_96.jpg" alt="" width="44" height="44">
         <span>PRL Site Solutions</span>
       </a>
       <div class="nav-links" id="navLinks">
@@ -424,7 +425,7 @@
         <a href="https://www.prismworkforce.online/login">Contractor Login</a>
         <a href="#contact" class="nav-cta">Request Workers</a>
       </div>
-      <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <button class="mobile-toggle" aria-label="Menu" aria-controls="navLinks" aria-expanded="false" onclick="var n=document.getElementById('navLinks');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
@@ -432,12 +433,12 @@
 
   <!-- Hero -->
   <section class="hero">
-    <img src="./assets/prl_logo_hires.png" alt="" class="hero-watermark">
+    <img src="./assets/prl_logo_hires.png" alt="" class="hero-watermark" width="640" height="640">
     <div class="particles" id="particles"></div>
     <div class="hero-inner">
       <div class="hero-logo" style="display:flex;flex-direction:column;align-items:center">
-        <img src="./assets/prl_logo_hires.png" alt="PRL Site Solutions">
-        <img src="./assets/iso-logo.png" alt="ISO 9001 Certified" class="iso-badge" style="height:90px;width:auto;margin-top:16px;border-radius:12px;box-shadow:none;animation:none;border:none">
+        <img src="./assets/prl_logo_hires.png" alt="PRL Site Solutions" width="280" height="280" fetchpriority="high">
+        <img src="./assets/iso-logo.png" alt="ISO 9001 Certified" class="iso-badge" width="90" height="90" style="height:90px;width:auto;margin-top:16px;border-radius:12px;box-shadow:none;animation:none;border:none">
       </div>
       <div class="hero-text">
         <div class="hero-badge">Northwest UK's Leading Construction Recruiter</div>
@@ -496,14 +497,14 @@
     <div class="section-inner">
       <div class="section-header anim-up"><h2>Sectors We Serve</h2><p>From major contractors to specialist subcontractors.</p></div>
       <div class="sectors-grid">
-        <div class="sector-card anim-pop delay-1"><div class="emoji">🏗️</div><h4>Construction</h4></div>
-        <a href="/industrial-construction-recruitment/" class="sector-card anim-pop delay-2"><div class="emoji">🏭</div><h4>Industrial</h4></a>
-        <a href="/plant-operator-recruitment/" class="sector-card anim-pop delay-3"><div class="emoji">🚜</div><h4>Plant & Crane</h4></a>
-        <div class="sector-card anim-pop delay-4"><div class="emoji">🏥</div><h4>Facilities</h4></div>
-        <a href="/mechanical-electrical-recruitment/" class="sector-card anim-pop delay-1"><div class="emoji">⚡</div><h4>Electrical</h4></a>
-        <a href="/mechanical-electrical-recruitment/" class="sector-card anim-pop delay-2"><div class="emoji">🔧</div><h4>Mechanical</h4></a>
-        <div class="sector-card anim-pop delay-3"><div class="emoji">🏠</div><h4>Residential</h4></div>
-        <div class="sector-card anim-pop delay-4"><div class="emoji">🛤️</div><h4>Infrastructure</h4></div>
+        <div class="sector-card anim-pop delay-1"><div class="emoji">🏗️</div><h3>Construction</h3></div>
+        <a href="/industrial-construction-recruitment/" class="sector-card anim-pop delay-2"><div class="emoji">🏭</div><h3>Industrial</h3></a>
+        <a href="/plant-operator-recruitment/" class="sector-card anim-pop delay-3"><div class="emoji">🚜</div><h3>Plant & Crane</h3></a>
+        <div class="sector-card anim-pop delay-4"><div class="emoji">🏥</div><h3>Facilities</h3></div>
+        <a href="/mechanical-electrical-recruitment/" class="sector-card anim-pop delay-1"><div class="emoji">⚡</div><h3>Electrical</h3></a>
+        <a href="/mechanical-electrical-recruitment/" class="sector-card anim-pop delay-2"><div class="emoji">🔧</div><h3>Mechanical</h3></a>
+        <div class="sector-card anim-pop delay-3"><div class="emoji">🏠</div><h3>Residential</h3></div>
+        <div class="sector-card anim-pop delay-4"><div class="emoji">🛤️</div><h3>Infrastructure</h3></div>
       </div>
       <p class="sector-specialist">Specialists in <a href="/energy-from-waste-recruitment/">energy-from-waste (EfW) recruitment</a>, <a href="/industrial-construction-recruitment/">industrial construction</a>, <a href="/mechanical-electrical-recruitment/">M&amp;E</a> and <a href="/rail-recruitment/">rail</a>.</p>
     </div>
@@ -511,7 +512,7 @@
 
   <!-- PRISM -->
   <section class="prism-section" id="prism">
-    <img src="./assets/prl_logo_hires.png" alt="" class="hero-watermark">
+    <img src="./assets/prl_logo_hires.png" alt="" class="hero-watermark" width="640" height="640">
     <div class="prism-inner">
       <div class="prism-text anim-left">
         <h2>PRISM — Contractor Portal</h2>
@@ -526,7 +527,7 @@
         <a href="https://www.prismworkforce.online/install" class="btn-primary">Get the PRISM App</a>
       </div>
       <div class="prism-mockup anim-right">
-        <img src="./assets/prl_logo_hires.png" alt="PRISM">
+        <img src="./assets/prl_logo_hires.png" alt="PRISM" width="220" height="220" loading="lazy">
       </div>
     </div>
   </section>
@@ -556,7 +557,7 @@
         <p>Workers on site within 24 hours. Prefer to talk? Call or email us directly.</p>
         <a href="tel:08007723959" class="btn-primary" style="font-size:18px">📞 0800 772 3959</a>
         <a href="mailto:info@prlsitesolutions.co.uk" class="btn-secondary" style="border-color:rgba(255,255,255,0.4)">✉️ info@prlsitesolutions.co.uk</a>
-        <p style="font-size:13px;opacity:0.6;margin-top:12px">Looking for work? Register on our <a href="https://www.prismworkforce.online/onboarding" style="color:var(--amber);text-decoration:underline">online portal</a> or see <a href="./careers.html" style="color:var(--amber);text-decoration:underline">live vacancies</a>.</p>
+        <p style="font-size:13px;color:rgba(255,255,255,0.9);opacity:1;margin-top:12px">Looking for work? Register on our <a href="https://www.prismworkforce.online/onboarding" style="color:#fff;font-weight:600;text-decoration:underline">online portal</a> or see <a href="./careers.html" style="color:#fff;font-weight:600;text-decoration:underline">live vacancies</a>.</p>
       </div>
     </div>
   </section>
@@ -615,23 +616,23 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
-          <img src="./assets/prl_logo.jpg" alt="PRL" style="width:36px;height:36px;border-radius:50%">
+          <img src="./assets/prl_logo_96.jpg" alt="" width="36" height="36" style="width:36px;height:36px;border-radius:50%">
           <span style="color:white;font-weight:700">PRL Site Solutions</span>
         </div>
         <p>Northwest UK's leading bespoke recruitment agency for construction, plant, and crane hire. Supplying skilled, certified tradesmen and labourers nationwide.</p>
         <div style="display:flex;align-items:center;gap:16px;margin-top:16px">
-          <img src="./assets/cyber-essentials-white.png" alt="Cyber Essentials Certified" style="height:56px;width:auto;object-fit:contain;">
-          <img src="./assets/iso-logo.png" alt="ISO 9001 Certified" style="height:48px;width:auto;object-fit:contain;">
+          <img src="./assets/cyber-essentials-white.png" alt="Cyber Essentials Certified" width="140" height="56" loading="lazy" style="height:56px;width:auto;object-fit:contain;">
+          <img src="./assets/iso-logo.png" alt="ISO 9001 Certified" width="48" height="48" loading="lazy" style="height:48px;width:auto;object-fit:contain;">
         </div>
       </div>
-      <div><h4>Services</h4><a href="/skilled-trades-recruitment/">Skilled Trades</a><a href="/construction-labour-supply/">Labour Supply</a><a href="/plant-operator-recruitment/">Plant Operators</a><a href="/site-management-recruitment/">Site Management</a><a href="/energy-from-waste-recruitment/">Energy-from-Waste</a><a href="/industrial-construction-recruitment/">Industrial</a><a href="/mechanical-electrical-recruitment/">M&amp;E</a><a href="/rail-recruitment/">Rail</a></div>
-      <div><h4>Contractors</h4><a href="https://www.prismworkforce.online/new-starter">New Starter Form</a><a href="https://www.prismworkforce.online/apply">Application Form</a><a href="https://www.prismworkforce.online/payment-query">Payment Query</a><a href="https://www.prismworkforce.online/grievance">Make a Complaint</a><a href="https://www.prismworkforce.online/policy-documents">Company Policies</a><a href="https://www.prismworkforce.online/login">Login</a><a href="https://www.prismworkforce.online/install">Get the App</a></div>
-      <div><h4>Company</h4><a href="./careers.html">Live Vacancies</a><a href="#contact">Contact Us</a><a href="https://www.prismworkforce.online/privacy">Privacy Policy</a><a href="https://www.prismworkforce.online/supplier-questionnaire">Supplier Registration</a><a href="./modern-slavery.html">Modern Slavery Statement</a></div>
+      <div><h2>Services</h2><a href="/skilled-trades-recruitment/">Skilled Trades</a><a href="/construction-labour-supply/">Labour Supply</a><a href="/plant-operator-recruitment/">Plant Operators</a><a href="/site-management-recruitment/">Site Management</a><a href="/energy-from-waste-recruitment/">Energy-from-Waste</a><a href="/industrial-construction-recruitment/">Industrial</a><a href="/mechanical-electrical-recruitment/">M&amp;E</a><a href="/rail-recruitment/">Rail</a></div>
+      <div><h2>Contractors</h2><a href="https://www.prismworkforce.online/new-starter">New Starter Form</a><a href="https://www.prismworkforce.online/apply">Application Form</a><a href="https://www.prismworkforce.online/payment-query">Payment Query</a><a href="https://www.prismworkforce.online/grievance">Make a Complaint</a><a href="https://www.prismworkforce.online/policy-documents">Company Policies</a><a href="https://www.prismworkforce.online/login">Login</a><a href="https://www.prismworkforce.online/install">Get the App</a></div>
+      <div><h2>Company</h2><a href="./careers.html">Live Vacancies</a><a href="#contact">Contact Us</a><a href="https://www.prismworkforce.online/privacy">Privacy Policy</a><a href="https://www.prismworkforce.online/supplier-questionnaire">Supplier Registration</a><a href="./modern-slavery.html">Modern Slavery Statement</a></div>
     </div>
     <!-- Lighthouse Charity -->
     <div style="max-width:1100px;margin:32px auto 0;padding-top:28px;border-top:1px solid #374151;display:flex;align-items:center;justify-content:center;">
       <a href="https://www.lighthouseclub.org" target="_blank" rel="noopener" style="display:inline-block;">
-        <img src="./assets/lighthouse-charity.jpeg" alt="We're proud to support Lighthouse – The Construction Charity. 24/7 Helpline: UK 0345 605 1956 | ROI 1800 939 122. Text HARDHAT to 85258 (UK) or 50808 (ROI)." style="height:120px;width:auto;object-fit:contain;display:block;">
+        <img src="./assets/lighthouse-charity.jpeg" width="290" height="120" loading="lazy" alt="We're proud to support Lighthouse – The Construction Charity. 24/7 Helpline: UK 0345 605 1956 | ROI 1800 939 122. Text HARDHAT to 85258 (UK) or 50808 (ROI)." style="height:120px;width:auto;object-fit:contain;display:block;">
       </a>
     </div>
     <div class="footer-bottom"><span>&copy; 2026 PRL Site Solutions Ltd. All rights reserved.</span><span>Powered by <a href="https://www.prismworkforce.online" style="color:var(--amber)">PRISM</a></span></div>

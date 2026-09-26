@@ -49,7 +49,7 @@ function schema(p) {
 
 const NAV = `<nav class="nav" aria-label="Main">
   <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="/assets/prl_logo.jpg" alt="" width="40" height="40">PRL Site Solutions</a>
+    <a href="/" class="nav-logo"><img src="/assets/prl_logo_96.jpg" alt="" width="40" height="40">PRL Site Solutions</a>
     <div class="nav-links" id="navLinks">
       <a href="/#services">Services</a>
       <a href="/#sectors">Sectors</a>
@@ -89,13 +89,13 @@ const FOOTER = `<footer class="footer">
         <p>Construction, industrial and energy-from-waste recruitment. 15 Beryl Road, Prenton, Wirral CH43 9RS.<br>
         <a href="tel:08007723959" style="display:inline">0800 772 3959</a> · <a href="mailto:info@prlsitesolutions.co.uk" style="display:inline">info@prlsitesolutions.co.uk</a></p>
         <div class="footer-badges">
-          <img src="/assets/cyber-essentials-white.png" alt="Cyber Essentials certified" height="48" style="height:48px;width:auto">
-          <img src="/assets/iso-logo.png" alt="ISO 9001:2015 certified" height="44" style="height:44px;width:auto;border-radius:6px">
+          <img src="/assets/cyber-essentials-white.png" alt="Cyber Essentials certified" width="120" height="48" loading="lazy" style="height:48px;width:auto">
+          <img src="/assets/iso-logo.png" alt="ISO 9001:2015 certified" width="44" height="44" loading="lazy" style="height:44px;width:auto;border-radius:6px">
         </div>
       </div>
-      <div><h4>Services</h4>${PAGES.filter((p) => p.kind === 'service').map((p) => `<a href="/${p.slug}/">${esc(p.nav)}</a>`).join('')}</div>
-      <div><h4>Sectors</h4>${PAGES.filter((p) => p.kind === 'sector').map((p) => `<a href="/${p.slug}/">${esc(p.nav)}</a>`).join('')}</div>
-      <div><h4>Company</h4><a href="/careers.html">Live vacancies</a><a href="/#contact">Contact us</a><a href="https://www.prismworkforce.online/apply">Apply for work</a><a href="https://www.prismworkforce.online/privacy">Privacy policy</a><a href="/modern-slavery.html">Modern slavery statement</a></div>
+      <div><h2>Services</h2>${PAGES.filter((p) => p.kind === 'service').map((p) => `<a href="/${p.slug}/">${esc(p.nav)}</a>`).join('')}</div>
+      <div><h2>Sectors</h2>${PAGES.filter((p) => p.kind === 'sector').map((p) => `<a href="/${p.slug}/">${esc(p.nav)}</a>`).join('')}</div>
+      <div><h2>Company</h2><a href="/careers.html">Live vacancies</a><a href="/#contact">Contact us</a><a href="https://www.prismworkforce.online/apply">Apply for work</a><a href="https://www.prismworkforce.online/privacy">Privacy policy</a><a href="/modern-slavery.html">Modern slavery statement</a></div>
     </div>
     <div class="footer-bottom"><span>&copy; ${new Date().getFullYear()} PRL Site Solutions Ltd. All rights reserved.</span><span>Proud supporters of the Lighthouse Construction Industry Charity</span></div>
   </div>
@@ -142,7 +142,8 @@ function page(p) {
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
   <link rel="stylesheet" href="/assets/site.css">
   ${schema(p)}
   <script defer src="/assets/track.js"></script>

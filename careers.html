@@ -36,7 +36,8 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 
 <!-- Organisation Schema -->
 <script type="application/ld+json">
@@ -67,6 +68,7 @@
   --prl-steel: #001f2e;
   --prl-blue: #2563eb;
   --prl-accent: #00b4d8;
+  --prl-accent-dark: #006f8a; /* accent on light backgrounds: 5.3:1 on white */
   --prl-hazard: #f59e0b;
   --prl-white: #ffffff;
   --prl-grey-50: #f8fafc;
@@ -355,6 +357,8 @@ h1, h2, h3, h4 {
   font-weight: 700;
 }
 
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
 /* ============ ROLES ============ */
 .roles-section {
   padding: 60px 0 100px;
@@ -553,7 +557,7 @@ h1, h2, h3, h4 {
 
 .section-eyebrow {
   display: inline-block;
-  color: var(--prl-accent);
+  color: var(--prl-accent-dark);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -588,7 +592,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-size: 56px;
   font-weight: 800;
-  color: var(--prl-accent);
+  color: var(--prl-accent-dark);
   line-height: 1;
   margin-bottom: 20px;
 }
@@ -763,7 +767,7 @@ h1, h2, h3, h4 {
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="./" class="nav-logo">
-      <img src="./assets/prl_logo.jpg" alt="PRL Site Solutions">
+      <img src="./assets/prl_logo_96.jpg" alt="" width="44" height="44">
       <span>PRL Site Solutions</span>
     </a>
     <div class="nav-links" id="navLinks">
@@ -775,7 +779,7 @@ h1, h2, h3, h4 {
       <a href="./#contact">Contact</a>
       <a href="https://www.prismworkforce.online/login" class="nav-cta">Contractor Login</a>
     </div>
-    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <button class="mobile-toggle" aria-label="Menu" aria-controls="navLinks" aria-expanded="false" onclick="var n=document.getElementById('navLinks');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">
       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
   </div>
@@ -809,6 +813,7 @@ h1, h2, h3, h4 {
   <div class="container">
     <!-- Role cards are rebuilt every day from PRL's live CV-Library adverts (agency 454083)
          by scripts/sync-jobs.mjs (.github/workflows/sync-jobs.yml). Do not edit by hand. -->
+    <h2 class="sr-only">Current vacancies</h2>
     <div class="roles-grid" id="roles-grid">
 <!-- JOBS-CARDS:START -->
       <article class="role-card">

@@ -84,8 +84,8 @@ section.alt{background:var(--g50)}
 .cta h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:10px}
 .cta-contact p{opacity:0.9;margin-bottom:20px}
 .cta-contact .btn{width:100%;margin-bottom:12px}
-.cta-small{font-size:13px;opacity:0.75!important}
-.cta-small a{color:var(--amber)}
+.cta-small{font-size:13px;color:rgba(255,255,255,0.9);opacity:1!important}
+.cta-small a{color:#fff;font-weight:600}
 .enquiry{background:#fff;color:var(--g900);border-radius:14px;padding:28px;box-shadow:0 20px 50px rgba(0,0,0,0.25)}
 .enquiry h3{font-size:20px;font-weight:800;margin-bottom:4px}
 .enquiry-sub{font-size:14px;color:var(--g500);margin-bottom:20px}
@@ -109,7 +109,7 @@ section.alt{background:var(--g50)}
 /* Footer */
 .footer{background:var(--g900);color:#9ca3af;padding:48px 0 24px;font-size:14px}
 .footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
-.footer h4{color:#fff;font-size:14px;margin-bottom:12px}
+.footer h2{color:#fff;font-size:14px;margin-bottom:12px}
 .footer a{display:block;text-decoration:none;padding:3px 0}
 .footer a:hover{color:#fff}
 .footer-brand p{margin-top:10px;line-height:1.6}
