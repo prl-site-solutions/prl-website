@@ -113,6 +113,8 @@ function shell({ path, title, description, schemaHtml, ogImage, body }) {
   <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/site.css">
   ${schemaHtml}
+  <link rel="preconnect" href="https://cloud.umami.is">
+  <link rel="preconnect" href="https://gateway.umami.is" crossorigin>
   <script defer src="/assets/track.js"></script>
   <script defer src="/assets/enquiry.js"></script>
 </head>
@@ -141,9 +143,11 @@ function ctaSection(heading, placeholder) {
   </section>`;
 }
 
-function csCard(c) {
+function csCard(c, eager = false) {
+  const src = c.imageSmall ? c.imageSmall[0] : c.image[0];
+  const [w, h] = c.imageSmall ? [c.imageSmall[1], c.imageSmall[2]] : [c.image[1], c.image[2]];
   return `        <a class="cs-card" href="/case-studies/${c.slug}/">
-          <img src="${c.image[0]}" alt="" width="${c.image[1]}" height="${c.image[2]}" loading="lazy">
+          <img src="${src}" alt="" width="${w}" height="${h}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'}>
           <span class="cs-card-body"><span class="cs-card-sector">${esc(c.meta.find(([k]) => k === 'Sector')?.[1] || 'Case study')}</span><strong>${esc(c.h1)}</strong><span class="cs-card-more">Read the case study →</span></span>
         </a>`;
 }
@@ -224,7 +228,7 @@ ${caseStudies.length ? `
       <h2>Case studies</h2>
       <p class="intro">${esc(p.nav)} projects PRL has staffed.</p>
       <div class="cs-cards">
-${caseStudies.map(csCard).join('\n')}
+${caseStudies.map((c) => csCard(c)).join('\n')}
       </div>
     </div>
   </section>
@@ -360,7 +364,7 @@ ${c.how.map(([h, t]) => `        <div class="step"><h3>${esc(h)}</h3><p>${esc(t)
 
 <main>
   <div class="wrap cs-figure-wrap">
-    <img class="cs-figure" src="${c.image[0]}" alt="${esc(c.image[3])}" width="${c.image[1]}" height="${c.image[2]}" fetchpriority="high">
+    <img class="cs-figure" src="${c.image[0]}"${c.imageSmall ? ` srcset="${c.imageSmall[0]} ${c.imageSmall[1]}w, ${c.image[0]} ${c.image[1]}w" sizes="(max-width: 1100px) calc(100vw - 48px), 1052px"` : ''} alt="${esc(c.image[3])}" width="${c.image[1]}" height="${c.image[2]}" fetchpriority="high">
   </div>
 
   <section class="block cs-glance-block">
@@ -418,7 +422,7 @@ function caseStudyIndex() {
     <div class="wrap">
       <h2 class="sr-only">All case studies</h2>
       <div class="cs-cards">
-${CASE_STUDIES.map(csCard).join('\n')}
+${CASE_STUDIES.map((c, i) => csCard(c, i < 2)).join('\n')}
       </div>
     </div>
   </section>

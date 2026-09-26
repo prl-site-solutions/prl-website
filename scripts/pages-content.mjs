@@ -31,6 +31,7 @@ export const CASE_STUDIES = [
     h1: 'Staffing Protos Energy Park at Ince Marsh: 420+ workers placed',
     lede: 'Energy-from-waste with carbon capture at Ince Marsh, Cheshire. PRL has placed more than 420 people across electrical, mechanical, civils, plant and fire watch roles, on days and nights.',
     image: ['/assets/case-studies/protos-ince-marsh.jpg', 1400, 423, 'Aerial view of the Protos Energy Park construction site at Ince Marsh, Cheshire'],
+    imageSmall: ['/assets/case-studies/protos-ince-marsh-700.jpg', 700, 212],
     meta: [['Client', 'Metlen'], ['Site', 'Ince Marsh, Cheshire'], ['Sector', 'Energy-from-waste'], ['Since', 'March 2026, ongoing']],
     glance: [['420+', 'workers placed'], ['250+', 'on site today'], ['Day & night', 'shifts covered'], ['16 wks', 'typical placement']],
     sections: [
