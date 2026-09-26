@@ -17,7 +17,7 @@ export const COMMON_CHECKS = [
 export const STEPS = [
   ['Tell us what you need', 'Use the form or call 0800 772 3959. Trades, numbers, site, start date and any site-specific tickets.'],
   ['We put forward checked people', 'We match from our pool of 320+ active contractors. Everyone is compliance-checked before they go, and in most cases they can be on site within 24 hours.'],
-  ['On site, managed through PRISM', 'Contractors submit timesheets through our PRISM app and their documents are tracked for expiry. You get one point of contact for the whole placement.'],
+  ['On site, and we stay involved', 'We visit our sites regularly to check our workforce are OK and being treated properly. Timesheets and documents run through our PRISM app, and you get one point of contact for the whole placement.'],
 ];
 
 export const PAGES = [
@@ -231,5 +231,36 @@ export const PAGES = [
       ['Do you cover mechanical as well as electrical?', 'Yes: mechanical fitters, pipefitters and plumbers, plus piping QA/QC for industrial and process work.'],
     ],
     related: ['industrial-construction-recruitment', 'energy-from-waste-recruitment', 'skilled-trades-recruitment', 'site-management-recruitment'],
+  },
+  {
+    slug: 'rail-recruitment',
+    kind: 'sector',
+    nav: 'Rail',
+    title: 'Rail Recruitment Agency | PTS, COSS & Rail Civils Staff | PRL',
+    description: 'Rail recruitment: PTS track operatives, COSS, Engineering Supervisors, rail civils and trades. Competencies checked, deployed under your Sentinel sponsorship.',
+    h1: 'Rail recruitment: track, civils and construction staff with the right competencies',
+    lede: 'PTS-holding operatives, COSS and Engineering Supervisors for trackside work, plus the civils, trades and supervision rail projects need off the track. Every competency checked before anyone is put forward.',
+    facts: ['PTS, Sentinel and COSS checked', 'Trackside and off-track roles', 'Team with a rail background'],
+    rolesIntro: 'Rail roles we supply. Tell us the competencies your work needs.',
+    roles: [
+      ['Track operatives', 'PTS-holding operatives with a current Sentinel card and track induction, for maintenance, renewals and enhancement work.'],
+      ['COSS', 'Controllers of Site Safety to plan and set up safe systems of work for trackside teams.'],
+      ['Engineering Supervisors', 'ES-competent staff to manage worksites within a possession.'],
+      ['Rail civils and structures', 'Groundworkers, steel fixers and labourers for drainage, embankments, bridges, platforms and other civils packages.'],
+      ['Station and depot construction trades', 'Electricians, joiners, welders and fabricators for station, depot and building works off the operational railway.'],
+      ['Supervision and HSE', 'Site supervisors, foremen and HSE advisors for rail construction projects.'],
+    ],
+    body: [
+      'The railway runs on competencies. Anyone going trackside on Network Rail infrastructure needs a Personal Track Safety (PTS) card on the Sentinel scheme, and roles like COSS and Engineering Supervisor carry their own competence requirements. We record each person\'s PTS, Sentinel, COSS, ES and track induction details in our PRISM system and check them before anyone is put forward, so you don\'t get someone whose competence has lapsed.',
+      'Trackside workers are deployed under your company\'s, or a partner\'s, Sentinel sponsorship, as the rules require. PRL finds and checks the people; sponsorship stays with the organisation that controls the work. For off-track work such as rail civils, stations and depots, we supply and manage the workforce in the usual way.',
+      'Our team has a background in construction, rail and administration, so we understand why a missing competency or a late start on a possession matters.',
+    ],
+    faqs: [
+      ['Is PRL a Sentinel sponsor?', 'No. PRL supplies rail-competent workers who are deployed under the client\'s, or a partner\'s, Sentinel sponsorship. We check each worker\'s PTS, Sentinel card, COSS, Engineering Supervisor and track induction competencies before putting them forward, and work with your sponsorship arrangements.'],
+      ['What rail competencies do you check?', 'PTS (Personal Track Safety) on a current Sentinel card, COSS, Engineering Supervisor (ES) and track induction, alongside the standard checks: CSCS where relevant, right to work and trade qualifications.'],
+      ['Do you supply off-track rail roles?', 'Yes. Rail civils (groundworkers, steel fixers, labourers), station and depot construction trades, and site supervision and HSE for rail construction projects.'],
+      ['Can you supply for possessions and night work?', 'Tell us the shift pattern, location and competencies needed and we\'ll put forward people who can work it. Night and weekend possession work is common in rail, and we ask about availability up front.'],
+    ],
+    related: ['construction-labour-supply', 'site-management-recruitment', 'skilled-trades-recruitment', 'industrial-construction-recruitment'],
   },
 ];

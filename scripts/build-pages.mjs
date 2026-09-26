@@ -101,6 +101,19 @@ const FOOTER = `<footer class="footer">
   </div>
 </footer>`;
 
+const SERVICE_CTA = {
+  'Skilled Trades': 'Need skilled tradespeople on site?',
+  'Labour Supply': 'Need labour on site?',
+  'Plant Operators': 'Need a plant operator?',
+  'Site Management': 'Need site management cover?',
+};
+function ctaHeading(p) {
+  if (p.kind === 'service') return SERVICE_CTA[p.nav] || 'Need people on site?';
+  const noun = p.nav === 'M&E' ? 'M&E' : p.nav.toLowerCase();
+  const article = /^(M&E|[aeiou])/i.test(noun) ? 'an' : 'a'; // "an M&E", "an energy-from-waste"
+  return `Staffing ${article} ${noun} project?`;
+}
+
 function page(p) {
   const url = `${SITE}/${p.slug}/`;
   const section = p.kind === 'service' ? ['Services', '/#services'] : ['Sectors', '/#sectors'];
@@ -212,7 +225,7 @@ ${p.related.map((s) => `        <a href="/${s}/">${esc(bySlug[s].nav)}${bySlug[s
     <div class="wrap cta-inner">
       ${FORM.replace('__PLACEHOLDER__', esc(placeholder))}
       <div class="cta-contact">
-        <h2>Need ${esc(p.nav === 'M&E' ? 'M&E people' : p.nav.toLowerCase().replace(/ recruitment$/, ''))} on site?</h2>
+        <h2>${esc(ctaHeading(p))}</h2>
         <p>Workers on site within 24 hours in most cases. Prefer to talk? Call or email us directly.</p>
         <a href="tel:08007723959" class="btn btn-amber">Call 0800 772 3959</a>
         <a href="mailto:info@prlsitesolutions.co.uk" class="btn btn-ghost">info@prlsitesolutions.co.uk</a>
