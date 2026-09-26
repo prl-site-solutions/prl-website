@@ -96,6 +96,39 @@ function address(location) {
   return addr;
 }
 
+// Google asks for a postalCode. Adverts often give only a town, so look up its
+// postcode district (outward code) on postcodes.io — only when the town AND
+// county both match, and never failing the sync if the lookup is unavailable.
+const norm = (s) => (s || '').toLowerCase().replace(/[^a-z]/g, '');
+async function addPostcodeDistrict(addr) {
+  if (addr.postalCode || !addr.addressLocality) return;
+  try {
+    const res = await fetch(`https://api.postcodes.io/places?q=${encodeURIComponent(addr.addressLocality)}&limit=10`, { signal: AbortSignal.timeout(8000) });
+    if (!res.ok) return;
+    const { result = [] } = await res.json();
+    const town = norm(addr.addressLocality);
+    const region = norm(addr.addressRegion);
+    const hits = result.filter((p) =>
+      [p.name_1, p.name_2].some((n) => norm(n) === town) &&
+      (!region || [p.county_unitary, p.region].some((c) => norm(c) && (norm(c).includes(region) || region.includes(norm(c)))))
+    );
+    const outcodes = [...new Set(hits.map((p) => p.outcode).filter(Boolean))];
+    if (outcodes.length === 1) addr.postalCode = outcodes[0];
+  } catch { /* lookup is best-effort */ }
+}
+
+// CV-Library adverts run 30 days. validThrough = posting date + 30 days; if the
+// advert is still live after that, roll forward in 30-day steps so Google never
+// sees a live job as expired, and the page only changes once a month per job.
+function validThrough(datePosted, now = new Date()) {
+  if (!datePosted) return null;
+  const DAY = 86400000;
+  const posted = Date.parse(`${datePosted}T00:00:00Z`);
+  let end = posted + 30 * DAY;
+  while (end < now.getTime() + 3 * DAY) end += 30 * DAY;
+  return new Date(end).toISOString().slice(0, 10);
+}
+
 const EMPLOYMENT = { temporary: 'TEMPORARY', permanent: 'FULL_TIME', contract: 'CONTRACTOR', 'part time': 'PART_TIME' };
 
 function jobPosting(j) {
@@ -106,15 +139,16 @@ function jobPosting(j) {
     title: titleCase(j.title),
     description: j.description.split('\n').map((l) => `<p>${escapeHtml(l)}</p>`).join(''),
     datePosted: isoDate(j.posted),
+    validThrough: validThrough(isoDate(j.posted)),
     employmentType: EMPLOYMENT[j.type.toLowerCase()] || 'OTHER',
     hiringOrganization: ORG,
-    jobLocation: { '@type': 'Place', address: address(j.location) },
+    jobLocation: { '@type': 'Place', address: j.address },
     identifier: { '@type': 'PropertyValue', name: 'CV-Library Job ID', value: j.id },
     directApply: false,
     url: `https://www.cv-library.co.uk/job/${j.id}`,
   };
   if (pay) posting.baseSalary = { '@type': 'MonetaryAmount', currency: 'GBP', value: { '@type': 'QuantitativeValue', minValue: pay.min, maxValue: pay.max, unitText: pay.unit } };
-  if (!posting.datePosted) delete posting.datePosted;
+  if (!posting.datePosted) { delete posting.datePosted; delete posting.validThrough; }
   return posting;
 }
 
@@ -175,6 +209,10 @@ function replaceBetween(src, name, content) {
 async function main() {
   const jobs = parseFeed(await getFeed());
   jobs.sort((a, b) => (isoDate(b.posted) || '').localeCompare(isoDate(a.posted) || ''));
+  for (const j of jobs) {
+    j.address = address(j.location);
+    await addPostcodeDistrict(j.address);
+  }
 
   const before = readFileSync(PAGE, 'utf8');
   let page = before;
