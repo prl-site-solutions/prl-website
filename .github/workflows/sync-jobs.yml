@@ -3,8 +3,11 @@
 name: Sync jobs from CV-Library
 
 on:
+  # GitHub runs schedules best-effort and can drop a slot when busy, so run
+  # twice a day at off-the-hour minutes; a missed run is covered by the next.
   schedule:
-    - cron: '30 5 * * *'   # 05:30 UTC = 06:30 UK summer time / 05:30 winter
+    - cron: '17 5 * * *'    # 06:17 UK summer time / 05:17 winter
+    - cron: '17 12 * * *'   # 13:17 UK summer time / 12:17 winter
   workflow_dispatch:
 
 permissions:

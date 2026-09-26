@@ -1,16 +1,16 @@
 # PRL careers page
 
 The job cards on `careers.html`, and the JobPosting data Google reads for its
-job search, are rebuilt **every morning** from PRL's live CV-Library adverts
+job search, are rebuilt **twice a day** from PRL's live CV-Library adverts
 (agency ID `454083`):
 
 https://www.cv-library.co.uk/cgi-bin/yourjobs.cgi?agency=454083
 
 **There is nothing to update when a role opens or closes.** Post or remove the
-advert on CV-Library and the website follows by the next morning.
+advert on CV-Library and the website follows within half a day.
 
 - Script: `scripts/sync-jobs.mjs` (no dependencies — `node scripts/sync-jobs.mjs`)
-- Schedule: `.github/workflows/sync-jobs.yml`, daily at 05:30 UTC
+- Schedule: `.github/workflows/sync-jobs.yml`, twice daily (05:17 and 12:17 UTC)
 - Need it sooner? GitHub → Actions → "Sync jobs from CV-Library" → Run workflow
 
 Everything between the `JOBS-…:START` / `JOBS-…:END` markers in
