@@ -131,7 +131,7 @@ section.alt{background:var(--g50)}
 .cs-meta dt{font-size:12px;text-transform:uppercase;letter-spacing:0.08em;opacity:0.75}
 .cs-meta dd{font-weight:700;font-size:16px}
 .cs-figure-wrap{margin-top:-32px}
-.cs-figure{width:100%;height:auto;max-height:440px;object-fit:cover;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,0.18)}
+.cs-figure{display:block;width:auto;max-width:100%;margin:0 auto;height:auto;max-height:440px;object-fit:cover;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,0.18)}
 .cs-glance-block{padding:40px 0 8px}
 .cs-glance{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .cs-glance li{background:var(--g50);border:1px solid var(--g200);border-radius:12px;padding:20px;text-align:center}
