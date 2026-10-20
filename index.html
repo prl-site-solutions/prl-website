@@ -31,8 +31,8 @@
   <!-- Geo targeting -->
   <meta name="geo.region" content="GB-MER">
   <meta name="geo.placename" content="Wirral, Merseyside">
-  <meta name="geo.position" content="53.3727;-3.0738">
-  <meta name="ICBM" content="53.3727, -3.0738">
+  <meta name="geo.position" content="53.3863;-3.0788">
+  <meta name="ICBM" content="53.3863, -3.0788">
 
   <link rel="icon" href="./assets/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
@@ -59,16 +59,16 @@
     },
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "15 Beryl Road, Prenton",
-      "addressLocality": "Wirral",
-      "addressRegion": "Merseyside",
+      "streetAddress": "15 Beryl Road",
+      "addressLocality": "Prenton",
+      "addressRegion": "Wirral",
       "postalCode": "CH43 9RS",
       "addressCountry": "GB"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 53.3727,
-      "longitude": -3.0738
+      "latitude": 53.3863,
+      "longitude": -3.0788
     },
     "areaServed": [
       {"@type": "Country", "name": "United Kingdom"},
@@ -91,6 +91,7 @@
     ],
     "sameAs": [
       "https://www.google.com/maps/place/?q=place_id:ChIJpahC5Xt2RSURTYVO12XzYpk",
+      "https://find-and-update.company-information.service.gov.uk/company/14358717",
       "https://www.linkedin.com/company/prl-site-solutions/",
       "https://www.facebook.com/profile.php?id=61595134512677",
       "https://www.instagram.com/prlsitesolutionsltd/",
@@ -306,6 +307,7 @@
     .card-link:hover{text-decoration:underline}
     .area-card p{font-size:13px;color:var(--g500);margin-top:6px;font-weight:500;line-height:1.4}
     .areas-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .guides-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .faq details{border-bottom:1px solid var(--g200);padding:8px 0}
     .faq summary{font-weight:700;cursor:pointer;padding:8px 0}
     .faq details p{color:var(--g700);margin:8px 0 12px}
@@ -368,6 +370,7 @@
       .prism-features{text-align:left;padding-left:0}
       .sectors-grid{grid-template-columns:repeat(2,1fr)}
       .areas-grid{grid-template-columns:1fr 1fr}
+      .guides-grid{grid-template-columns:1fr}
       .cta-inner{grid-template-columns:1fr}
       .enquiry{padding:22px}
       .enquiry-grid{grid-template-columns:1fr}
@@ -435,6 +438,7 @@
         <a href="#services">Services</a>
         <a href="#sectors">Sectors</a>
         <a href="#areas">Areas</a>
+        <a href="/guides/">Guides</a>
         <a href="#prism">PRISM App</a>
         <a href="./careers.html">Vacancies</a>
         <a href="https://www.prismworkforce.online/login">Contractor Login</a>
@@ -541,7 +545,19 @@
         <a href="/construction-recruitment-chester/" class="sector-card area-card"><h3>Chester</h3><p>Ellesmere Port, Ince Marsh, Deeside</p></a>
         <a href="/construction-recruitment-warrington/" class="sector-card area-card"><h3>Warrington</h3><p>Widnes, Runcorn, Birchwood</p></a>
       </div>
-      <p class="sector-specialist">Google listing: <a href="https://www.google.com/maps/place/?q=place_id:ChIJpahC5Xt2RSURTYVO12XzYpk">PRL Site Solutions | Recruitment Experts</a>. Registered office: 15 Beryl Road, Prenton, Wirral CH43 9RS. Company no. 14358717.</p>
+      <p class="sector-specialist">Google listing: <a href="https://www.google.com/maps/place/?q=place_id:ChIJpahC5Xt2RSURTYVO12XzYpk">PRL Site Solutions | Recruitment Experts</a>. Registered office: 15 Beryl Road, Prenton, Wirral CH43 9RS. Company no. <a href="https://find-and-update.company-information.service.gov.uk/company/14358717">14358717</a>.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="guides">
+    <div class="section-inner">
+      <div class="section-header"><h2>Guides from the Prenton desk</h2><p>Written so a site manager can brief us, and so the checks we already run are on the record. Not legal advice.</p></div>
+      <div class="guides-grid">
+        <a href="/guides/which-site-card/" class="sector-card area-card"><h3>Which site card</h3><p>CSCS colours, ECS for electricians, CPCS and NPORS categories. What we accept and what we send back.</p></a>
+        <a href="/guides/hiring-construction-labour-northwest/" class="sector-card area-card"><h3>Hiring in the Northwest</h3><p>Wirral, Liverpool, Chester, Warrington and Manchester. Distance, tickets, and the one job we publish numbers for.</p></a>
+        <a href="/guides/right-to-work-before-a-start/" class="sector-card area-card"><h3>Right to work</h3><p>Checked before anyone is put forward. What that covers, and what it does not replace for the hirer.</p></a>
+        <a href="/guides/briefing-a-construction-agency/" class="sector-card area-card"><h3>Brief an agency</h3><p>Trade, ticket, numbers, postcode, start, shift and engagement. The difference between a filled order and a wrong CV.</p></a>
+      </div>
     </div>
   </section>
 
@@ -678,7 +694,7 @@
       <div><h2>Services</h2><a href="/skilled-trades-recruitment/">Skilled Trades</a><a href="/construction-labour-supply/">Labour Supply</a><a href="/plant-operator-recruitment/">Plant Operators</a><a href="/site-management-recruitment/">Site Management</a><a href="/energy-from-waste-recruitment/">Energy-from-Waste</a><a href="/industrial-construction-recruitment/">Industrial</a><a href="/mechanical-electrical-recruitment/">M&amp;E</a><a href="/rail-recruitment/">Rail</a></div>
       <div><h2>Contractors</h2><a href="https://www.prismworkforce.online/apply">Looking for Work?</a><a href="https://www.prismworkforce.online/payment-query">Payment Query</a><a href="https://www.prismworkforce.online/grievance">Make a Complaint</a><a href="https://www.prismworkforce.online/policy-documents">Company Policies</a><a href="https://www.prismworkforce.online/login">Login</a><a href="https://www.prismworkforce.online/install">Get the App</a></div>
       <div><h2>Areas</h2><a href="/construction-recruitment-wirral/">Wirral</a><a href="/construction-recruitment-liverpool/">Liverpool</a><a href="/construction-recruitment-manchester/">Manchester</a><a href="/construction-recruitment-chester/">Chester</a><a href="/construction-recruitment-warrington/">Warrington</a><a href="https://www.google.com/maps/place/?q=place_id:ChIJpahC5Xt2RSURTYVO12XzYpk">Google reviews</a></div>
-      <div><h2>Company</h2><a href="/case-studies/">Case Studies</a><a href="./careers.html">Live Vacancies</a><a href="#contact">Contact Us</a><a href="https://www.prismworkforce.online/privacy">Privacy Policy</a><a href="https://www.prismworkforce.online/supplier-questionnaire">Supplier Registration</a><a href="./modern-slavery.html">Modern Slavery Statement</a></div>
+      <div><h2>Company</h2><a href="/guides/">Guides</a><a href="/case-studies/">Case Studies</a><a href="./careers.html">Live Vacancies</a><a href="#contact">Contact Us</a><a href="https://find-and-update.company-information.service.gov.uk/company/14358717">Companies House</a><a href="https://www.prismworkforce.online/privacy">Privacy Policy</a><a href="https://www.prismworkforce.online/supplier-questionnaire">Supplier Registration</a><a href="./modern-slavery.html">Modern Slavery Statement</a></div>
     </div>
     <!-- Lighthouse Charity -->
     <div style="max-width:1100px;margin:32px auto 0;padding-top:28px;border-top:1px solid #374151;display:flex;align-items:center;justify-content:center;">

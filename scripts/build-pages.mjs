@@ -8,18 +8,22 @@
 // this after editing the content and commit both.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
-import { COMMON_CHECKS, STEPS, PAGES, CASE_STUDIES, AREAS } from './pages-content.mjs';
+import { COMMON_CHECKS, STEPS, PAGES, CASE_STUDIES, AREAS, GUIDES } from './pages-content.mjs';
 
 const SITE = 'https://prlsitesolutions.co.uk';
 const ORG_ID = `${SITE}/#organization`;
 const ROOT = new URL('../', import.meta.url);
 const bySlug = Object.fromEntries(PAGES.map((p) => [p.slug, p]));
 const csBySlug = Object.fromEntries(CASE_STUDIES.map((c) => [c.slug, c]));
+const guideBySlug = Object.fromEntries(GUIDES.map((g) => [g.slug, g]));
 const PUBLISHED = '2026-09-26';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const jsonLd = (o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`;
 const MAPS = 'https://www.google.com/maps/place/?q=place_id:ChIJpahC5Xt2RSURTYVO12XzYpk';
+const COMPANIES_HOUSE = 'https://find-and-update.company-information.service.gov.uk/company/14358717';
+const OFFICE_GEO = { '@type': 'GeoCoordinates', latitude: 53.3863, longitude: -3.0788 };
+const NW_CITIES = ['Wirral', 'Liverpool', 'Birkenhead', 'Chester', 'Warrington', 'Manchester'];
 const HOURS = {
   '@type': 'OpeningHoursSpecification',
   dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
@@ -41,6 +45,20 @@ const LOCAL_PROVIDER = {
     postalCode: 'CH43 9RS',
     addressCountry: 'GB',
   },
+  geo: OFFICE_GEO,
+  areaServed: [
+    { '@type': 'Country', name: 'United Kingdom' },
+    { '@type': 'AdministrativeArea', name: 'Northwest England' },
+    ...NW_CITIES.map((name) => ({ '@type': 'City', name })),
+  ],
+  sameAs: [
+    MAPS,
+    COMPANIES_HOUSE,
+    'https://www.linkedin.com/company/prl-site-solutions/',
+    'https://www.facebook.com/profile.php?id=61595134512677',
+    'https://www.instagram.com/prlsitesolutionsltd/',
+    'https://www.cv-library.co.uk/list-jobs/454083/PRL-Site-Solutions',
+  ],
 };
 
 const breadcrumbs = (items) => ({
@@ -56,7 +74,8 @@ const NAV = `<nav class="nav" aria-label="Main">
     <a href="/" class="nav-logo"><img src="/assets/prl_logo_96.jpg" alt="" width="40" height="40">PRL Site Solutions</a>
     <div class="nav-links" id="navLinks">
       <a href="/#services">Services</a>
-      <a href="/#sectors">Sectors</a>
+      <a href="/#areas">Areas</a>
+      <a href="/guides/">Guides</a>
       <a href="/case-studies/">Case Studies</a>
       <a href="/careers.html">Vacancies</a>
       <a href="https://www.prismworkforce.online/login">Contractor Login</a>
@@ -104,7 +123,7 @@ const FOOTER = `<footer class="footer">
       <div><h2>Services</h2>${PAGES.filter((p) => p.kind === 'service').map((p) => `<a href="/${p.slug}/">${esc(p.nav)}</a>`).join('')}</div>
       <div><h2>Sectors</h2>${PAGES.filter((p) => p.kind === 'sector').map((p) => `<a href="/${p.slug}/">${esc(p.nav)}</a>`).join('')}</div>
       <div><h2>Areas</h2>${AREAS.map((a) => `<a href="/${a.slug}/">${esc(a.nav)}</a>`).join('')}<a href="${MAPS}">Google reviews</a></div>
-      <div><h2>Company</h2><a href="/case-studies/">Case studies</a><a href="/careers.html">Live vacancies</a><a href="/#contact">Contact us</a><a href="https://www.prismworkforce.online/apply">Apply for work</a><a href="https://www.prismworkforce.online/privacy">Privacy policy</a><a href="/modern-slavery.html">Modern slavery statement</a></div>
+      <div><h2>Company</h2><a href="/guides/">Guides</a><a href="/case-studies/">Case studies</a><a href="/careers.html">Live vacancies</a><a href="/#contact">Contact us</a><a href="${COMPANIES_HOUSE}">Companies House</a><a href="https://www.prismworkforce.online/apply">Apply for work</a><a href="https://www.prismworkforce.online/privacy">Privacy policy</a><a href="/modern-slavery.html">Modern slavery statement</a></div>
     </div>
     <div class="footer-bottom"><span>&copy; ${new Date().getFullYear()} PRL Site Solutions Ltd. All rights reserved.</span><span>Proud supporters of the Lighthouse Construction Industry Charity</span></div>
   </div>
@@ -206,8 +225,12 @@ function page(p) {
       serviceType: p.nav + (p.kind === 'service' ? ' recruitment' : ' sector recruitment'),
       description: p.description,
       url,
-      provider: PROVIDER,
-      areaServed: { '@type': 'Country', name: 'United Kingdom' },
+      provider: LOCAL_PROVIDER,
+      areaServed: [
+        { '@type': 'Country', name: 'United Kingdom' },
+        { '@type': 'AdministrativeArea', name: 'Northwest England' },
+        ...NW_CITIES.map((name) => ({ '@type': 'City', name })),
+      ],
     },
     {
       '@context': 'https://schema.org',
@@ -293,6 +316,14 @@ ${p.faqs.map(([q, a]) => `        <details><summary>${esc(q)}</summary><p>${esc(
       <div class="related">
 ${p.related.map((s) => `        <a href="/${s}/">${esc(bySlug[s].nav)}${bySlug[s].kind === 'service' ? ' recruitment' : ''}</a>`).join('\n')}
         <a href="/careers.html">Live vacancies</a>
+      </div>
+      <h2 style="margin-top:36px">Where we supply ${esc(p.nav.toLowerCase())}</h2>
+      <div class="related">
+${AREAS.map((a) => `        <a href="/${a.slug}/">${esc(a.nav)}</a>`).join('\n')}
+      </div>
+      <h2 style="margin-top:36px">Practical guides</h2>
+      <div class="related">
+${GUIDES.map((g) => `        <a href="/guides/${g.slug}/">${esc(g.nav)}</a>`).join('\n')}
       </div>
     </div>
   </section>
@@ -508,10 +539,20 @@ function areaPage(a) {
       <h2>Supplying ${esc(a.city)} and nearby</h2>
 ${a.body.map((para) => `      <p>${esc(para)}</p>`).join('\n')}
       <p>Towns covered from this page: ${esc(a.towns.join(', '))}.</p>
+      <p><strong>PRL Site Solutions Ltd</strong>, 15 Beryl Road, Prenton, Wirral, CH43 9RS. Company <a href="${COMPANIES_HOUSE}">14358717</a>. <a href="tel:08007723959">0800 772 3959</a>, Monday to Friday 9am–5pm. <a href="${MAPS}">Google listing</a>.</p>
     </div>
   </section>
 
   <section class="block alt">
+    <div class="wrap">
+      <h2>What ${esc(a.city)} sites usually ask for</h2>
+      <div class="roles">
+${a.asks.map(([name, detail]) => `        <div class="role"><h3>${esc(name)}</h3><p>${esc(detail)}</p></div>`).join('\n')}
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
     <div class="wrap">
       <h2>Checked before they reach your site</h2>
       <ul class="checks">
@@ -544,6 +585,9 @@ ${a.faqs.map(([q, ans]) => `        <details><summary>${esc(q)}</summary><p>${es
       <div class="related">
 ${services.map((s) => `        <a href="/${s}/">${esc(bySlug[s].nav)} recruitment</a>`).join('\n')}
 ${others.map((o) => `        <a href="/${o.slug}/">${esc(o.nav)} recruitment</a>`).join('\n')}
+        <a href="/guides/hiring-construction-labour-northwest/">Hiring labour in the Northwest</a>
+        <a href="/guides/which-site-card/">Which site card</a>
+        <a href="/guides/">All guides</a>
         <a href="/case-studies/">Case studies</a>
         <a href="${MAPS}">Google listing</a>
       </div>
@@ -560,6 +604,129 @@ ${ctaSection(`Need people on a ${a.nav} site?`, `e.g. 6 labourers, ${a.city}, Mo
     schemaHtml: `<meta name="geo.placename" content="${esc(a.city)}, ${esc(a.region)}">\n  <meta name="geo.position" content="${a.geo[0]};${a.geo[1]}">\n  <meta name="ICBM" content="${a.geo[0]}, ${a.geo[1]}">\n  ${schemaHtml}`,
     body,
   });
+}
+
+// ───────────────────────── guides ─────────────────────────
+
+function guideBody(g) {
+  return g.sections.map((s, i) => `  <section class="block${i % 2 ? ' alt' : ''}">
+    <div class="wrap prose">
+      <h2>${esc(s.h2)}</h2>
+${s.paragraphs.map((para) => `      <p>${esc(para)}</p>`).join('\n')}
+${s.bullets ? `      <ul class="checks">\n${s.bullets.map((b) => `        <li>${esc(b)}</li>`).join('\n')}\n      </ul>` : ''}
+    </div>
+  </section>`).join('\n');
+}
+
+function guidePage(g) {
+  const path = `/guides/${g.slug}/`;
+  const url = `${SITE}${path}`;
+  const schemaHtml = [
+    breadcrumbs([['Home', `${SITE}/`], ['Guides', `${SITE}/guides/`], [g.nav, url]]),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: g.h1,
+      description: g.description,
+      datePublished: '2026-10-20',
+      dateModified: '2026-10-20',
+      mainEntityOfPage: url,
+      author: { '@id': ORG_ID },
+      publisher: LOCAL_PROVIDER,
+      about: NW_CITIES.map((name) => ({ '@type': 'City', name })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: g.faqs.map(([q, ans]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: ans } })),
+    },
+  ].map(jsonLd).join('\n');
+
+  const body = `
+<header class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/guides/">Guides</a> › ${esc(g.nav)}</nav>
+    <h1>${esc(g.h1)}</h1>
+    <p class="lede">${esc(g.lede)}</p>
+    <div class="hero-actions">
+      <a href="#enquiry" class="btn btn-amber">Request workers</a>
+      <a href="tel:08007723959" class="btn btn-ghost">Call 0800 772 3959</a>
+    </div>
+    <ul class="hero-facts"><li>PRL Site Solutions Ltd, Prenton</li><li>Company 14358717</li><li>Not legal advice</li></ul>
+  </div>
+</header>
+
+<main>
+${guideBody(g)}
+  <section class="block alt">
+    <div class="wrap">
+      <h2>Questions on this</h2>
+      <div class="faq">
+${g.faqs.map(([q, ans]) => `        <details><summary>${esc(q)}</summary><p>${esc(ans)}</p></details>`).join('\n')}
+      </div>
+    </div>
+  </section>
+  <section class="block">
+    <div class="wrap">
+      <h2>Related</h2>
+      <div class="related">
+${g.relatedPages.map((s) => `        <a href="/${s}/">${esc(bySlug[s].nav)}</a>`).join('\n')}
+${g.relatedGuides.map((s) => `        <a href="/guides/${s}/">${esc(guideBySlug[s].nav)}</a>`).join('\n')}
+${AREAS.map((a) => `        <a href="/${a.slug}/">${esc(a.nav)}</a>`).join('\n')}
+      </div>
+    </div>
+  </section>
+${ctaSection('Need people on site?', 'Trade, numbers, postcode, start date and the ticket the gate will enforce')}
+</main>
+`;
+  return shell({ path, title: g.title, description: g.description, schemaHtml, body });
+}
+
+function guideIndex() {
+  const path = '/guides/';
+  const title = 'Construction recruitment guides | CSCS, hiring, right to work | PRL';
+  const description = 'Practical guides from PRL Site Solutions in Prenton: which site card, hiring labour in the Northwest, right to work, and how to brief an agency.';
+  const schemaHtml = [
+    breadcrumbs([['Home', `${SITE}/`], ['Guides', `${SITE}/guides/`]]),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Construction recruitment guides',
+      url: `${SITE}/guides/`,
+      isPartOf: { '@id': ORG_ID },
+      about: LOCAL_PROVIDER,
+    },
+  ].map(jsonLd).join('\n');
+  const body = `
+<header class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › Guides</nav>
+    <h1>Guides for hiring construction people</h1>
+    <p class="lede">How we read a site card, what a Northwest brief needs, and the checks that happen before anyone travels. Written from the Prenton desk, not a generic agency template.</p>
+  </div>
+</header>
+<main>
+  <section class="block">
+    <div class="wrap">
+      <div class="roles">
+${GUIDES.map((g) => `        <div class="role"><h3><a href="/guides/${g.slug}/">${esc(g.h1)}</a></h3><p>${esc(g.description)}</p></div>`).join('\n')}
+      </div>
+    </div>
+  </section>
+  <section class="block alt">
+    <div class="wrap">
+      <h2>Areas these apply to</h2>
+      <div class="related">
+${AREAS.map((a) => `        <a href="/${a.slug}/">${esc(a.city)}</a>`).join('\n')}
+        <a href="/case-studies/">Case studies</a>
+        <a href="${COMPANIES_HOUSE}">Companies House 14358717</a>
+      </div>
+    </div>
+  </section>
+${ctaSection('Tell us the postcode and the ticket', 'e.g. 4 blue-card groundworkers, CH41, Monday')}
+</main>
+`;
+  return shell({ path, title, description, schemaHtml, body });
 }
 
 // ───────────────────────── validate & write ─────────────────────────
@@ -579,10 +746,17 @@ for (const c of CASE_STUDIES) {
 }
 
 for (const a of AREAS) warn(a.slug, a.title, a.description);
+for (const g of GUIDES) {
+  warn(g.slug, g.title, g.description);
+  for (const r of g.relatedPages) if (!bySlug[r]) throw new Error(`${g.slug}: related page "${r}" does not exist`);
+  for (const r of g.relatedGuides) if (!guideBySlug[r]) throw new Error(`${g.slug}: related guide "${r}" does not exist`);
+}
 
 const OUTPUTS = [
   ...PAGES.map((p) => ({ path: `${p.slug}/`, html: page(p), prio: p.kind === 'sector' && p.slug.startsWith('energy') ? '0.9' : '0.8' })),
   ...AREAS.map((a) => ({ path: `${a.slug}/`, html: areaPage(a), prio: '0.8' })),
+  { path: 'guides/', html: guideIndex(), prio: '0.7' },
+  ...GUIDES.map((g) => ({ path: `guides/${g.slug}/`, html: guidePage(g), prio: '0.7' })),
   { path: 'case-studies/', html: caseStudyIndex(), prio: '0.7' },
   ...CASE_STUDIES.map((c) => ({ path: `case-studies/${c.slug}/`, html: caseStudy(c), prio: '0.7' })),
 ];

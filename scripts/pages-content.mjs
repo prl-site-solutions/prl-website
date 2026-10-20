@@ -352,6 +352,11 @@ export const AREAS = [
     h1: 'Construction recruitment on the Wirral',
     lede: 'PRL Site Solutions is registered in Prenton. We supply CSCS-checked labour, trades and plant to sites on the Wirral and across Merseyside, usually within 24 hours.',
     towns: ['Birkenhead', 'Wallasey', 'Prenton', 'Bromborough', 'Ellesmere Port', 'Heswall', 'Bebington'],
+    asks: [
+      ['Labour and groundworks', 'Green CSCS labourers and blue-card groundworkers for Birkenhead, Bromborough and sites further out toward Heswall and Bebington.'],
+      ['Plant', 'CPCS or NPORS telehandlers and 360 excavators. The category on the card is what the gate checks, not the word "driver".'],
+      ['Industrial next door', 'Ellesmere Port and the dock estate ask for the same mix as Ince Marsh: electricians, welders, banksmen and fire watch. That job is on the Chester page.'],
+    ],
     body: [
       'The company is PRL Site Solutions Ltd, number 14358717, registered in England and Wales. The registered office is 15 Beryl Road, Prenton, Wirral, CH43 9RS. The desk is open Monday to Friday, 9am to 5pm, on 0800 772 3959. Mobilising people onto a site is a separate promise: pre-checked workers can be on site the next day, including when the call comes in late.',
       'From Prenton we cover Birkenhead, Wallasey, Bromborough, Bebington, Heswall and across the Mersey into Ellesmere Port. Typical orders are labourers, groundworkers and banksmen, coded welders and platers, electricians, and CPCS or NPORS plant operators for contractors and plant and crane hire companies.',
@@ -374,6 +379,11 @@ export const AREAS = [
     h1: 'Construction recruitment in Liverpool',
     lede: 'CSCS labour, skilled trades and plant operators for Liverpool and the city region, supplied from our Wirral desk and checked before they start.',
     towns: ['Liverpool', 'Bootle', 'Speke', 'Knowsley', 'St Helens', 'Crosby', 'Kirkby'],
+    asks: [
+      ['City, docks and Speke', 'Fit-out trades, labourers and banksmen in the city and on the dock estate. Speke, Kirkby and Knowsley are more industrial: electricians, fitters and plant.'],
+      ['From the office', 'CH43 9RS is on the Birkenhead side of the Mersey tunnels, about 7 miles from Liverpool city centre. Bootle and Crosby are the same run.'],
+      ['Rail in the city region', 'Trackside staff need a current PTS card on Sentinel and are deployed under your sponsorship or a partner’s. PRL is not a Sentinel sponsor.'],
+    ],
     body: [
       'Liverpool sites ask for the same things we already supply: labourers and groundworkers, banksmen, electricians, welders, steel fixers, and CPCS or NPORS operators. We are based in Prenton, a short run through the tunnel, and the office line is 0800 772 3959, Monday to Friday, 9am to 5pm.',
       'Coverage includes the city, Bootle, Speke, Kirkby, Knowsley, Crosby and St Helens. For trackside rail work in the city region, PTS, COSS and Engineering Supervisor staff are deployed under your Sentinel sponsorship or a partner’s. PRL is not a Sentinel sponsor. Off-track rail civils, stations and depots we supply in the usual way.',
@@ -396,6 +406,11 @@ export const AREAS = [
     h1: 'Construction recruitment in Manchester',
     lede: 'Labour, trades and plant for Greater Manchester sites, supplied by a Wirral recruiter that already works on major Northwest projects.',
     towns: ['Manchester', 'Salford', 'Trafford', 'Stockport', 'Bolton', 'Wigan', 'Oldham'],
+    asks: [
+      ['What Manchester sites ask for', 'CSCS labour and groundworkers, CPCS excavators and telehandlers, electricians, coded welders and SMSTS supervisors. City commercial and out-of-town civils both come through the same desk.'],
+      ['No Manchester office', 'Greater Manchester is covered from Prenton. A start the next morning is normal. A start in an hour is not — book it the working day before.'],
+      ['Where this page stops', 'Salford, Trafford, Stockport, Bolton, Wigan and Oldham are in the weekly patch. Leeds and the rest of Yorkshire are not. Ask, and we will say if we can fill it.'],
+    ],
     body: [
       'We supply Greater Manchester from the Prenton office: labourers, groundworkers, banksmen, electricians, mechanical fitters, coded welders, steel fixers, site supervisors and CPCS or NPORS plant operators, including excavators, telehandlers and cranes.',
       'The patch covers Manchester, Salford, Trafford, Stockport, Bolton, Wigan and Oldham. Office hours are Monday to Friday, 9am to 5pm. If a site needs people tomorrow, say so on the call — rapid response is how most of our placements start, not a separate product.',
@@ -418,6 +433,11 @@ export const AREAS = [
     h1: 'Construction recruitment in Chester and Cheshire',
     lede: 'Chester, Ellesmere Port and the industrial sites around them — including the energy-from-waste build at Ince Marsh, where PRL has placed more than 420 people.',
     towns: ['Chester', 'Ellesmere Port', 'Ince', 'Deeside', 'Northwich', 'Frodsham', 'Helsby'],
+    asks: [
+      ['The job we can show', 'Protos Energy Park at Ince Marsh: more than 420 people placed for Metlen since March 2026, and 37 people supplied to Carey’s on the carbon-capture civils.'],
+      ['How an EfW crew changes', 'Civils and groundworks first, then steel fixers, platers, coded welders, electricians, pipefitters, plant, HSE and QA/QC as the job comes out of the ground.'],
+      ['Over the border', 'Deeside and nearby Flintshire sites are covered from the same desk. Chester city centre is about 15 miles from the Prenton office. Send the postcode either way.'],
+    ],
     body: [
       'Cheshire is where our largest published project sits. Protos Energy Park at Ince Marsh is an energy-from-waste plant with carbon capture, processing a designed 500,000 tonnes of waste a year. Since March 2026 we have placed more than 420 people there for Metlen: electricians, labourers, fire watch, plant, mechanical trades, civils and supervision, days and nights. A further 37 people went to Carey’s on the Protos carbon-capture civils.',
       'The same desk covers Chester, Ellesmere Port, Frodsham, Helsby, Northwich and over the border into Deeside. Trades are the ones on that job and the ones we advertise every week: coded welders, platers, steel fixers, electricians and testers, pipefitters, groundworkers, banksmen and site managers.',
@@ -440,6 +460,11 @@ export const AREAS = [
     h1: 'Construction recruitment in Warrington',
     lede: 'Labour, trades and plant for Warrington, Widnes and Runcorn, sent from our Wirral office and checked before they arrive.',
     towns: ['Warrington', 'Widnes', 'Runcorn', 'Birchwood', 'Newton-le-Willows', 'Lymm', 'Great Sankey'],
+    asks: [
+      ['Sheds, civils and nights', 'Logistics units and industrial builds along the M62. Night shifts are a normal brief, not an exception, and we ask about availability before anyone is put forward.'],
+      ['Tickets the gate usually wants', 'Green CSCS for labour, a banksman or slinger ticket where lifting is happening, CPCS or NPORS for telehandlers and excavators, and SMSTS where you need a supervisor.'],
+      ['How far is reasonable', 'Widnes and Runcorn are closer to Prenton than Manchester is. If the site is the far side of the M6, say so on the call and we will tell you whether we can fill it.'],
+    ],
     body: [
       'Warrington sits between Liverpool and Manchester, which is why so much of the work is logistics, industrial units, civils and plant. We supply the people those sites usually need at short notice: CSCS labourers and groundworkers, banksmen and slinger signallers, telehandler and excavator operators, electricians, and site supervisors.',
       'The towns we cover from this page are Warrington, Birchwood, Great Sankey, Lymm, Widnes, Runcorn and Newton-le-Willows. There is no published Warrington case study. The checking standard is the one used on Protos at Ince Marsh and on our other live jobs: CSCS or the right scheme card, right to work, and trade tickets recorded in PRISM with expiry dates.',
@@ -452,3 +477,191 @@ export const AREAS = [
     ],
   },
 ];
+
+// Practical guides. Public scheme rules plus PRL's own checking process.
+// Not legal advice, and not a substitute for the scheme operator's site.
+export const GUIDES = [
+  {
+    slug: 'which-site-card',
+    nav: 'Which site card',
+    title: 'CSCS, ECS, CPCS and NPORS: which card a site wants | PRL',
+    description: 'Green, blue, gold and black CSCS cards, plus ECS for electricians and CPCS or NPORS for plant. What PRL checks before anyone reaches a UK site.',
+    h1: 'Which card does the site actually want?',
+    lede: 'A CSCS card shows a health and safety test and, on most colours, a qualification. It does not show that the person can do tomorrow’s job. This is how we read a card before anyone is put forward.',
+    sections: [
+      {
+        h2: 'The colour is a shorthand, not the job',
+        paragraphs: [
+          'CSCS cards are issued by the Construction Skills Certification Scheme. The colour is a quick way to see the level. The occupation printed on the card is the part that matters on the gate. A blue card in one trade is not evidence of another.',
+          'Scheme rules change. The list below is the reading we use when a site says “CSCS only”. If a colour is disputed, the current CSCS register beats this page.',
+        ],
+        bullets: [
+          'Green — labourer. Health, safety and environment test, plus a Level 1 award in health and safety in a construction environment. Right for general labour. Wrong for a skilled trade.',
+          'Blue — skilled worker. Typically an NVQ or SVQ Level 2 in the trade named on the card. The usual card for a competent tradesman.',
+          'Gold — advanced craft or supervisor. Typically Level 3. The card says which of the two it is. Do not treat them as the same person.',
+          'Black — manager. A construction management qualification, the card a site manager is expected to hold.',
+          'White — academically or professionally qualified. Degrees and chartered routes. Common for engineers and designers visiting site, not for an operative.',
+          'Red — temporary. Trainee, apprentice, experienced worker and similar. These expire. We look at the date before we look at the photo.',
+          'Yellow — a visitor card. Not a licence to work. We do not send a visitor card in place of an operative.',
+        ],
+      },
+      {
+        h2: 'Electricians and plant are different schemes',
+        paragraphs: [
+          'An electrician on an industrial or building site is usually expected to hold an ECS card, the Electrotechnical Certification Scheme, not a generic CSCS labourer card. Testers need the testing qualification as well: 2391, 2394 or 2395, depending on what the site is asking them to sign off.',
+          'Plant is CPCS or NPORS. “Ticketed driver” is not a category. A 360 excavator, a telehandler and a crane are different cards. We only put forward the category named in the brief, and we record the expiry in PRISM.',
+        ],
+      },
+      {
+        h2: 'What we check, and what we refuse',
+        paragraphs: [
+          'Before a start, the card has to be in date, the occupation has to match the order, and right to work has to be on file. Coding certificates, SMSTS, SSSTS, NEBOSH and CCNSG are checked the same way when the site asks for them. Expiry dates sit in PRISM so a card that dies mid-placement is visible before the gate finds it.',
+          'If the brief is “four lads, CSCS”, we will ask which colour and which occupation. Sending green-card labourers to do a blue-card job wastes the induction and usually gets them turned away.',
+        ],
+      },
+    ],
+    faqs: [
+      ['Is a green CSCS card enough for a groundworker?', 'Only if the site has agreed that the work is general labour. A groundworker expected to work as a skilled operative should hold the blue skilled-worker card for that occupation. Tell us which one the principal contractor will accept.'],
+      ['Do you accept a photo of a card?', 'A photo starts the check. The card still has to be valid for the occupation, and the expiry is recorded. We do not send someone on a picture alone if the register or the date does not match.'],
+      ['Where should I confirm a card colour?', 'The scheme operator. CSCS for construction occupations, ECS for electrotechnical, CPCS or NPORS for plant. This page is how PRL reads those cards. It is not the scheme rulebook.'],
+    ],
+    relatedPages: ['construction-labour-supply', 'skilled-trades-recruitment', 'plant-operator-recruitment', 'site-management-recruitment'],
+    relatedGuides: ['briefing-a-construction-agency', 'right-to-work-before-a-start'],
+  },
+  {
+    slug: 'hiring-construction-labour-northwest',
+    nav: 'Hiring in the Northwest',
+    title: 'How to hire construction labour in the Northwest | PRL',
+    description: 'What to send a Wirral recruiter for a Liverpool, Manchester, Chester or Warrington site. Tickets, distance and the only local job we publish numbers for.',
+    h1: 'How to hire construction labour in the Northwest',
+    lede: 'PRL is registered in Prenton, Wirral. These are the towns we cover every week, how far is a fair ask, and what to put in the first call so the right people turn up.',
+    sections: [
+      {
+        h2: 'Start with the postcode, not the city',
+        paragraphs: [
+          '“Manchester” can mean the city centre or a field past Oldham. The postcode decides the travel, the induction site and whether we already have people who will take it. The registered office is 15 Beryl Road, Prenton, CH43 9RS, company 14358717. The desk is open Monday to Friday, 9am to 5pm, on 0800 772 3959.',
+          'CH43 9RS is about 7 miles from Liverpool city centre and about 15 miles from Chester. Widnes and Runcorn sit inside the same week. Greater Manchester is covered from Prenton, so it needs to be booked the working day before, not at 7am the same morning.',
+        ],
+      },
+      {
+        h2: 'What each part of the patch usually wants',
+        paragraphs: [
+          'The trades do not change much. The mix does. Use the local page for the town, not a generic “Northwest labour” brief.',
+        ],
+        bullets: [
+          'Wirral — Birkenhead, Wallasey, Bromborough, Heswall, plus Ellesmere Port. Labour, groundworkers, plant, and industrial trades heading toward the docks.',
+          'Liverpool — city, Bootle, Speke, Knowsley and St Helens. Fit-out and docks in the city, industrial trades at Speke and Kirkby. Trackside rail is under your Sentinel sponsorship. PRL is not a sponsor.',
+          'Chester and Cheshire — Chester, Ellesmere Port, Ince, Frodsham and Deeside. This is where the published large job is.',
+          'Warrington — Warrington, Birchwood, Widnes and Runcorn. Logistics sheds, civils and night shifts.',
+          'Manchester — Salford, Trafford, Stockport, Bolton, Wigan and Oldham. No local office. Same checks, longer travel.',
+        ],
+      },
+      {
+        h2: 'The only Northwest numbers we publish',
+        paragraphs: [
+          'Protos Energy Park at Ince Marsh, Cheshire, is an energy-from-waste plant with carbon capture. Since March 2026 we have placed more than 420 people there for Metlen: electricians, labourers, fire watch, plant, mechanical trades, civils and supervision, days and nights. A further 37 people went to Carey’s on the carbon-capture civils.',
+          'There is no published case study for Liverpool, Manchester or Warrington. Those pages do not invent one. The checking standard on them is the same PRISM process used at Ince: CSCS or the right scheme card, right to work, and tickets with expiry dates.',
+        ],
+      },
+      {
+        h2: 'A brief that can be filled overnight',
+        paragraphs: [
+          'In most cases, checked people can be on site the next day. That only works when the brief is specific. Trade and occupation, numbers, postcode, start time, shift, and the ticket the principal contractor will turn someone away for. CSCS colour, CPCS or NPORS category, weld process and position, SMSTS, CCNSG.',
+          'Rates, length of hire and whether the role is PAYE or limited company affect who will take the call. If you know them, say them. If the programme has already slipped, say that too. A next-morning start is a normal request.',
+        ],
+      },
+    ],
+    faqs: [
+      ['Do you have offices in Liverpool and Manchester?', 'No. The registered office is in Prenton, Wirral. Liverpool is a short run through the tunnels. Manchester is covered from the same desk, with the booking made the day before.'],
+      ['Can you cover North Wales?', 'Deeside and nearby Flintshire, yes, as part of the Chester patch. Further into Wales, tell us the postcode and we will say whether we can fill it.'],
+      ['Who do I call?', '0800 772 3959, Monday to Friday, 9am to 5pm, or the form on this page. info@prlsitesolutions.co.uk if you would rather write. The Google listing is under PRL Site Solutions | Recruitment Experts.'],
+    ],
+    relatedPages: ['construction-labour-supply', 'plant-operator-recruitment', 'energy-from-waste-recruitment'],
+    relatedGuides: ['which-site-card', 'briefing-a-construction-agency'],
+  },
+  {
+    slug: 'right-to-work-before-a-start',
+    nav: 'Right to work',
+    title: 'Right to work checks before a construction start | PRL',
+    description: 'PRL checks right to work before anyone is placed on a UK site and holds the record on file. What that covers, and what it does not replace for the hirer.',
+    h1: 'Right to work checks before someone starts on site',
+    lede: 'Nobody is put forward until right to work has been checked and the record is on file. This page is our process. It is not legal advice, and it does not replace a duty you hold as the hirer.',
+    sections: [
+      {
+        h2: 'When the check happens',
+        paragraphs: [
+          'The check is done before the person is offered to you, not on the morning they arrive at the turnstile. Documents are held on file. If a card, a share code or a date does not stand up, that person does not go onto the list.',
+          'The same file holds the site card (CSCS, ECS, CPCS or NPORS), trade tickets and expiry dates, in PRISM. Right to work is one line in that check, not a separate product you have to ask for.',
+        ],
+      },
+      {
+        h2: 'What you still need to tell us',
+        paragraphs: [
+          'Some sites, particularly rail, process plants and energy-from-waste jobs, add their own induction and sponsorship rules on top. Trackside workers on Network Rail infrastructure need PTS on Sentinel and are deployed under your sponsorship or a partner’s. PRL is not a Sentinel sponsor. A right-to-work pass does not put someone on Sentinel.',
+          'If your contract says the principal contractor will also inspect documents at induction, say so. We would rather send the pack you need than discover the gap at 6am.',
+        ],
+      },
+      {
+        h2: 'Where the official rules sit',
+        paragraphs: [
+          'Employers follow the Home Office right-to-work check. The official guidance is on GOV.UK, and it changes. We follow that check for the people we place. If you employ people directly, or your contract puts a check on you as well, use the current GOV.UK guidance rather than this page.',
+          'We do not give immigration advice, and we do not tell a worker which visa they should hold. If the check fails, they are not put forward.',
+        ],
+      },
+    ],
+    faqs: [
+      ['Do you check right to work on every placement?', 'Yes. Before anyone is placed, with the record held on file. It sits alongside the CSCS or scheme card and the trade tickets.'],
+      ['Does your check replace ours?', 'No. It covers the people we supply. If you are the employer, or your contract requires you to check as well, that duty stays with you. This page is not legal advice.'],
+      ['How does this relate to IR35?', 'They are different checks. Right to work is about permission to work in the UK. IR35 is about how a contractor engagement is taxed. We run IR35-compliant engagements as a separate control, not as a substitute for the right-to-work file.'],
+    ],
+    relatedPages: ['construction-labour-supply', 'rail-recruitment', 'site-management-recruitment'],
+    relatedGuides: ['which-site-card', 'briefing-a-construction-agency'],
+  },
+  {
+    slug: 'briefing-a-construction-agency',
+    nav: 'Brief an agency',
+    title: 'How to brief a construction recruitment agency | PRL',
+    description: 'The seven facts that decide whether a construction agency sends the right people: trade, ticket, numbers, postcode, start, shift and how they are paid.',
+    h1: 'How to brief a construction agency so the right people turn up',
+    lede: 'Most wrong CVs start with a vague order. These are the facts we ask for on 0800 772 3959, and why each one changes who we put forward.',
+    sections: [
+      {
+        h2: 'Seven facts, in this order',
+        paragraphs: [
+          'You do not need a formal scope. You do need enough that we can say yes or no the same day.',
+        ],
+        bullets: [
+          'Trade and occupation. “Trades” is not an order. Welder, groundworker, electrician, banksman and site supervisor are different people.',
+          'The ticket the gate will enforce. CSCS colour and occupation, ECS, CPCS or NPORS category, weld process and position, SMSTS, CCNSG, PTS. If you do not know, say what happened last time someone was refused.',
+          'Numbers. Three and thirty are different jobs. So is “two now and six next Monday”.' ,
+          'Postcode. Travel is part of whether someone will take the shift. City names are not precise enough on the Wirral, Merseyside or Greater Manchester.',
+          'Start date and time. Next morning is normal. Same hour is usually not, because the checks are done before they travel.',
+          'Shift. Days, nights, weekends, a possession. We ask the worker before we promise you.',
+          'Duration and how they are engaged. A two-day cover and a six-month EfW placement do not come from the same list. PAYE or limited company, if you already know.',
+        ],
+      },
+      {
+        h2: 'What we will not pretend',
+        paragraphs: [
+          'We will not invent a local case study to win a town we have not published. The large published Northwest job is Protos at Ince Marsh. The checking standard everywhere else is the same: card, right to work, tickets, expiry dates in PRISM.',
+          'We will tell you if the ticket is scarce. A 6G coded welder with an in-date certificate is not the same phone call as a green-card labourer. Saying “we’ll try” and sending the wrong card is how sites lose a morning.',
+        ],
+      },
+      {
+        h2: 'After they start',
+        paragraphs: [
+          'A project manager is appointed to the customer’s site, and we visit to check our workforce are all right and being treated properly. Timesheets and documents go through the PRISM app. If a ticket is due to expire during the hire, that date is already on the record.',
+          'To place the order: call 0800 772 3959, Monday to Friday 9am to 5pm, or use the form. The company is PRL Site Solutions Ltd, 15 Beryl Road, Prenton, Wirral, CH43 9RS.',
+        ],
+      },
+    ],
+    faqs: [
+      ['What if I only know the trade and the town?', 'Call anyway. We would rather fill the gaps on the phone than guess the ticket. You will get fewer, better names than from a one-line email that says “labourers, Liverpool”.'],
+      ['Can you start people tomorrow?', 'In most cases, yes, if the brief lands while the checks can still be done. Office hours are 9am to 5pm. The mobilisation promise is the next day, not a guarantee for a call made at midnight.'],
+      ['Do you cover the whole UK from this brief?', 'Yes, when we can fill it. The weekly patch without a long travel conversation is the Wirral, Liverpool, Chester and Cheshire, Warrington and Greater Manchester. Further out, the postcode decides.'],
+    ],
+    relatedPages: ['skilled-trades-recruitment', 'construction-labour-supply', 'site-management-recruitment', 'energy-from-waste-recruitment'],
+    relatedGuides: ['which-site-card', 'hiring-construction-labour-northwest', 'right-to-work-before-a-start'],
+  },
+];
+
