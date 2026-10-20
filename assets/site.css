@@ -110,7 +110,7 @@ section.alt{background:var(--g50)}
 
 /* Footer */
 .footer{background:var(--g900);color:#9ca3af;padding:48px 0 24px;font-size:14px}
-.footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+.footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 0.8fr;gap:28px}
 .footer h2{color:#fff;font-size:14px;margin-bottom:12px}
 .footer a{display:block;text-decoration:none;padding:3px 0}
 .footer a:hover{color:#fff}

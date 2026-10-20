@@ -8,7 +8,7 @@
 // this after editing the content and commit both.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
-import { COMMON_CHECKS, STEPS, PAGES, CASE_STUDIES } from './pages-content.mjs';
+import { COMMON_CHECKS, STEPS, PAGES, CASE_STUDIES, AREAS } from './pages-content.mjs';
 
 const SITE = 'https://prlsitesolutions.co.uk';
 const ORG_ID = `${SITE}/#organization`;
@@ -19,7 +19,29 @@ const PUBLISHED = '2026-09-26';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const jsonLd = (o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`;
+const MAPS = 'https://www.google.com/maps/place/?q=place_id:ChIJpahC5Xt2RSURTYVO12XzYpk';
+const HOURS = {
+  '@type': 'OpeningHoursSpecification',
+  dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+  opens: '09:00',
+  closes: '17:00',
+};
 const PROVIDER = { '@type': 'EmploymentAgency', '@id': ORG_ID, name: 'PRL Site Solutions', url: `${SITE}/`, telephone: '+448007723959' };
+const LOCAL_PROVIDER = {
+  ...PROVIDER,
+  alternateName: ['PRL Site Solutions Ltd', 'PRL Site Solutions | Recruitment Experts'],
+  email: 'info@prlsitesolutions.co.uk',
+  hasMap: MAPS,
+  openingHoursSpecification: HOURS,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '15 Beryl Road',
+    addressLocality: 'Prenton',
+    addressRegion: 'Wirral',
+    postalCode: 'CH43 9RS',
+    addressCountry: 'GB',
+  },
+};
 
 const breadcrumbs = (items) => ({
   '@context': 'https://schema.org',
@@ -69,8 +91,10 @@ const FOOTER = `<footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <strong style="color:#fff">PRL Site Solutions Ltd</strong>
-        <p>Construction, industrial and energy-from-waste recruitment. 15 Beryl Road, Prenton, Wirral CH43 9RS.<br>
-        <a href="tel:08007723959" style="display:inline">0800 772 3959</a> · <a href="mailto:info@prlsitesolutions.co.uk" style="display:inline">info@prlsitesolutions.co.uk</a></p>
+        <p>Construction recruitment. Registered office: 15 Beryl Road, Prenton, Wirral CH43 9RS.<br>
+        Company no. 14358717. Office Monday to Friday, 9am–5pm.<br>
+        <a href="tel:08007723959" style="display:inline">0800 772 3959</a> · <a href="mailto:info@prlsitesolutions.co.uk" style="display:inline">info@prlsitesolutions.co.uk</a><br>
+        <a href="${MAPS}">Google listing and reviews</a></p>
         <p class="footer-social" style="margin-top:12px;display:flex;gap:10px;align-items:center"><a href="https://www.linkedin.com/company/prl-site-solutions/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);color:#fff;padding:0" aria-label="PRL Site Solutions on LinkedIn" title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a><a href="https://www.instagram.com/prlsitesolutionsltd/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);color:#fff;padding:0" aria-label="PRL Site Solutions on Instagram" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/profile.php?id=61595134512677" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);color:#fff;padding:0" aria-label="PRL Site Solutions on Facebook" title="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07"/></svg></a></p>
         <div class="footer-badges">
           <img src="/assets/cyber-essentials-white.png" alt="Cyber Essentials certified" width="120" height="48" loading="lazy" style="height:48px;width:auto">
@@ -79,6 +103,7 @@ const FOOTER = `<footer class="footer">
       </div>
       <div><h2>Services</h2>${PAGES.filter((p) => p.kind === 'service').map((p) => `<a href="/${p.slug}/">${esc(p.nav)}</a>`).join('')}</div>
       <div><h2>Sectors</h2>${PAGES.filter((p) => p.kind === 'sector').map((p) => `<a href="/${p.slug}/">${esc(p.nav)}</a>`).join('')}</div>
+      <div><h2>Areas</h2>${AREAS.map((a) => `<a href="/${a.slug}/">${esc(a.nav)}</a>`).join('')}<a href="${MAPS}">Google reviews</a></div>
       <div><h2>Company</h2><a href="/case-studies/">Case studies</a><a href="/careers.html">Live vacancies</a><a href="/#contact">Contact us</a><a href="https://www.prismworkforce.online/apply">Apply for work</a><a href="https://www.prismworkforce.online/privacy">Privacy policy</a><a href="/modern-slavery.html">Modern slavery statement</a></div>
     </div>
     <div class="footer-bottom"><span>&copy; ${new Date().getFullYear()} PRL Site Solutions Ltd. All rights reserved.</span><span>Proud supporters of the Lighthouse Construction Industry Charity</span></div>
@@ -434,6 +459,109 @@ ${ctaSection('Staffing your next project?', 'Trades, numbers, site and start dat
   return shell({ path, title: 'Case Studies | Projects Staffed by PRL Site Solutions', description, schemaHtml, body });
 }
 
+// ───────────────────────── local area pages ─────────────────────────
+
+function areaPage(a) {
+  const path = `/${a.slug}/`;
+  const url = `${SITE}${path}`;
+  const others = AREAS.filter((o) => o.slug !== a.slug);
+  const schemaHtml = [
+    breadcrumbs([['Home', `${SITE}/`], ['Areas', `${SITE}/#areas`], [a.nav, url]]),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: a.h1,
+      serviceType: 'Construction recruitment',
+      description: a.description,
+      url,
+      provider: LOCAL_PROVIDER,
+      areaServed: [
+        { '@type': 'City', name: a.city },
+        ...a.towns.filter((t) => t !== a.city).map((name) => ({ '@type': 'City', name })),
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: a.faqs.map(([q, ans]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: ans } })),
+    },
+  ].map(jsonLd).join('\n');
+
+  const services = ['skilled-trades-recruitment', 'construction-labour-supply', 'plant-operator-recruitment', 'site-management-recruitment'];
+  const body = `
+<header class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/#areas">Areas</a> › ${esc(a.nav)}</nav>
+    <h1>${esc(a.h1)}</h1>
+    <p class="lede">${esc(a.lede)}</p>
+    <div class="hero-actions">
+      <a href="#enquiry" class="btn btn-amber">Request workers in ${esc(a.nav)}</a>
+      <a href="tel:08007723959" class="btn btn-ghost">Call 0800 772 3959</a>
+    </div>
+    <ul class="hero-facts"><li>Registered office in Prenton, Wirral</li><li>Office Monday–Friday, 9am–5pm</li><li>On site within 24 hours in most cases</li></ul>
+  </div>
+</header>
+
+<main>
+  <section class="block">
+    <div class="wrap prose">
+      <h2>Supplying ${esc(a.city)} and nearby</h2>
+${a.body.map((para) => `      <p>${esc(para)}</p>`).join('\n')}
+      <p>Towns covered from this page: ${esc(a.towns.join(', '))}.</p>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="wrap">
+      <h2>Checked before they reach your site</h2>
+      <ul class="checks">
+${COMMON_CHECKS.map(([b, rest]) => `        <li><strong>${esc(b)}:</strong> ${esc(rest)}</li>`).join('\n')}
+      </ul>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <div class="steps">
+${STEPS.map(([h, t]) => `        <div class="step"><h3>${esc(h)}</h3><p>${esc(t)}</p></div>`).join('\n')}
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="wrap">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+${a.faqs.map(([q, ans]) => `        <details><summary>${esc(q)}</summary><p>${esc(ans)}</p></details>`).join('\n')}
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2>Related</h2>
+      <div class="related">
+${services.map((s) => `        <a href="/${s}/">${esc(bySlug[s].nav)} recruitment</a>`).join('\n')}
+${others.map((o) => `        <a href="/${o.slug}/">${esc(o.nav)} recruitment</a>`).join('\n')}
+        <a href="/case-studies/">Case studies</a>
+        <a href="${MAPS}">Google listing</a>
+      </div>
+    </div>
+  </section>
+
+${ctaSection(`Need people on a ${a.nav} site?`, `e.g. 6 labourers, ${a.city}, Monday, days`)}
+</main>
+`;
+  return shell({
+    path,
+    title: a.title,
+    description: a.description,
+    schemaHtml: `<meta name="geo.placename" content="${esc(a.city)}, ${esc(a.region)}">\n  <meta name="geo.position" content="${a.geo[0]};${a.geo[1]}">\n  <meta name="ICBM" content="${a.geo[0]}, ${a.geo[1]}">\n  ${schemaHtml}`,
+    body,
+  });
+}
+
 // ───────────────────────── validate & write ─────────────────────────
 
 const warn = (slug, title, description) => {
@@ -450,8 +578,11 @@ for (const c of CASE_STUDIES) {
   for (const r of c.related) if (!bySlug[r]) throw new Error(`${c.slug}: related page "${r}" does not exist`);
 }
 
+for (const a of AREAS) warn(a.slug, a.title, a.description);
+
 const OUTPUTS = [
   ...PAGES.map((p) => ({ path: `${p.slug}/`, html: page(p), prio: p.kind === 'sector' && p.slug.startsWith('energy') ? '0.9' : '0.8' })),
+  ...AREAS.map((a) => ({ path: `${a.slug}/`, html: areaPage(a), prio: '0.8' })),
   { path: 'case-studies/', html: caseStudyIndex(), prio: '0.7' },
   ...CASE_STUDIES.map((c) => ({ path: `case-studies/${c.slug}/`, html: caseStudy(c), prio: '0.7' })),
 ];

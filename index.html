@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>PRL Site Solutions | Construction Recruitment Specialists | Northwest UK</title>
-  <meta name="description" content="PRL Site Solutions is a leading construction recruitment agency in the Northwest UK. We supply CSCS-certified skilled tradesmen, labourers, plant operators, and site managers to construction, plant hire, and crane hire companies across the UK. 24-hour rapid response. 0800 772 3959.">
+  <meta name="description" content="Construction recruitment from Prenton, Wirral. CSCS trades, labour and plant for Liverpool, Manchester, Chester and UK sites. Office 9am–5pm. 0800 772 3959.">
   <meta name="keywords" content="construction recruitment, staffing agency, PRL Site Solutions, skilled tradesmen, labourers, plant operators, site managers, CSCS certified, Liverpool, Manchester, Northwest UK, crane hire recruitment, temporary workers construction, recruitment agency Wirral, Merseyside recruitment, Lancashire staffing, construction workers UK">
   <meta name="author" content="PRL Site Solutions Ltd">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -44,13 +44,19 @@
     "@type": "EmploymentAgency",
     "@id": "https://prlsitesolutions.co.uk/#organization",
     "name": "PRL Site Solutions",
-    "alternateName": "PRL Site Solutions Ltd",
+    "alternateName": ["PRL Site Solutions Ltd", "PRL Site Solutions | Recruitment Experts"],
     "url": "https://prlsitesolutions.co.uk/",
     "logo": "https://prlsitesolutions.co.uk/assets/prl_logo.jpg",
     "image": "https://prlsitesolutions.co.uk/assets/prl_logo.jpg",
     "description": "Leading construction recruitment agency in the Northwest UK. Supplying CSCS-certified skilled tradesmen, labourers, plant operators, and site managers to construction, plant hire, and crane hire companies across the UK.",
     "telephone": "+448007723959",
     "email": "info@prlsitesolutions.co.uk",
+    "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJpahC5Xt2RSURTYVO12XzYpk",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "UK Companies House",
+      "value": "14358717"
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "15 Beryl Road, Prenton",
@@ -84,17 +90,16 @@
       {"@type": "City", "name": "Birmingham"}
     ],
     "sameAs": [
+      "https://www.google.com/maps/place/?q=place_id:ChIJpahC5Xt2RSURTYVO12XzYpk",
       "https://www.linkedin.com/company/prl-site-solutions/",
       "https://www.facebook.com/profile.php?id=61595134512677",
       "https://www.instagram.com/prlsitesolutionsltd/",
-      "https://www.cv-library.co.uk/list-jobs/454083/PRL-Site-Solutions",
-      "https://www.linkedin.com/company/102646020/",
-      "https://www.linkedin.com/in/keenan-thomas-b8485911a/"
+      "https://www.cv-library.co.uk/list-jobs/454083/PRL-Site-Solutions"
     ],
     "openingHoursSpecification": [{"@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "07:00",
-      "closes": "18:00"
+      "opens": "09:00",
+      "closes": "17:00"
     }],
     "priceRange": "££",
     "knowsAbout": ["Construction Recruitment","Skilled Tradesmen","Plant Operators","Site Management","CSCS Certification","IR35 Compliance","Crane Hire Staffing"]
@@ -146,7 +151,7 @@
         "name": "What areas does PRL Site Solutions cover?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "PRL Site Solutions is based in Wirral, Merseyside and operates nationwide across the UK. We have strong coverage across Northwest England including Liverpool, Manchester, Chester, Warrington, Preston, and Lancashire, and regularly place workers on projects in Wales, the Midlands, and southern England."
+          "text": "PRL Site Solutions is registered in Prenton, Wirral and covers the Northwest and sites across the UK. Local pages: Wirral, Liverpool, Manchester, Chester and Cheshire, and Warrington. We also place people in Wales, the Midlands and southern England."
         }
       },
       {
@@ -299,7 +304,11 @@
     a.sector-card h3{color:var(--blue)}
     .card-link{display:inline-block;margin-top:2px;padding:10px 0;font-size:14px;font-weight:600;color:var(--blue)}
     .card-link:hover{text-decoration:underline}
-    .sector-specialist{text-align:center;margin-top:28px;color:var(--g700)}
+    .area-card p{font-size:13px;color:var(--g500);margin-top:6px;font-weight:500;line-height:1.4}
+    .areas-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .faq details{border-bottom:1px solid var(--g200);padding:8px 0}
+    .faq summary{font-weight:700;cursor:pointer;padding:8px 0}
+    .faq details p{color:var(--g700);margin:8px 0 12px}
     .sector-specialist a{color:var(--blue);font-weight:600;text-decoration:underline}
 
     /* CTA */
@@ -330,7 +339,7 @@
 
     /* Footer */
     .footer{background:var(--g900);color:var(--g500);padding:48px 24px 24px;background-image:radial-gradient(circle,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:32px 32px}
-    .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+    .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 0.8fr 0.9fr;gap:28px}
     .footer h2{color:white;font-size:14px;font-weight:700;margin-bottom:16px}
     .footer a{display:block;font-size:13px;color:var(--g500);padding:4px 0;transition:color 0.2s}
     .footer a:hover{color:white}
@@ -358,6 +367,7 @@
       .prism-inner{grid-template-columns:1fr;text-align:center}
       .prism-features{text-align:left;padding-left:0}
       .sectors-grid{grid-template-columns:repeat(2,1fr)}
+      .areas-grid{grid-template-columns:1fr 1fr}
       .cta-inner{grid-template-columns:1fr}
       .enquiry{padding:22px}
       .enquiry-grid{grid-template-columns:1fr}
@@ -418,12 +428,13 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <img src="./assets/prl_logo_96.jpg" alt="" width="44" height="44">
+        <img src="./assets/prl_logo_96.jpg" alt="PRL Site Solutions" width="44" height="44">
         <span>PRL Site Solutions</span>
       </a>
       <div class="nav-links" id="navLinks">
         <a href="#services">Services</a>
         <a href="#sectors">Sectors</a>
+        <a href="#areas">Areas</a>
         <a href="#prism">PRISM App</a>
         <a href="./careers.html">Vacancies</a>
         <a href="https://www.prismworkforce.online/login">Contractor Login</a>
@@ -520,6 +531,20 @@
     </div>
   </section>
 
+  <section class="section" id="areas">
+    <div class="section-inner">
+      <div class="section-header"><h2>Construction recruitment across the Northwest</h2><p>Registered in Prenton, Wirral. The office is open Monday to Friday, 9am to 5pm. Checked workers can be on site within 24 hours, including when you call outside those hours.</p></div>
+      <div class="areas-grid">
+        <a href="/construction-recruitment-wirral/" class="sector-card area-card"><h3>Wirral</h3><p>Prenton, Birkenhead, Wallasey, Ellesmere Port</p></a>
+        <a href="/construction-recruitment-liverpool/" class="sector-card area-card"><h3>Liverpool</h3><p>City, Bootle, Speke, Knowsley</p></a>
+        <a href="/construction-recruitment-manchester/" class="sector-card area-card"><h3>Manchester</h3><p>Salford, Trafford, Stockport, Bolton</p></a>
+        <a href="/construction-recruitment-chester/" class="sector-card area-card"><h3>Chester</h3><p>Ellesmere Port, Ince Marsh, Deeside</p></a>
+        <a href="/construction-recruitment-warrington/" class="sector-card area-card"><h3>Warrington</h3><p>Widnes, Runcorn, Birchwood</p></a>
+      </div>
+      <p class="sector-specialist">Google listing: <a href="https://www.google.com/maps/place/?q=place_id:ChIJpahC5Xt2RSURTYVO12XzYpk">PRL Site Solutions | Recruitment Experts</a>. Registered office: 15 Beryl Road, Prenton, Wirral CH43 9RS. Company no. 14358717.</p>
+    </div>
+  </section>
+
   <!-- PRISM -->
   <section class="prism-section" id="prism">
     <img src="./assets/prl_logo_hires.png" alt="" class="hero-watermark" width="640" height="640">
@@ -538,6 +563,20 @@
       </div>
       <div class="prism-mockup anim-right">
         <img src="./assets/prl_logo_hires.png" alt="PRISM" width="220" height="220" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="faq">
+    <div class="section-inner">
+      <div class="section-header"><h2>Questions contractors ask</h2></div>
+      <div class="faq" style="max-width:800px;margin:0 auto;text-align:left">
+        <details><summary>What types of workers does PRL Site Solutions supply?</summary><p>CSCS-certified skilled tradesmen, general labourers, groundworkers, plant operators (CPCS/NPORS), site managers, supervisors and project coordinators. We also cover energy-from-waste, M&E and industrial construction.</p></details>
+        <details><summary>How quickly can PRL supply workers to a site?</summary><p>The office is open Monday to Friday, 9am to 5pm. Mobilisation is faster than that: pre-checked people can be on site the next day in most cases, across the Northwest and the rest of the UK.</p></details>
+        <details><summary>Are all PRL contractors CSCS certified?</summary><p>Yes. Operatives hold a valid CSCS card, or the right scheme card for the trade. Plant operators carry CPCS or NPORS. Right to work, tickets and IR35 are checked in PRISM before anyone starts.</p></details>
+        <details><summary>What areas does PRL Site Solutions cover?</summary><p>Registered in Prenton, Wirral, and working across the Northwest: <a href="/construction-recruitment-wirral/">Wirral</a>, <a href="/construction-recruitment-liverpool/">Liverpool</a>, <a href="/construction-recruitment-manchester/">Manchester</a>, <a href="/construction-recruitment-chester/">Chester and Cheshire</a> and <a href="/construction-recruitment-warrington/">Warrington</a>, plus sites in Wales, the Midlands and southern England.</p></details>
+        <details><summary>How do I register as a contractor?</summary><p>Apply at prismworkforce.online/apply, or call 0800 772 3959. Then use the PRISM app for timesheets, documents and assignments.</p></details>
+        <details><summary>What is the PRISM app?</summary><p>PRISM is our contractor portal. Timesheets, CSCS and ticket uploads, expiry dates and live assignments, from a phone.</p></details>
       </div>
     </div>
   </section>
@@ -626,10 +665,10 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
-          <img src="./assets/prl_logo_96.jpg" alt="" width="36" height="36" style="width:36px;height:36px;border-radius:50%">
+          <img src="./assets/prl_logo_96.jpg" alt="PRL Site Solutions" width="36" height="36" style="width:36px;height:36px;border-radius:50%">
           <span style="color:white;font-weight:700">PRL Site Solutions</span>
         </div>
-        <p>Northwest UK's leading bespoke recruitment agency for construction, plant, and crane hire. Supplying skilled, certified tradesmen and labourers nationwide.</p>
+        <p>Construction recruitment from Prenton, Wirral. Office Monday to Friday, 9am–5pm.<br>15 Beryl Road, Prenton, Wirral CH43 9RS<br>PRL Site Solutions Ltd · company no. 14358717<br><a href="tel:08007723959" style="display:inline;color:#fff">0800 772 3959</a> · <a href="mailto:info@prlsitesolutions.co.uk" style="display:inline;color:#fff">info@prlsitesolutions.co.uk</a><br><a href="https://www.google.com/maps/place/?q=place_id:ChIJpahC5Xt2RSURTYVO12XzYpk" style="display:inline;color:#fff;text-decoration:underline">Google listing and reviews</a></p>
         <p class="footer-social" style="margin-top:12px;display:flex;gap:10px;align-items:center"><a href="https://www.linkedin.com/company/prl-site-solutions/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);color:#fff;padding:0" aria-label="PRL Site Solutions on LinkedIn" title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a><a href="https://www.instagram.com/prlsitesolutionsltd/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);color:#fff;padding:0" aria-label="PRL Site Solutions on Instagram" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/profile.php?id=61595134512677" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);color:#fff;padding:0" aria-label="PRL Site Solutions on Facebook" title="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07"/></svg></a></p>
         <div style="display:flex;align-items:center;gap:16px;margin-top:16px">
           <img src="./assets/cyber-essentials-white.png" alt="Cyber Essentials Certified" width="140" height="56" loading="lazy" style="height:56px;width:auto;object-fit:contain;">
@@ -638,6 +677,7 @@
       </div>
       <div><h2>Services</h2><a href="/skilled-trades-recruitment/">Skilled Trades</a><a href="/construction-labour-supply/">Labour Supply</a><a href="/plant-operator-recruitment/">Plant Operators</a><a href="/site-management-recruitment/">Site Management</a><a href="/energy-from-waste-recruitment/">Energy-from-Waste</a><a href="/industrial-construction-recruitment/">Industrial</a><a href="/mechanical-electrical-recruitment/">M&amp;E</a><a href="/rail-recruitment/">Rail</a></div>
       <div><h2>Contractors</h2><a href="https://www.prismworkforce.online/apply">Looking for Work?</a><a href="https://www.prismworkforce.online/payment-query">Payment Query</a><a href="https://www.prismworkforce.online/grievance">Make a Complaint</a><a href="https://www.prismworkforce.online/policy-documents">Company Policies</a><a href="https://www.prismworkforce.online/login">Login</a><a href="https://www.prismworkforce.online/install">Get the App</a></div>
+      <div><h2>Areas</h2><a href="/construction-recruitment-wirral/">Wirral</a><a href="/construction-recruitment-liverpool/">Liverpool</a><a href="/construction-recruitment-manchester/">Manchester</a><a href="/construction-recruitment-chester/">Chester</a><a href="/construction-recruitment-warrington/">Warrington</a><a href="https://www.google.com/maps/place/?q=place_id:ChIJpahC5Xt2RSURTYVO12XzYpk">Google reviews</a></div>
       <div><h2>Company</h2><a href="/case-studies/">Case Studies</a><a href="./careers.html">Live Vacancies</a><a href="#contact">Contact Us</a><a href="https://www.prismworkforce.online/privacy">Privacy Policy</a><a href="https://www.prismworkforce.online/supplier-questionnaire">Supplier Registration</a><a href="./modern-slavery.html">Modern Slavery Statement</a></div>
     </div>
     <!-- Lighthouse Charity -->
