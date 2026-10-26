@@ -22,7 +22,7 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 const jsonLd = (o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`;
 const MAPS = 'https://www.google.com/maps/place/?q=place_id:ChIJpahC5Xt2RSURTYVO12XzYpk';
 const COMPANIES_HOUSE = 'https://find-and-update.company-information.service.gov.uk/company/14358717';
-const OFFICE_GEO = { '@type': 'GeoCoordinates', latitude: 53.3863, longitude: -3.0788 };
+const OFFICE_GEO = { '@type': 'GeoCoordinates', latitude: 53.4308, longitude: -3.0560 };
 const NW_CITIES = ['Wirral', 'Liverpool', 'Birkenhead', 'Chester', 'Warrington', 'Manchester'];
 const HOURS = {
   '@type': 'OpeningHoursSpecification',
@@ -39,10 +39,10 @@ const LOCAL_PROVIDER = {
   openingHoursSpecification: HOURS,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '15 Beryl Road',
-    addressLocality: 'Prenton',
+    streetAddress: '259 Wallasey Village',
+    addressLocality: 'Wallasey',
     addressRegion: 'Wirral',
-    postalCode: 'CH43 9RS',
+    postalCode: 'CH45 3LR',
     addressCountry: 'GB',
   },
   geo: OFFICE_GEO,
@@ -110,7 +110,7 @@ const FOOTER = `<footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <strong style="color:#fff">PRL Site Solutions Ltd</strong>
-        <p>Construction recruitment. Registered office: 15 Beryl Road, Prenton, Wirral CH43 9RS.<br>
+        <p>Construction recruitment. Registered office: 259 Wallasey Village, Wallasey, Wirral, Merseyside CH45 3LR.<br>
         Company no. 14358717. Office Monday to Friday, 9am–5pm.<br>
         <a href="tel:08007723959" style="display:inline">0800 772 3959</a> · <a href="mailto:info@prlsitesolutions.co.uk" style="display:inline">info@prlsitesolutions.co.uk</a><br>
         <a href="${MAPS}">Google listing and reviews</a></p>
@@ -529,7 +529,7 @@ function areaPage(a) {
       <a href="#enquiry" class="btn btn-amber">Request workers in ${esc(a.nav)}</a>
       <a href="tel:08007723959" class="btn btn-ghost">Call 0800 772 3959</a>
     </div>
-    <ul class="hero-facts"><li>Registered office in Prenton, Wirral</li><li>Office Monday–Friday, 9am–5pm</li><li>On site within 24 hours in most cases</li></ul>
+    <ul class="hero-facts"><li>Registered office in Wallasey, Wirral</li><li>Office Monday–Friday, 9am–5pm</li><li>On site within 24 hours in most cases</li></ul>
   </div>
 </header>
 
@@ -539,7 +539,7 @@ function areaPage(a) {
       <h2>Supplying ${esc(a.city)} and nearby</h2>
 ${a.body.map((para) => `      <p>${esc(para)}</p>`).join('\n')}
       <p>Towns covered from this page: ${esc(a.towns.join(', '))}.</p>
-      <p><strong>PRL Site Solutions Ltd</strong>, 15 Beryl Road, Prenton, Wirral, CH43 9RS. Company <a href="${COMPANIES_HOUSE}">14358717</a>. <a href="tel:08007723959">0800 772 3959</a>, Monday to Friday 9am–5pm. <a href="${MAPS}">Google listing</a>.</p>
+      <p><strong>PRL Site Solutions Ltd</strong>, 259 Wallasey Village, Wallasey, Wirral, Merseyside, CH45 3LR. Company <a href="${COMPANIES_HOUSE}">14358717</a>. <a href="tel:08007723959">0800 772 3959</a>, Monday to Friday 9am–5pm. <a href="${MAPS}">Google listing</a>.</p>
     </div>
   </section>
 
@@ -652,7 +652,7 @@ function guidePage(g) {
       <a href="#enquiry" class="btn btn-amber">Request workers</a>
       <a href="tel:08007723959" class="btn btn-ghost">Call 0800 772 3959</a>
     </div>
-    <ul class="hero-facts"><li>PRL Site Solutions Ltd, Prenton</li><li>Company 14358717</li><li>Not legal advice</li></ul>
+    <ul class="hero-facts"><li>PRL Site Solutions Ltd, Wallasey</li><li>Company 14358717</li><li>Not legal advice</li></ul>
   </div>
 </header>
 
@@ -685,7 +685,7 @@ ${ctaSection('Need people on site?', 'Trade, numbers, postcode, start date and t
 function guideIndex() {
   const path = '/guides/';
   const title = 'Construction recruitment guides | CSCS, hiring, right to work | PRL';
-  const description = 'Practical guides from PRL Site Solutions in Prenton: which site card, hiring labour in the Northwest, right to work, and how to brief an agency.';
+  const description = 'Practical guides from PRL Site Solutions in Wallasey: which site card, hiring labour in the Northwest, right to work, and how to brief an agency.';
   const schemaHtml = [
     breadcrumbs([['Home', `${SITE}/`], ['Guides', `${SITE}/guides/`]]),
     {
@@ -702,7 +702,7 @@ function guideIndex() {
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › Guides</nav>
     <h1>Guides for hiring construction people</h1>
-    <p class="lede">How we read a site card, what a Northwest brief needs, and the checks that happen before anyone travels. Written from the Prenton desk, not a generic agency template.</p>
+    <p class="lede">How we read a site card, what a Northwest brief needs, and the checks that happen before anyone travels. Written from the Wallasey desk, not a generic agency template.</p>
   </div>
 </header>
 <main>
