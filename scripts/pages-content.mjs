@@ -346,11 +346,11 @@ export const AREAS = [
     nav: 'Wirral',
     city: 'Wirral',
     region: 'Merseyside',
-    geo: [53.3727, -3.0738],
+    geo: [53.4308, -3.0560],
     title: 'Construction Recruitment Wirral | Labour & Trades | PRL',
-    description: 'Wirral construction recruitment from Prenton. CSCS labour, trades and plant for Birkenhead, Wallasey, Ellesmere Port and sites across Merseyside.',
+    description: 'Wirral construction recruitment from Wallasey. CSCS labour, trades and plant for Birkenhead, Prenton, Ellesmere Port and sites across Merseyside.',
     h1: 'Construction recruitment on the Wirral',
-    lede: 'PRL Site Solutions is registered in Prenton. We supply CSCS-checked labour, trades and plant to sites on the Wirral and across Merseyside, usually within 24 hours.',
+    lede: 'PRL Site Solutions is registered in Wallasey. We supply CSCS-checked labour, trades and plant to sites on the Wirral and across Merseyside, usually within 24 hours.',
     towns: ['Birkenhead', 'Wallasey', 'Prenton', 'Bromborough', 'Ellesmere Port', 'Heswall', 'Bebington'],
     asks: [
       ['Labour and groundworks', 'Green CSCS labourers and blue-card groundworkers for Birkenhead, Bromborough and sites further out toward Heswall and Bebington.'],
@@ -358,12 +358,12 @@ export const AREAS = [
       ['Industrial next door', 'Ellesmere Port and the dock estate ask for the same mix as Ince Marsh: electricians, welders, banksmen and fire watch. That job is on the Chester page.'],
     ],
     body: [
-      'The company is PRL Site Solutions Ltd, number 14358717, registered in England and Wales. The registered office is 15 Beryl Road, Prenton, Wirral, CH43 9RS. The desk is open Monday to Friday, 9am to 5pm, on 0800 772 3959. Mobilising people onto a site is a separate promise: pre-checked workers can be on site the next day, including when the call comes in late.',
-      'From Prenton we cover Birkenhead, Wallasey, Bromborough, Bebington, Heswall and across the Mersey into Ellesmere Port. Typical orders are labourers, groundworkers and banksmen, coded welders and platers, electricians, and CPCS or NPORS plant operators for contractors and plant and crane hire companies.',
+      'The company is PRL Site Solutions Ltd, number 14358717, registered in England and Wales. The registered office is 259 Wallasey Village, Wallasey, Wirral, Merseyside, CH45 3LR. The desk is open Monday to Friday, 9am to 5pm, on 0800 772 3959. Mobilising people onto a site is a separate promise: pre-checked workers can be on site the next day, including when the call comes in late.',
+      'From Wallasey we cover Birkenhead, Prenton, Bromborough, Bebington, Heswall and across the Mersey into Ellesmere Port. Typical orders are labourers, groundworkers and banksmen, coded welders and platers, electricians, and CPCS or NPORS plant operators for contractors and plant and crane hire companies.',
       'The nearest project we publish in detail is Protos Energy Park at Ince Marsh, just off the Wirral in Cheshire, where we have placed more than 420 people for Metlen since March 2026. The same compliance checks — CSCS, right to work, tickets, IR35 — apply on a Wirral site of any size.',
     ],
     faqs: [
-      ['Where is PRL based?', 'The registered office is 15 Beryl Road, Prenton, Wirral, CH43 9RS. Call 0800 772 3959, Monday to Friday, 9am to 5pm. We do not ask clients to visit; we come to the site.'],
+      ['Where is PRL based?', 'The registered office is 259 Wallasey Village, Wallasey, Wirral, Merseyside, CH45 3LR. Call 0800 772 3959, Monday to Friday, 9am to 5pm. We do not ask clients to visit; we come to the site.'],
       ['How fast can you get people onto a Wirral site?', 'In most cases, the next day. Tell us the trade, the tickets the site insists on, the numbers and the start date. Everyone is compliance-checked before they are put forward.'],
       ['Which Wirral towns do you cover?', 'Prenton, Birkenhead, Wallasey, Bromborough, Bebington, Heswall and Ellesmere Port, plus the rest of Merseyside and Cheshire when the job needs it.'],
     ],
@@ -381,11 +381,11 @@ export const AREAS = [
     towns: ['Liverpool', 'Bootle', 'Speke', 'Knowsley', 'St Helens', 'Crosby', 'Kirkby'],
     asks: [
       ['City, docks and Speke', 'Fit-out trades, labourers and banksmen in the city and on the dock estate. Speke, Kirkby and Knowsley are more industrial: electricians, fitters and plant.'],
-      ['From the office', 'CH43 9RS is on the Birkenhead side of the Mersey tunnels, about 7 miles from Liverpool city centre. Bootle and Crosby are the same run.'],
+      ['From the office', 'CH45 3LR is on the Wallasey side of the Mersey tunnels, about 5 miles from Liverpool city centre through the Kingsway Tunnel. Bootle and Crosby are the same run.'],
       ['Rail in the city region', 'Trackside staff need a current PTS card on Sentinel and are deployed under your sponsorship or a partner’s. PRL is not a Sentinel sponsor.'],
     ],
     body: [
-      'Liverpool sites ask for the same things we already supply: labourers and groundworkers, banksmen, electricians, welders, steel fixers, and CPCS or NPORS operators. We are based in Prenton, a short run through the tunnel, and the office line is 0800 772 3959, Monday to Friday, 9am to 5pm.',
+      'Liverpool sites ask for the same things we already supply: labourers and groundworkers, banksmen, electricians, welders, steel fixers, and CPCS or NPORS operators. We are based in Wallasey, a short run through the Kingsway Tunnel, and the office line is 0800 772 3959, Monday to Friday, 9am to 5pm.',
       'Coverage includes the city, Bootle, Speke, Kirkby, Knowsley, Crosby and St Helens. For trackside rail work in the city region, PTS, COSS and Engineering Supervisor staff are deployed under your Sentinel sponsorship or a partner’s. PRL is not a Sentinel sponsor. Off-track rail civils, stations and depots we supply in the usual way.',
       'Our published large-scale job nearby is Protos Energy Park at Ince Marsh, Cheshire: more than 420 workers placed for Metlen since March 2026, across electrical, labour, fire watch, plant, mechanical and supervision. Liverpool orders use that same PRISM checking process.',
     ],
@@ -408,16 +408,16 @@ export const AREAS = [
     towns: ['Manchester', 'Salford', 'Trafford', 'Stockport', 'Bolton', 'Wigan', 'Oldham'],
     asks: [
       ['What Manchester sites ask for', 'CSCS labour and groundworkers, CPCS excavators and telehandlers, electricians, coded welders and SMSTS supervisors. City commercial and out-of-town civils both come through the same desk.'],
-      ['No Manchester office', 'Greater Manchester is covered from Prenton. A start the next morning is normal. A start in an hour is not — book it the working day before.'],
+      ['No Manchester office', 'Greater Manchester is covered from Wallasey. A start the next morning is normal. A start in an hour is not — book it the working day before.'],
       ['Where this page stops', 'Salford, Trafford, Stockport, Bolton, Wigan and Oldham are in the weekly patch. Leeds and the rest of Yorkshire are not. Ask, and we will say if we can fill it.'],
     ],
     body: [
-      'We supply Greater Manchester from the Prenton office: labourers, groundworkers, banksmen, electricians, mechanical fitters, coded welders, steel fixers, site supervisors and CPCS or NPORS plant operators, including excavators, telehandlers and cranes.',
+      'We supply Greater Manchester from the Wallasey office: labourers, groundworkers, banksmen, electricians, mechanical fitters, coded welders, steel fixers, site supervisors and CPCS or NPORS plant operators, including excavators, telehandlers and cranes.',
       'The patch covers Manchester, Salford, Trafford, Stockport, Bolton, Wigan and Oldham. Office hours are Monday to Friday, 9am to 5pm. If a site needs people tomorrow, say so on the call — rapid response is how most of our placements start, not a separate product.',
       'We have not published a Manchester case study. What we can show is the same standard of checking used at Protos Energy Park in Cheshire, where more than 420 people have been placed since March 2026, and on the Kelvin energy-from-waste civils in Sandwell. Cards, right to work and tickets are checked in PRISM before day one.',
     ],
     faqs: [
-      ['Do you have an office in Manchester?', 'No. The registered office is in Prenton, Wirral. Manchester, Salford, Trafford and the rest of Greater Manchester are covered from there, with workers sent to your site.'],
+      ['Do you have an office in Manchester?', 'No. The registered office is in Wallasey, Wirral. Manchester, Salford, Trafford and the rest of Greater Manchester are covered from there, with workers sent to your site.'],
       ['What plant tickets do you supply in Manchester?', 'CPCS and NPORS operators, including 360 excavators, telehandlers and crane roles. Tell us the category and we only put forward people with that card in date.'],
       ['Can you staff a Manchester site at short notice?', 'In most cases, yes — the following day. Numbers, shift pattern and any site induction or ticket need to be in the brief so we do not send the wrong people.'],
     ],
@@ -436,12 +436,12 @@ export const AREAS = [
     asks: [
       ['The job we can show', 'Protos Energy Park at Ince Marsh: more than 420 people placed for Metlen since March 2026, and 37 people supplied to Carey’s on the carbon-capture civils.'],
       ['How an EfW crew changes', 'Civils and groundworks first, then steel fixers, platers, coded welders, electricians, pipefitters, plant, HSE and QA/QC as the job comes out of the ground.'],
-      ['Over the border', 'Deeside and nearby Flintshire sites are covered from the same desk. Chester city centre is about 15 miles from the Prenton office. Send the postcode either way.'],
+      ['Over the border', 'Deeside and nearby Flintshire sites are covered from the same desk. Chester city centre is about 18 miles from the Wallasey office. Send the postcode either way.'],
     ],
     body: [
       'Cheshire is where our largest published project sits. Protos Energy Park at Ince Marsh is an energy-from-waste plant with carbon capture, processing a designed 500,000 tonnes of waste a year. Since March 2026 we have placed more than 420 people there for Metlen: electricians, labourers, fire watch, plant, mechanical trades, civils and supervision, days and nights. A further 37 people went to Carey’s on the Protos carbon-capture civils.',
       'The same desk covers Chester, Ellesmere Port, Frodsham, Helsby, Northwich and over the border into Deeside. Trades are the ones on that job and the ones we advertise every week: coded welders, platers, steel fixers, electricians and testers, pipefitters, groundworkers, banksmen and site managers.',
-      'PRL is registered in Prenton on the Wirral, about half an hour from Chester. Call 0800 772 3959, Monday to Friday, 9am to 5pm.',
+      'PRL is registered in Wallasey on the Wirral, about 40 minutes from Chester. Call 0800 772 3959, Monday to Friday, 9am to 5pm.',
     ],
     faqs: [
       ['Have you worked on a Chester or Ellesmere Port site?', 'Yes. Protos Energy Park at Ince Marsh, Cheshire. More than 420 workers placed for Metlen since March 2026, and 37 people supplied to Carey’s on the carbon-capture civils.'],
@@ -463,7 +463,7 @@ export const AREAS = [
     asks: [
       ['Sheds, civils and nights', 'Logistics units and industrial builds along the M62. Night shifts are a normal brief, not an exception, and we ask about availability before anyone is put forward.'],
       ['Tickets the gate usually wants', 'Green CSCS for labour, a banksman or slinger ticket where lifting is happening, CPCS or NPORS for telehandlers and excavators, and SMSTS where you need a supervisor.'],
-      ['How far is reasonable', 'Widnes and Runcorn are closer to Prenton than Manchester is. If the site is the far side of the M6, say so on the call and we will tell you whether we can fill it.'],
+      ['How far is reasonable', 'Widnes and Runcorn are closer to Wallasey than Manchester is. If the site is the far side of the M6, say so on the call and we will tell you whether we can fill it.'],
     ],
     body: [
       'Warrington sits between Liverpool and Manchester, which is why so much of the work is logistics, industrial units, civils and plant. We supply the people those sites usually need at short notice: CSCS labourers and groundworkers, banksmen and slinger signallers, telehandler and excavator operators, electricians, and site supervisors.',
@@ -472,7 +472,7 @@ export const AREAS = [
     ],
     faqs: [
       ['Do you supply warehouse and logistics sites around Warrington?', 'Yes, where the requirement is construction or industrial labour, trades, plant or supervision. Tell us the shift pattern. Nights and weekends are common and we ask about availability before anyone is put forward.'],
-      ['How far do crews travel?', 'Warrington, Widnes and Runcorn are inside the area we cover every week from Prenton. If the job is further out, say so and we will tell you whether we can fill it.'],
+      ['How far do crews travel?', 'Warrington, Widnes and Runcorn are inside the area we cover every week from Wallasey. If the job is further out, say so and we will tell you whether we can fill it.'],
       ['What should I send with the enquiry?', 'Trade, numbers, postcode, start date, shift, and any ticket the principal contractor insists on (CSCS colour, CPCS category, SMSTS, CCNSG). The tighter the brief, the fewer wrong CVs you see.'],
     ],
   },
@@ -534,13 +534,13 @@ export const GUIDES = [
     title: 'How to hire construction labour in the Northwest | PRL',
     description: 'What to send a Wirral recruiter for a Liverpool, Manchester, Chester or Warrington site. Tickets, distance and the only local job we publish numbers for.',
     h1: 'How to hire construction labour in the Northwest',
-    lede: 'PRL is registered in Prenton, Wirral. These are the towns we cover every week, how far is a fair ask, and what to put in the first call so the right people turn up.',
+    lede: 'PRL is registered in Wallasey, Wirral. These are the towns we cover every week, how far is a fair ask, and what to put in the first call so the right people turn up.',
     sections: [
       {
         h2: 'Start with the postcode, not the city',
         paragraphs: [
-          '“Manchester” can mean the city centre or a field past Oldham. The postcode decides the travel, the induction site and whether we already have people who will take it. The registered office is 15 Beryl Road, Prenton, CH43 9RS, company 14358717. The desk is open Monday to Friday, 9am to 5pm, on 0800 772 3959.',
-          'CH43 9RS is about 7 miles from Liverpool city centre and about 15 miles from Chester. Widnes and Runcorn sit inside the same week. Greater Manchester is covered from Prenton, so it needs to be booked the working day before, not at 7am the same morning.',
+          '“Manchester” can mean the city centre or a field past Oldham. The postcode decides the travel, the induction site and whether we already have people who will take it. The registered office is 259 Wallasey Village, Wallasey, CH45 3LR, company 14358717. The desk is open Monday to Friday, 9am to 5pm, on 0800 772 3959.',
+          'CH45 3LR is about 5 miles from Liverpool city centre and about 18 miles from Chester. Widnes and Runcorn sit inside the same week. Greater Manchester is covered from Wallasey, so it needs to be booked the working day before, not at 7am the same morning.',
         ],
       },
       {
@@ -572,7 +572,7 @@ export const GUIDES = [
       },
     ],
     faqs: [
-      ['Do you have offices in Liverpool and Manchester?', 'No. The registered office is in Prenton, Wirral. Liverpool is a short run through the tunnels. Manchester is covered from the same desk, with the booking made the day before.'],
+      ['Do you have offices in Liverpool and Manchester?', 'No. The registered office is in Wallasey, Wirral. Liverpool is a short run through the tunnels. Manchester is covered from the same desk, with the booking made the day before.'],
       ['Can you cover North Wales?', 'Deeside and nearby Flintshire, yes, as part of the Chester patch. Further into Wales, tell us the postcode and we will say whether we can fill it.'],
       ['Who do I call?', '0800 772 3959, Monday to Friday, 9am to 5pm, or the form on this page. info@prlsitesolutions.co.uk if you would rather write. The Google listing is under PRL Site Solutions | Recruitment Experts.'],
     ],
@@ -651,7 +651,7 @@ export const GUIDES = [
         h2: 'After they start',
         paragraphs: [
           'A project manager is appointed to the customer’s site, and we visit to check our workforce are all right and being treated properly. Timesheets and documents go through the PRISM app. If a ticket is due to expire during the hire, that date is already on the record.',
-          'To place the order: call 0800 772 3959, Monday to Friday 9am to 5pm, or use the form. The company is PRL Site Solutions Ltd, 15 Beryl Road, Prenton, Wirral, CH43 9RS.',
+          'To place the order: call 0800 772 3959, Monday to Friday 9am to 5pm, or use the form. The company is PRL Site Solutions Ltd, 259 Wallasey Village, Wallasey, Wirral, Merseyside, CH45 3LR.',
         ],
       },
     ],
