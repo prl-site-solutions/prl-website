@@ -1,8 +1,8 @@
 # PRL careers page
 
-The job cards on `careers.html`, and the JobPosting data Google reads for its
-job search, are rebuilt **twice a day** from PRL's live CV-Library adverts
-(agency ID `454083`):
+The job cards on `careers.html`, and one page per job under `/jobs/<title-town-id>/`
+(each carrying the JobPosting data Google reads for its job search), are rebuilt
+**twice a day** from PRL's live CV-Library adverts (agency ID `454083`):
 
 https://www.cv-library.co.uk/cgi-bin/yourjobs.cgi?agency=454083
 
@@ -14,7 +14,11 @@ advert on CV-Library and the website follows within half a day.
 - Need it sooner? GitHub → Actions → "Sync jobs from CV-Library" → Run workflow
 
 Everything between the `JOBS-…:START` / `JOBS-…:END` markers in
-`careers.html` is overwritten on each run, so don't hand-edit inside them.
+`careers.html`, and everything under `/jobs/`, is overwritten on each run, so
+don't hand-edit them. When an advert closes, its `/jobs/` page is deleted (so it
+returns 404, which tells Google the role has gone) and its sitemap entry removed.
+Each job page has an "Apply with PRL" route (consultant phone, email, PRISM
+registration) with CV-Library as a secondary link.
 Hand-typed job cards are how the page ended up showing ten roles that had all
 expired months earlier (fixed 2026-09-25).
 
