@@ -574,7 +574,7 @@ export const GUIDES = [
     faqs: [
       ['Do you have offices in Liverpool and Manchester?', 'No. The registered office is in Wallasey, Wirral. Liverpool is a short run through the tunnels. Manchester is covered from the same desk, with the booking made the day before.'],
       ['Can you cover North Wales?', 'Deeside and nearby Flintshire, yes, as part of the Chester patch. Further into Wales, tell us the postcode and we will say whether we can fill it.'],
-      ['Who do I call?', '0800 772 3959, Monday to Friday, 9am to 5pm, or the form on this page. info@prlsitesolutions.co.uk if you would rather write. The Google listing is under PRL Site Solutions | Recruitment Experts.'],
+      ['Who do I call?', '0800 772 3959, Monday to Friday, 9am to 5pm, or the form on this page. info@prlsitesolutions.co.uk if you would rather write. The Google listing is under PRL Site Solutions.'],
     ],
     relatedPages: ['construction-labour-supply', 'plant-operator-recruitment', 'energy-from-waste-recruitment'],
     relatedGuides: ['which-site-card', 'briefing-a-construction-agency'],

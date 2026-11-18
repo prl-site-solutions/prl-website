@@ -33,7 +33,7 @@ const HOURS = {
 const PROVIDER = { '@type': 'EmploymentAgency', '@id': ORG_ID, name: 'PRL Site Solutions', url: `${SITE}/`, telephone: '+448007723959' };
 const LOCAL_PROVIDER = {
   ...PROVIDER,
-  alternateName: ['PRL Site Solutions Ltd', 'PRL Site Solutions | Recruitment Experts'],
+  alternateName: ['PRL Site Solutions Ltd'],
   email: 'info@prlsitesolutions.co.uk',
   hasMap: MAPS,
   openingHoursSpecification: HOURS,
