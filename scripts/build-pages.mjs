@@ -22,9 +22,24 @@ const PUBLISHED = '2026-09-26';
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const jsonLd = (o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`;
 const MAPS = 'https://www.google.com/maps/place/?q=place_id:ChIJpahC5Xt2RSURTYVO12XzYpk';
+const REVIEW = 'https://search.google.com/local/writereview?placeid=ChIJpahC5Xt2RSURTYVO12XzYpk';
+const OFFICE_Q = encodeURIComponent('PRL Site Solutions, 259 Wallasey Village, Wallasey CH45 3LR');
+const MAP_EMBED = `https://www.google.com/maps?q=${OFFICE_Q}&output=embed`;
+const DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${OFFICE_Q}`;
+const mapBlock = (label) => `<div class="office-map" style="margin-top:20px">
+        <iframe src="${MAP_EMBED}" title="Map: PRL Site Solutions office, 259 Wallasey Village, Wallasey CH45 3LR" width="100%" height="300" style="border:0;border-radius:12px;display:block" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <p style="margin-top:10px"><a href="${DIRECTIONS}">Directions to the Wallasey office</a> · <a href="${REVIEW}">Worked with us${label ? ` in ${esc(label)}` : ''}? Leave us a Google review</a></p>
+      </div>`;
+
+// Live adverts, written by scripts/sync-jobs.mjs. Read at build time so the area
+// pages list the roles currently open near them.
+function liveJobs() {
+  try { return JSON.parse(readFileSync(new URL('jobs/jobs.json', ROOT), 'utf8')); } catch { return []; }
+}
+const areasFor = (location) => AREAS.filter((a) => a.jobMatch && a.jobMatch.test(location || ''));
 const COMPANIES_HOUSE = 'https://find-and-update.company-information.service.gov.uk/company/14358717';
 const OFFICE_GEO = { '@type': 'GeoCoordinates', latitude: 53.4308, longitude: -3.0560 };
-const NW_CITIES = ['Wirral', 'Liverpool', 'Birkenhead', 'Chester', 'Warrington', 'Manchester'];
+const NW_CITIES = ['Wirral', 'Wallasey', 'Birkenhead', 'Liverpool', 'Ellesmere Port', 'Chester', 'Warrington', 'Manchester'];
 const HOURS = {
   '@type': 'OpeningHoursSpecification',
   dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
@@ -319,6 +334,7 @@ ${p.related.map((s) => `        <a href="/${s}/">${esc(bySlug[s].nav)}${bySlug[s
         <a href="/careers.html">Live vacancies</a>
       </div>
       <h2 style="margin-top:36px">Where we supply ${esc(p.nav.toLowerCase())}</h2>
+      <p class="intro">Supplied from our office in Wallasey on the Wirral to sites in Birkenhead, Liverpool, Ellesmere Port, Chester, Warrington, Manchester and across the North West, and further afield when a project needs it.</p>
       <div class="related">
 ${AREAS.map((a) => `        <a href="/${a.slug}/">${esc(a.nav)}</a>`).join('\n')}
       </div>
@@ -506,10 +522,20 @@ function areaPage(a) {
       serviceType: 'Construction recruitment',
       description: a.description,
       url,
-      provider: LOCAL_PROVIDER,
+      provider: { '@id': ORG_ID },
       areaServed: [
         { '@type': 'City', name: a.city },
         ...a.towns.filter((t) => t !== a.city).map((name) => ({ '@type': 'City', name })),
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      ...LOCAL_PROVIDER,
+      areaServed: [
+        { '@type': 'City', name: a.city },
+        ...a.towns.filter((t) => t !== a.city).map((name) => ({ '@type': 'City', name })),
+        { '@type': 'AdministrativeArea', name: a.region },
+        { '@type': 'AdministrativeArea', name: 'Northwest England' },
       ],
     },
     {
@@ -520,6 +546,17 @@ function areaPage(a) {
   ].map(jsonLd).join('\n');
 
   const services = ['skilled-trades-recruitment', 'construction-labour-supply', 'plant-operator-recruitment', 'site-management-recruitment'];
+  const nearby = liveJobs().filter((j) => a.jobMatch && a.jobMatch.test(j.location));
+  const jobsSection = `  <section class="block alt">
+    <div class="wrap">
+      <h2>Live roles near ${esc(a.city)}</h2>
+${nearby.length ? `      <div class="roles">
+${nearby.map((j) => `        <div class="role"><h3><a href="${j.path}">${esc(j.title)}</a></h3><p>${esc([j.rate, j.type, j.location].filter(Boolean).join(' · '))}</p></div>`).join('\n')}
+      </div>
+      <p style="margin-top:16px"><a href="/careers.html">See every live vacancy</a></p>` : `      <p class="intro">No roles are advertised near ${esc(a.city)} today. New roles go up every week: see <a href="/careers.html">all live vacancies</a>, or <a href="https://www.prismworkforce.online/apply">register with PRL</a> and we will call you when work in your trade comes up.</p>`}
+    </div>
+  </section>
+`;
   const body = `
 <header class="hero">
   <div class="wrap">
@@ -541,10 +578,12 @@ function areaPage(a) {
 ${a.body.map((para) => `      <p>${esc(para)}</p>`).join('\n')}
       <p>Towns covered from this page: ${esc(a.towns.join(', '))}.</p>
       <p><strong>PRL Site Solutions Ltd</strong>, 259 Wallasey Village, Wallasey, Wirral, Merseyside, CH45 3LR. Company <a href="${COMPANIES_HOUSE}">14358717</a>. <a href="tel:08007723959">0800 772 3959</a>, Monday to Friday 9am–5pm. <a href="${MAPS}">Google listing</a>.</p>
+      ${mapBlock(a.nav)}
     </div>
   </section>
 
-  <section class="block alt">
+${jobsSection}
+  <section class="block">
     <div class="wrap">
       <h2>What ${esc(a.city)} sites usually ask for</h2>
       <div class="roles">
@@ -562,7 +601,7 @@ ${COMMON_CHECKS.map(([b, rest]) => `        <li><strong>${esc(b)}:</strong> ${es
     </div>
   </section>
 
-  <section class="block">
+  <section class="block alt">
     <div class="wrap">
       <h2>How it works</h2>
       <div class="steps">
@@ -571,7 +610,7 @@ ${STEPS.map(([h, t]) => `        <div class="step"><h3>${esc(h)}</h3><p>${esc(t)
     </div>
   </section>
 
-  <section class="block alt">
+  <section class="block">
     <div class="wrap">
       <h2>Frequently asked questions</h2>
       <div class="faq">
@@ -580,12 +619,13 @@ ${a.faqs.map(([q, ans]) => `        <details><summary>${esc(q)}</summary><p>${es
     </div>
   </section>
 
-  <section class="block">
+  <section class="block alt">
     <div class="wrap">
       <h2>Related</h2>
       <div class="related">
 ${services.map((s) => `        <a href="/${s}/">${esc(bySlug[s].nav)} recruitment</a>`).join('\n')}
 ${others.map((o) => `        <a href="/${o.slug}/">${esc(o.nav)} recruitment</a>`).join('\n')}
+        <a href="/careers.html">Live vacancies</a>
         <a href="/guides/hiring-construction-labour-northwest/">Hiring labour in the Northwest</a>
         <a href="/guides/which-site-card/">Which site card</a>
         <a href="/guides/">All guides</a>
@@ -731,7 +771,7 @@ ${ctaSection('Tell us the postcode and the ticket', 'e.g. 4 blue-card groundwork
 }
 
 // Shared with scripts/sync-jobs.mjs, which builds the /jobs/ pages in the same chrome.
-export { SITE, ORG_ID, esc, jsonLd, breadcrumbs, shell, ctaSection, PAGES };
+export { SITE, ORG_ID, esc, jsonLd, breadcrumbs, shell, ctaSection, PAGES, AREAS, areasFor, buildAll };
 
 // ───────────────────────── validate & write ─────────────────────────
 
@@ -793,6 +833,7 @@ for (const o of OUTPUTS) {
 writeFileSync(smFile, sm);
 
 console.log(changed.length ? `Built ${changed.length} page(s): ${changed.join(', ')}` : 'No page changes.');
+return changed;
 }
 
 // Build only when run directly (node scripts/build-pages.mjs), not when imported.

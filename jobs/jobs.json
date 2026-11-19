@@ -1,0 +1,44 @@
+[
+  {
+    "path": "/jobs/tig-welder-nights-hoole-225850386/",
+    "title": "TIG Welder NIGHTS",
+    "location": "CH2, Hoole, Cheshire West and Chester",
+    "rate": "£45 /hr",
+    "type": "Temporary"
+  },
+  {
+    "path": "/jobs/tig-welder-hoole-225850102/",
+    "title": "TIG Welder",
+    "location": "CH2, Hoole, Cheshire West and Chester",
+    "rate": "£30 /hr",
+    "type": "Temporary"
+  },
+  {
+    "path": "/jobs/slinger-signaller-ince-225836107/",
+    "title": "Slinger Signaller",
+    "location": "Ince, Cheshire West and Chester",
+    "rate": "£21 /hr",
+    "type": "Temporary"
+  },
+  {
+    "path": "/jobs/appointed-person-with-rigger-diagram-experience-enfield-225781481/",
+    "title": "Appointed Person With Rigger Diagram Experience",
+    "location": "Enfield, Greater London",
+    "rate": "£40–£43 /hr",
+    "type": "Temporary"
+  },
+  {
+    "path": "/jobs/setting-out-engineer-bickershaw-225775676/",
+    "title": "Setting Out Engineer",
+    "location": "WN2, Bickershaw, Borough of Wigan",
+    "rate": "£35 /hr",
+    "type": "Contract"
+  },
+  {
+    "path": "/jobs/piping-supervisor-walsall-225757911/",
+    "title": "Piping Supervisor",
+    "location": "Walsall, West Midlands (County)",
+    "rate": "£35–£40 /hr",
+    "type": "Temporary"
+  }
+]

@@ -15,7 +15,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { SITE, esc, jsonLd, breadcrumbs, shell, ctaSection } from './build-pages.mjs';
+import { SITE, esc, jsonLd, breadcrumbs, shell, ctaSection, areasFor, buildAll } from './build-pages.mjs';
 import { notify } from './notify-indexing.mjs';
 
 const AGENCY = '454083';
@@ -262,7 +262,7 @@ ${facts.map(([k, v]) => `        <li><strong>${esc(k)}:</strong> ${esc(v)}</li>`
       <div class="related">
         <a href="/careers.html">All live vacancies</a>
         <a href="/${svcSlug}/">${esc(svcName)}</a>
-        <a href="/guides/which-site-card/">Which site card do you need?</a>
+${areasFor(j.location).map((a) => `        <a href="/${a.slug}/">Construction recruitment in ${esc(a.nav)}</a>\n`).join('')}        <a href="/guides/which-site-card/">Which site card do you need?</a>
         <a href="/guides/right-to-work-before-a-start/">Right to work checks</a>
       </div>
     </div>
@@ -408,6 +408,10 @@ async function main() {
     if (write(new URL('index.html', dir), p.html)) changed.add(p.path);
   }
   write(new URL('index.html', JOBS_DIR), JOBS_INDEX);
+  // Summary for the area landing pages ("Live roles near Liverpool" etc.).
+  write(new URL('jobs.json', JOBS_DIR), JSON.stringify(jobs.map((j) => ({
+    path: jobPath(j), title: titleCase(j.title), location: j.location, rate: rateText(j), type: j.type || '',
+  })), null, 2) + '\n');
   const keep = new Set(paths.map((p) => p.split('/')[2]));
   const removed = [];
   for (const d of readdirSync(JOBS_DIR, { withFileTypes: true })) {
@@ -424,9 +428,12 @@ async function main() {
   sitemap = updateSitemap(sitemap, jobs, changed, today);
   if (sitemap !== smBefore) writeFileSync(SITEMAP, sitemap);
 
-  // The workflow commits with "git add careers.html sitemap.xml"; stage the job
-  // pages (including deletions) too so they go out in the same commit.
-  if (process.env.GITHUB_ACTIONS === 'true') execFileSync('git', ['add', '-A', 'jobs'], { stdio: 'inherit' });
+  // Rebuild the generated pages so each area page lists the roles open near it.
+  const rebuilt = buildAll();
+
+  // The workflow commits with "git add careers.html sitemap.xml jobs"; stage the
+  // rebuilt area pages too so they go out in the same commit.
+  if (process.env.GITHUB_ACTIONS === 'true') execFileSync('git', ['add', '-A', 'jobs', ...rebuilt], { stdio: 'inherit' });
 
   // Google Indexing API: new/changed job pages -> URL_UPDATED, closed ones -> URL_DELETED.
   // INDEXING_CHANGES_FILE saves the list so a later workflow step can send it once
