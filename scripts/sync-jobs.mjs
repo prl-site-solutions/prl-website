@@ -16,6 +16,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { SITE, esc, jsonLd, breadcrumbs, shell, ctaSection } from './build-pages.mjs';
+import { notify } from './notify-indexing.mjs';
 
 const AGENCY = '454083';
 const FEED_URL = `https://www.cv-library.co.uk/cgi-bin/yourjobs.cgi?agency=${AGENCY}`;
@@ -426,6 +427,20 @@ async function main() {
   // The workflow commits with "git add careers.html sitemap.xml"; stage the job
   // pages (including deletions) too so they go out in the same commit.
   if (process.env.GITHUB_ACTIONS === 'true') execFileSync('git', ['add', '-A', 'jobs'], { stdio: 'inherit' });
+
+  // Google Indexing API: new/changed job pages -> URL_UPDATED, closed ones -> URL_DELETED.
+  // INDEXING_CHANGES_FILE saves the list so a later workflow step can send it once
+  // the pages are live (set INDEXING_DEFER=1 for that); otherwise send it now.
+  const indexing = {
+    updated: [...changed].map((p) => `${SITE}${p}`),
+    deleted: removed.map((name) => `${SITE}/jobs/${name}/`),
+  };
+  if (process.env.INDEXING_CHANGES_FILE) writeFileSync(process.env.INDEXING_CHANGES_FILE, JSON.stringify(indexing, null, 2));
+  if (process.env.INDEXING_DEFER === '1') {
+    console.log(`Indexing API: ${indexing.updated.length + indexing.deleted.length} change(s) saved for the post-publish step.`);
+  } else {
+    try { await notify(indexing); } catch (err) { console.log(`Indexing API: unexpected error — ${err.message}`); }
+  }
 
   if (!careersChanged && !changed.size && !removed.length) {
     console.log(`No change — ${jobs.length} live jobs.`);

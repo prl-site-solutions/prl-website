@@ -33,3 +33,19 @@ failed run.
 Each job card's Call button uses the contact number on that CV-Library advert.
 The general contact card at the bottom of the page is hand-written: search
 `careers.html` for `07960871442`.
+
+---
+
+## Google Indexing API (fast Google for Jobs updates)
+
+`scripts/notify-indexing.mjs` tells Google when a job page is added or changed
+(`URL_UPDATED`) or removed (`URL_DELETED`). It needs the service-account JSON in
+the GitHub Actions secret `GOOGLE_INDEXING_KEY`; without it, it logs one
+"skipped" line and the sync carries on. Errors never fail the sync. Each run
+sends at most 100 notifications (Google's default quota is 200 a day).
+
+- After the sync: `node scripts/notify-indexing.mjs --changes <file>` sends the
+  changes the sync saved to `INDEXING_CHANGES_FILE` (set `INDEXING_DEFER=1` on the
+  sync step so they're sent once the pages are live).
+- Resubmit everything: `GOOGLE_INDEXING_KEY="$(cat key.json)" node scripts/notify-indexing.mjs --all`
+- Add `--dry-run` to see what would be sent.
