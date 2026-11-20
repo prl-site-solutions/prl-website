@@ -16,7 +16,7 @@ export const COMMON_CHECKS = [
 
 export const STEPS = [
   ['Tell us what you need', 'Use the form or call 0800 772 3959. Trades, numbers, site, start date and any site-specific tickets.'],
-  ['We put forward checked people', 'We match from our pool of 320+ active contractors. Everyone is compliance-checked before they go, and in most cases they can be on site within 24 hours.'],
+  ['We put forward checked people', 'We match from our pool of 600+ active contractors. Everyone is compliance-checked before they go, and in most cases they can be on site within 24 hours.'],
   ['On site, and we stay involved', 'We appoint a project manager to each customer\'s site and visit regularly to check our workforce are OK and being treated properly. Timesheets and documents run through our PRISM app.'],
 ];
 
