@@ -1,23 +1,23 @@
 [
   {
-    "path": "/jobs/plater-fabricator-helsby-225854218/",
-    "title": "Plater Fabricator",
-    "location": "CH2, Helsby, Cheshire West and Chester",
-    "rate": "£30 /hr",
-    "type": "Temporary"
-  },
-  {
-    "path": "/jobs/tig-welder-nights-helsby-225850386/",
-    "title": "TIG Welder NIGHTS",
-    "location": "CH2, Helsby, Cheshire West and Chester",
-    "rate": "£47–£55 /hr",
-    "type": "Temporary"
+    "path": "/jobs/setting-out-engineer-bickershaw-225775676/",
+    "title": "Setting Out Engineer",
+    "location": "WN2, Bickershaw, Borough of Wigan",
+    "rate": "£35 /hr",
+    "type": "Contract"
   },
   {
     "path": "/jobs/tig-welder-hapsford-225850102/",
     "title": "TIG Welder",
     "location": "CH2, Hapsford, Cheshire West and Chester",
     "rate": "£35–£50 /hr",
+    "type": "Temporary"
+  },
+  {
+    "path": "/jobs/cleaner-withnell-fold-225864593/",
+    "title": "Cleaner",
+    "location": "PR6, Withnell Fold, Lancashire",
+    "rate": "£14.25 /hr",
     "type": "Temporary"
   },
   {
@@ -33,12 +33,5 @@
     "location": "Enfield, Greater London",
     "rate": "£40–£43 /hr",
     "type": "Temporary"
-  },
-  {
-    "path": "/jobs/setting-out-engineer-bickershaw-225775676/",
-    "title": "Setting Out Engineer",
-    "location": "WN2, Bickershaw, Borough of Wigan",
-    "rate": "£35 /hr",
-    "type": "Contract"
   }
 ]
